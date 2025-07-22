@@ -10,6 +10,30 @@ import type { OutgoingMessage } from "../shared";
 import type { LegacyRef } from "react";
 
 function App() {
+  const [route, setRoute] = useState(window.location.pathname);
+  useEffect(() => {
+    const onPopState = () => setRoute(window.location.pathname);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const navigate = (path: string) => {
+    window.history.pushState({}, "", path);
+    setRoute(path);
+  };
+
+  if (route === "/privacy-policy") {
+    const PrivacyPolicy = React.lazy(() => import("./PrivacyPolicy"));
+    return (
+      <React.Suspense fallback={<div style={{color:'#ccc'}}>Loading…</div>}>
+        <PrivacyPolicy />
+        <p style={{marginTop:32}}>
+          <a href="#" onClick={e => { e.preventDefault(); navigate("/"); }} style={{color:'#ccc'}}>← Back to Home</a>
+        </p>
+      </React.Suspense>
+    );
+  }
+
   // A reference to the canvas element where we'll render the globe
   const canvasRef = useRef<HTMLCanvasElement>();
   // The number of markers we're currently displaying
@@ -105,11 +129,8 @@ function App() {
         style={{ width: 400, height: 400, maxWidth: "100%", aspectRatio: 1 }}
       />
 
-      {/* Let's give some credit */}
-      <p>
-        Powered by <a href="https://cobe.vercel.app/">🌏 Cobe</a>,{" "}
-        <a href="https://www.npmjs.com/package/phenomenon">Phenomenon</a> and{" "}
-        <a href="https://npmjs.com/package/partyserver/">🎈 PartyServer</a>
+      <p style={{marginTop:32}}>
+        <a href="#" onClick={e => { e.preventDefault(); navigate("/privacy-policy"); }} style={{color:'#ccc'}}>Privacy Policy</a>
       </p>
     </div>
   );
