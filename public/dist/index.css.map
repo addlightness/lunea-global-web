@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["../../src/client/styles.css"],
   "sourcesContent": ["/* \n  We've already included normalize.css. \n\n  But we'd like a modern looking boilerplate. \n  Clean type, sans-serif, and a nice color palette. \n  \n*/\n\nbody {\n  font-family: sans-serif;\n  font-size: 16px;\n  line-height: 1.5;\n  color: #999;\n  background-color: black;\n  text-align: center;\n  padding-top: 40px;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: sans-serif;\n  font-weight: 600;\n  line-height: 1.25;\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n}\n\n#app {\n  padding: 1rem;\n}\n\nh1 {\n  color: white;\n}\n\nb {\n  color: white;\n  font-weight: bold;\n}\n\na {\n  color: #ccc;\n  text-decoration-line: underline;\n  text-underline-offset: 3px;\n  text-decoration-color: #555;\n}\n"],
-  "mappings": ";AAQA;AACE;AACA;AACA;AACA;AACA;AACA;AACA;AAAA;AAGF;AAAA;AAAA;AAAA;AAAA;AAAA;AAME;AACA;AACA;AACA;AACA;AAAA;AAGF;AACE;AAAA;AAGF;AACE;AAAA;AAGF;AACE;AACA;AAAA;AAGF;AACE;AACA;AACA;AACA;AAAA;",
+  "mappings": ";AAQA;AACE,eAAa;AACb,aAAW;AACX,eAAa;AACb,SAAO;AACP,oBAAkB;AAClB,cAAY;AACZ,eAAa;AACf;AAEA;AACA;AACA;AACA;AACA;AACA;AACE,eAAa;AACb,eAAa;AACb,eAAa;AACb,cAAY;AACZ,iBAAe;AACjB;AAEA,CAAC;AACC,WAAS;AACX;AAEA;AACE,SAAO;AACT;AAEA;AACE,SAAO;AACP,eAAa;AACf;AAEA;AACE,SAAO;AACP,wBAAsB;AACtB,yBAAuB;AACvB,yBAAuB;AACzB;",
   "names": []
 }

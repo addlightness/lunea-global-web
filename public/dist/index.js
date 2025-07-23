@@ -1,12 +1,13 @@
 import {
   __commonJS,
+  __publicField,
   __toESM,
   require_react
-} from "./chunk-CFJSGZFY.js";
+} from "./chunk-ODPORMEJ.js";
 
-// ../../../../../../node_modules/scheduler/cjs/scheduler.development.js
+// node_modules/scheduler/cjs/scheduler.development.js
 var require_scheduler_development = __commonJS({
-  "../../../../../../node_modules/scheduler/cjs/scheduler.development.js"(exports) {
+  "node_modules/scheduler/cjs/scheduler.development.js"(exports) {
     "use strict";
     if (true) {
       (function() {
@@ -37,8 +38,8 @@ var require_scheduler_development = __commonJS({
           }
           return first;
         }
-        function siftUp(heap, node, i) {
-          var index = i;
+        function siftUp(heap, node, i3) {
+          var index = i3;
           while (index > 0) {
             var parentIndex = index - 1 >>> 1;
             var parent = heap[parentIndex];
@@ -51,8 +52,8 @@ var require_scheduler_development = __commonJS({
             }
           }
         }
-        function siftDown(heap, node, i) {
-          var index = i;
+        function siftDown(heap, node, i3) {
+          var index = i3;
           var length = heap.length;
           var halfLength = length >>> 1;
           while (index < halfLength) {
@@ -454,9 +455,9 @@ var require_scheduler_development = __commonJS({
   }
 });
 
-// ../../../../../../node_modules/scheduler/index.js
+// node_modules/scheduler/index.js
 var require_scheduler = __commonJS({
-  "../../../../../../node_modules/scheduler/index.js"(exports, module) {
+  "node_modules/scheduler/index.js"(exports, module) {
     "use strict";
     if (false) {
       module.exports = null;
@@ -466,9 +467,9 @@ var require_scheduler = __commonJS({
   }
 });
 
-// ../../../../../../node_modules/react-dom/cjs/react-dom.development.js
+// node_modules/react-dom/cjs/react-dom.development.js
 var require_react_dom_development = __commonJS({
-  "../../../../../../node_modules/react-dom/cjs/react-dom.development.js"(exports) {
+  "node_modules/react-dom/cjs/react-dom.development.js"(exports) {
     "use strict";
     if (true) {
       (function() {
@@ -552,7 +553,7 @@ var require_react_dom_development = __commonJS({
         var enableSuspenseAvoidThisFallback = false;
         var disableCommentsAsDOMContainers = true;
         var enableCustomElementPropertySupport = false;
-        var warnAboutStringRefs = false;
+        var warnAboutStringRefs = true;
         var enableSchedulingProfiler = true;
         var enableProfilerTimer = true;
         var enableProfilerCommitHooks = true;
@@ -577,8 +578,8 @@ var require_react_dom_development = __commonJS({
               possibleRegistrationNames.ondblclick = registrationName;
             }
           }
-          for (var i = 0; i < dependencies.length; i++) {
-            allNativeEvents.add(dependencies[i]);
+          for (var i3 = 0; i3 < dependencies.length; i3++) {
+            allNativeEvents.add(dependencies[i3]);
           }
         }
         var canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
@@ -595,7 +596,7 @@ var require_react_dom_development = __commonJS({
             try {
               testStringCoercion(value);
               return false;
-            } catch (e) {
+            } catch (e2) {
               return true;
             }
           }
@@ -698,6 +699,7 @@ var require_react_dom_development = __commonJS({
           }
           switch (typeof value) {
             case "function":
+            // $FlowIssue symbol is perfectly valid here
             case "symbol":
               return true;
             case "boolean": {
@@ -1386,8 +1388,8 @@ var require_react_dom_development = __commonJS({
             if (prefix === void 0) {
               try {
                 throw Error();
-              } catch (x) {
-                var match = x.stack.trim().match(/\n( *(at )?)/);
+              } catch (x2) {
+                var match = x2.stack.trim().match(/\n( *(at )?)/);
                 prefix = match && match[1] || "";
               }
             }
@@ -1433,23 +1435,23 @@ var require_react_dom_development = __commonJS({
               if (typeof Reflect === "object" && Reflect.construct) {
                 try {
                   Reflect.construct(Fake, []);
-                } catch (x) {
-                  control = x;
+                } catch (x2) {
+                  control = x2;
                 }
                 Reflect.construct(fn, [], Fake);
               } else {
                 try {
                   Fake.call();
-                } catch (x) {
-                  control = x;
+                } catch (x2) {
+                  control = x2;
                 }
                 fn.call(Fake.prototype);
               }
             } else {
               try {
                 throw Error();
-              } catch (x) {
-                control = x;
+              } catch (x2) {
+                control = x2;
               }
               fn();
             }
@@ -1457,19 +1459,19 @@ var require_react_dom_development = __commonJS({
             if (sample && control && typeof sample.stack === "string") {
               var sampleLines = sample.stack.split("\n");
               var controlLines = control.stack.split("\n");
-              var s = sampleLines.length - 1;
-              var c = controlLines.length - 1;
-              while (s >= 1 && c >= 0 && sampleLines[s] !== controlLines[c]) {
-                c--;
+              var s2 = sampleLines.length - 1;
+              var c2 = controlLines.length - 1;
+              while (s2 >= 1 && c2 >= 0 && sampleLines[s2] !== controlLines[c2]) {
+                c2--;
               }
-              for (; s >= 1 && c >= 0; s--, c--) {
-                if (sampleLines[s] !== controlLines[c]) {
-                  if (s !== 1 || c !== 1) {
+              for (; s2 >= 1 && c2 >= 0; s2--, c2--) {
+                if (sampleLines[s2] !== controlLines[c2]) {
+                  if (s2 !== 1 || c2 !== 1) {
                     do {
-                      s--;
-                      c--;
-                      if (c < 0 || sampleLines[s] !== controlLines[c]) {
-                        var _frame = "\n" + sampleLines[s].replace(" at new ", " at ");
+                      s2--;
+                      c2--;
+                      if (c2 < 0 || sampleLines[s2] !== controlLines[c2]) {
+                        var _frame = "\n" + sampleLines[s2].replace(" at new ", " at ");
                         if (fn.displayName && _frame.includes("<anonymous>")) {
                           _frame = _frame.replace("<anonymous>", fn.displayName);
                         }
@@ -1480,7 +1482,7 @@ var require_react_dom_development = __commonJS({
                         }
                         return _frame;
                       }
-                    } while (s >= 1 && c >= 0);
+                    } while (s2 >= 1 && c2 >= 0);
                   }
                   break;
                 }
@@ -1547,7 +1549,7 @@ var require_react_dom_development = __commonJS({
                 var init = lazyComponent._init;
                 try {
                   return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
+                } catch (x2) {
                 }
               }
             }
@@ -1587,8 +1589,8 @@ var require_react_dom_development = __commonJS({
               node = node.return;
             } while (node);
             return info;
-          } catch (x) {
-            return "\nError generating stack: " + x.message + "\n" + x.stack;
+          } catch (x2) {
+            return "\nError generating stack: " + x2.message + "\n" + x2.stack;
           }
         }
         function getWrappedName(outerType, innerType, wrapperName) {
@@ -1653,7 +1655,7 @@ var require_react_dom_development = __commonJS({
                 var init = lazyComponent._init;
                 try {
                   return getComponentNameFromType(init(payload));
-                } catch (x) {
+                } catch (x2) {
                   return null;
                 }
               }
@@ -1712,6 +1714,7 @@ var require_react_dom_development = __commonJS({
               return "SuspenseList";
             case TracingMarkerComponent:
               return "TracingMarker";
+            // The display name for this tags come from the user-provided type:
             case ClassComponent:
             case FunctionComponent:
             case IncompleteClassComponent:
@@ -1909,7 +1912,7 @@ var require_react_dom_development = __commonJS({
           }
           try {
             return doc.activeElement || doc.body;
-          } catch (e) {
+          } catch (e2) {
             return doc.body;
           }
         }
@@ -2050,8 +2053,8 @@ var require_react_dom_development = __commonJS({
               checkAttributeStringCoercion(name, "name");
             }
             var group = queryRoot.querySelectorAll("input[name=" + JSON.stringify("" + name) + '][type="radio"]');
-            for (var i = 0; i < group.length; i++) {
-              var otherNode = group[i];
+            for (var i3 = 0; i3 < group.length; i3++) {
+              var otherNode = group[i3];
               if (otherNode === rootNode || otherNode.form !== rootNode.form) {
                 continue;
               }
@@ -2132,8 +2135,8 @@ var require_react_dom_development = __commonJS({
         function checkSelectPropTypes(props) {
           {
             checkControlledValueProps("select", props);
-            for (var i = 0; i < valuePropNames.length; i++) {
-              var propName = valuePropNames[i];
+            for (var i3 = 0; i3 < valuePropNames.length; i3++) {
+              var propName = valuePropNames[i3];
               if (props[propName] == null) {
                 continue;
               }
@@ -2151,8 +2154,8 @@ var require_react_dom_development = __commonJS({
           if (multiple) {
             var selectedValues = propValue;
             var selectedValue = {};
-            for (var i = 0; i < selectedValues.length; i++) {
-              selectedValue["$" + selectedValues[i]] = true;
+            for (var i3 = 0; i3 < selectedValues.length; i3++) {
+              selectedValue["$" + selectedValues[i3]] = true;
             }
             for (var _i = 0; _i < options2.length; _i++) {
               var selected = selectedValue.hasOwnProperty("$" + options2[_i].value);
@@ -2628,8 +2631,8 @@ var require_react_dom_development = __commonJS({
           var expanded = {};
           for (var key in styles) {
             var longhands = shorthandToLonghand[key] || [key];
-            for (var i = 0; i < longhands.length; i++) {
-              expanded[longhands[i]] = key;
+            for (var i3 = 0; i3 < longhands.length; i3++) {
+              expanded[longhands[i3]] = key;
             }
           }
           return expanded;
@@ -2709,6 +2712,10 @@ var require_react_dom_development = __commonJS({
             return typeof props.is === "string";
           }
           switch (tagName) {
+            // These are reserved SVG and MathML elements.
+            // We don't mind this list too much because we expect it to never grow.
+            // The alternative is to track the namespace in a few places which is convoluted.
+            // https://w3c.github.io/webcomponents/spec/custom/#custom-elements-core-concepts
             case "annotation-xml":
             case "color-profile":
             case "font-face":
@@ -3551,8 +3558,8 @@ var require_react_dom_development = __commonJS({
           restoreQueue = null;
           restoreStateOfTarget(target);
           if (queuedTargets) {
-            for (var i = 0; i < queuedTargets.length; i++) {
-              restoreStateOfTarget(queuedTargets[i]);
+            for (var i3 = 0; i3 < queuedTargets.length; i3++) {
+              restoreStateOfTarget(queuedTargets[i3]);
             }
           }
         }
@@ -3635,11 +3642,11 @@ var require_react_dom_development = __commonJS({
             });
             window.addEventListener("test", options, options);
             window.removeEventListener("test", options, options);
-          } catch (e) {
+          } catch (e2) {
             passiveBrowserEventsSupported = false;
           }
         }
-        function invokeGuardedCallbackProd(name, func, context, a, b, c, d, e, f) {
+        function invokeGuardedCallbackProd(name, func, context, a, b, c2, d2, e2, f2) {
           var funcArgs = Array.prototype.slice.call(arguments, 3);
           try {
             func.apply(context, funcArgs);
@@ -3651,7 +3658,7 @@ var require_react_dom_development = __commonJS({
         {
           if (typeof window !== "undefined" && typeof window.dispatchEvent === "function" && typeof document !== "undefined" && typeof document.createEvent === "function") {
             var fakeNode = document.createElement("react");
-            invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b, c, d, e, f) {
+            invokeGuardedCallbackImpl = function invokeGuardedCallbackDev(name, func, context, a, b, c2, d2, e2, f2) {
               if (typeof document === "undefined" || document === null) {
                 throw new Error("The `document` global was defined when React was initialized, but is not defined anymore. This can happen in a test environment if a component schedules an update from an asynchronous callback, but the test has already finished running. To solve this, you can either unmount the component at the end of your test (and ensure that any asynchronous operations get canceled in `componentWillUnmount`), or you can change the test itself to be asynchronous.");
               }
@@ -3726,12 +3733,12 @@ var require_react_dom_development = __commonJS({
             caughtError = error2;
           }
         };
-        function invokeGuardedCallback(name, func, context, a, b, c, d, e, f) {
+        function invokeGuardedCallback(name, func, context, a, b, c2, d2, e2, f2) {
           hasError = false;
           caughtError = null;
           invokeGuardedCallbackImpl$1.apply(reporter, arguments);
         }
-        function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c, d, e, f) {
+        function invokeGuardedCallbackAndCatchFirstError(name, func, context, a, b, c2, d2, e2, f2) {
           invokeGuardedCallback.apply(this, arguments);
           if (hasError) {
             var error2 = clearCaughtError();
@@ -4441,8 +4448,8 @@ var require_react_dom_development = __commonJS({
         var clz32 = Math.clz32 ? Math.clz32 : clz32Fallback;
         var log = Math.log;
         var LN2 = Math.LN2;
-        function clz32Fallback(x) {
-          var asUint = x >>> 0;
+        function clz32Fallback(x2) {
+          var asUint = x2 >>> 0;
           if (asUint === 0) {
             return 32;
           }
@@ -4921,7 +4928,7 @@ var require_react_dom_development = __commonJS({
         }
         function createLaneMap(initial) {
           var laneMap = [];
-          for (var i = 0; i < TotalLanes; i++) {
+          for (var i3 = 0; i3 < TotalLanes; i3++) {
             laneMap.push(initial);
           }
           return laneMap;
@@ -5305,14 +5312,14 @@ var require_react_dom_development = __commonJS({
             target,
             priority: updatePriority
           };
-          var i = 0;
-          for (; i < queuedExplicitHydrationTargets.length; i++) {
-            if (!isHigherEventPriority(updatePriority, queuedExplicitHydrationTargets[i].priority)) {
+          var i3 = 0;
+          for (; i3 < queuedExplicitHydrationTargets.length; i3++) {
+            if (!isHigherEventPriority(updatePriority, queuedExplicitHydrationTargets[i3].priority)) {
               break;
             }
           }
-          queuedExplicitHydrationTargets.splice(i, 0, queuedTarget);
-          if (i === 0) {
+          queuedExplicitHydrationTargets.splice(i3, 0, queuedTarget);
+          if (i3 === 0) {
             attemptExplicitHydrationTarget(queuedTarget);
           }
         }
@@ -5375,8 +5382,8 @@ var require_react_dom_development = __commonJS({
         function retryIfBlockedOn(unblocked) {
           if (queuedDiscreteEvents.length > 0) {
             scheduleCallbackIfUnblocked(queuedDiscreteEvents[0], unblocked);
-            for (var i = 1; i < queuedDiscreteEvents.length; i++) {
-              var queuedEvent = queuedDiscreteEvents[i];
+            for (var i3 = 1; i3 < queuedDiscreteEvents.length; i3++) {
+              var queuedEvent = queuedDiscreteEvents[i3];
               if (queuedEvent.blockedOn === unblocked) {
                 queuedEvent.blockedOn = null;
               }
@@ -5538,6 +5545,7 @@ var require_react_dom_development = __commonJS({
         }
         function getEventPriority(domEventName) {
           switch (domEventName) {
+            // Used by SimpleEventPlugin:
             case "cancel":
             case "click":
             case "close":
@@ -5573,14 +5581,20 @@ var require_react_dom_development = __commonJS({
             case "touchend":
             case "touchstart":
             case "volumechange":
+            // Used by polyfills:
+            // eslint-disable-next-line no-fallthrough
             case "change":
             case "selectionchange":
             case "textInput":
             case "compositionstart":
             case "compositionend":
             case "compositionupdate":
+            // Only enableCreateEventHandleAPI:
+            // eslint-disable-next-line no-fallthrough
             case "beforeblur":
             case "afterblur":
+            // Not used by React but could be by user code:
+            // eslint-disable-next-line no-fallthrough
             case "beforeinput":
             case "blur":
             case "fullscreenchange":
@@ -5605,6 +5619,8 @@ var require_react_dom_development = __commonJS({
             case "toggle":
             case "touchmove":
             case "wheel":
+            // Not used by React but could be by user code:
+            // eslint-disable-next-line no-fallthrough
             case "mouseenter":
             case "mouseleave":
             case "pointerenter":
@@ -5836,8 +5852,7 @@ var require_react_dom_development = __commonJS({
           button: 0,
           buttons: 0,
           relatedTarget: function(event) {
-            if (event.relatedTarget === void 0)
-              return event.fromElement === event.srcElement ? event.toElement : event.fromElement;
+            if (event.relatedTarget === void 0) return event.fromElement === event.srcElement ? event.toElement : event.fromElement;
             return event.relatedTarget;
           },
           movementX: function(event) {
@@ -6473,8 +6488,8 @@ var require_react_dom_development = __commonJS({
           }
           accumulateEnterLeaveTwoPhaseListeners(dispatchQueue, leave, enter, from, to);
         }
-        function is(x, y) {
-          return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
+        function is(x2, y) {
+          return x2 === y && (x2 !== 0 || 1 / x2 === 1 / y) || x2 !== x2 && y !== y;
         }
         var objectIs = typeof Object.is === "function" ? Object.is : is;
         function shallowEqual(objA, objB) {
@@ -6489,8 +6504,8 @@ var require_react_dom_development = __commonJS({
           if (keysA.length !== keysB.length) {
             return false;
           }
-          for (var i = 0; i < keysA.length; i++) {
-            var currentKey = keysA[i];
+          for (var i3 = 0; i3 < keysA.length; i3++) {
+            var currentKey = keysA[i3];
             if (!hasOwnProperty.call(objB, currentKey) || !objectIs(objA[currentKey], objB[currentKey])) {
               return false;
             }
@@ -6540,7 +6555,7 @@ var require_react_dom_development = __commonJS({
           try {
             anchorNode.nodeType;
             focusNode.nodeType;
-          } catch (e) {
+          } catch (e2) {
             return null;
           }
           return getModernOffsetsFromPoints(outerNode, anchorNode, anchorOffset, focusNode, focusOffset);
@@ -6553,43 +6568,42 @@ var require_react_dom_development = __commonJS({
           var indexWithinFocus = 0;
           var node = outerNode;
           var parentNode = null;
-          outer:
+          outer: while (true) {
+            var next = null;
             while (true) {
-              var next = null;
-              while (true) {
-                if (node === anchorNode && (anchorOffset === 0 || node.nodeType === TEXT_NODE)) {
-                  start = length + anchorOffset;
-                }
-                if (node === focusNode && (focusOffset === 0 || node.nodeType === TEXT_NODE)) {
-                  end = length + focusOffset;
-                }
-                if (node.nodeType === TEXT_NODE) {
-                  length += node.nodeValue.length;
-                }
-                if ((next = node.firstChild) === null) {
-                  break;
-                }
-                parentNode = node;
-                node = next;
+              if (node === anchorNode && (anchorOffset === 0 || node.nodeType === TEXT_NODE)) {
+                start = length + anchorOffset;
               }
-              while (true) {
-                if (node === outerNode) {
-                  break outer;
-                }
-                if (parentNode === anchorNode && ++indexWithinAnchor === anchorOffset) {
-                  start = length;
-                }
-                if (parentNode === focusNode && ++indexWithinFocus === focusOffset) {
-                  end = length;
-                }
-                if ((next = node.nextSibling) !== null) {
-                  break;
-                }
-                node = parentNode;
-                parentNode = node.parentNode;
+              if (node === focusNode && (focusOffset === 0 || node.nodeType === TEXT_NODE)) {
+                end = length + focusOffset;
               }
+              if (node.nodeType === TEXT_NODE) {
+                length += node.nodeValue.length;
+              }
+              if ((next = node.firstChild) === null) {
+                break;
+              }
+              parentNode = node;
               node = next;
             }
+            while (true) {
+              if (node === outerNode) {
+                break outer;
+              }
+              if (parentNode === anchorNode && ++indexWithinAnchor === anchorOffset) {
+                start = length;
+              }
+              if (parentNode === focusNode && ++indexWithinFocus === focusOffset) {
+                end = length;
+              }
+              if ((next = node.nextSibling) !== null) {
+                break;
+              }
+              node = parentNode;
+              parentNode = node.parentNode;
+            }
+            node = next;
+          }
           if (start === -1 || end === -1) {
             return null;
           }
@@ -6707,8 +6721,8 @@ var require_react_dom_development = __commonJS({
             if (typeof priorFocusedElem.focus === "function") {
               priorFocusedElem.focus();
             }
-            for (var i = 0; i < ancestors.length; i++) {
-              var info = ancestors[i];
+            for (var i3 = 0; i3 < ancestors.length; i3++) {
+              var info = ancestors[i3];
               info.element.scrollLeft = info.left;
               info.element.scrollTop = info.top;
             }
@@ -6792,6 +6806,7 @@ var require_react_dom_development = __commonJS({
         function extractEvents$3(dispatchQueue, domEventName, targetInst, nativeEvent, nativeEventTarget, eventSystemFlags, targetContainer) {
           var targetNode = targetInst ? getNodeFromInstance(targetInst) : window;
           switch (domEventName) {
+            // Track the input node that has focus.
             case "focusin":
               if (isTextInputElement(targetNode) || targetNode.contentEditable === "true") {
                 activeElement$1 = targetNode;
@@ -6804,6 +6819,8 @@ var require_react_dom_development = __commonJS({
               activeElementInst$1 = null;
               lastSelection = null;
               break;
+            // Don't fire the event while the user is dragging. This matches the
+            // semantics of the native select event.
             case "mousedown":
               mouseDown = true;
               break;
@@ -6813,10 +6830,20 @@ var require_react_dom_development = __commonJS({
               mouseDown = false;
               constructSelectEvent(dispatchQueue, nativeEvent, nativeEventTarget);
               break;
+            // Chrome and IE fire non-standard event when selection is changed (and
+            // sometimes when it hasn't). IE's event fires out of order with respect
+            // to key and input events on deletion, so we discard it.
+            //
+            // Firefox doesn't support selectionchange, so check selection status
+            // after each key entry. The selection changes after keydown and before
+            // keyup, but we check on keydown as well in the case of holding down a
+            // key, when multiple keydown events are fired but only one keyup is.
+            // This is also our approach for IE handling, for the reason above.
             case "selectionchange":
               if (skipSelectionChangeEvent) {
                 break;
               }
+            // falls through
             case "keydown":
             case "keyup":
               constructSelectEvent(dispatchQueue, nativeEvent, nativeEventTarget);
@@ -6873,8 +6900,8 @@ var require_react_dom_development = __commonJS({
           registerTwoPhaseEvent(reactName, [domEventName]);
         }
         function registerSimpleEvents() {
-          for (var i = 0; i < simpleEventPluginEvents.length; i++) {
-            var eventName = simpleEventPluginEvents[i];
+          for (var i3 = 0; i3 < simpleEventPluginEvents.length; i3++) {
+            var eventName = simpleEventPluginEvents[i3];
             var domEventName = eventName.toLowerCase();
             var capitalizedEvent = eventName[0].toUpperCase() + eventName.slice(1);
             registerSimpleEvent(domEventName, "on" + capitalizedEvent);
@@ -6899,6 +6926,7 @@ var require_react_dom_development = __commonJS({
               if (getEventCharCode(nativeEvent) === 0) {
                 return;
               }
+            /* falls through */
             case "keydown":
             case "keyup":
               SyntheticEventCtor = SyntheticKeyboardEvent;
@@ -6919,11 +6947,14 @@ var require_react_dom_development = __commonJS({
               if (nativeEvent.button === 2) {
                 return;
               }
+            /* falls through */
             case "auxclick":
             case "dblclick":
             case "mousedown":
             case "mousemove":
             case "mouseup":
+            // TODO: Disabled elements should not respond to mouse events
+            /* falls through */
             case "mouseout":
             case "mouseover":
             case "contextmenu":
@@ -7018,8 +7049,8 @@ var require_react_dom_development = __commonJS({
         function processDispatchQueueItemsInOrder(event, dispatchListeners, inCapturePhase) {
           var previousInstance;
           if (inCapturePhase) {
-            for (var i = dispatchListeners.length - 1; i >= 0; i--) {
-              var _dispatchListeners$i = dispatchListeners[i], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
+            for (var i3 = dispatchListeners.length - 1; i3 >= 0; i3--) {
+              var _dispatchListeners$i = dispatchListeners[i3], instance = _dispatchListeners$i.instance, currentTarget = _dispatchListeners$i.currentTarget, listener = _dispatchListeners$i.listener;
               if (instance !== previousInstance && event.isPropagationStopped()) {
                 return;
               }
@@ -7039,8 +7070,8 @@ var require_react_dom_development = __commonJS({
         }
         function processDispatchQueue(dispatchQueue, eventSystemFlags) {
           var inCapturePhase = (eventSystemFlags & IS_CAPTURE_PHASE) !== 0;
-          for (var i = 0; i < dispatchQueue.length; i++) {
-            var _dispatchQueue$i = dispatchQueue[i], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
+          for (var i3 = 0; i3 < dispatchQueue.length; i3++) {
+            var _dispatchQueue$i = dispatchQueue[i3], event = _dispatchQueue$i.event, listeners = _dispatchQueue$i.listeners;
             processDispatchQueueItemsInOrder(event, listeners, inCapturePhase);
           }
           rethrowCaughtError();
@@ -7131,45 +7162,44 @@ var require_react_dom_development = __commonJS({
             var targetContainerNode = targetContainer;
             if (targetInst !== null) {
               var node = targetInst;
-              mainLoop:
-                while (true) {
-                  if (node === null) {
-                    return;
-                  }
-                  var nodeTag = node.tag;
-                  if (nodeTag === HostRoot || nodeTag === HostPortal) {
-                    var container = node.stateNode.containerInfo;
-                    if (isMatchingRootContainer(container, targetContainerNode)) {
-                      break;
-                    }
-                    if (nodeTag === HostPortal) {
-                      var grandNode = node.return;
-                      while (grandNode !== null) {
-                        var grandTag = grandNode.tag;
-                        if (grandTag === HostRoot || grandTag === HostPortal) {
-                          var grandContainer = grandNode.stateNode.containerInfo;
-                          if (isMatchingRootContainer(grandContainer, targetContainerNode)) {
-                            return;
-                          }
-                        }
-                        grandNode = grandNode.return;
-                      }
-                    }
-                    while (container !== null) {
-                      var parentNode = getClosestInstanceFromNode(container);
-                      if (parentNode === null) {
-                        return;
-                      }
-                      var parentTag = parentNode.tag;
-                      if (parentTag === HostComponent || parentTag === HostText) {
-                        node = ancestorInst = parentNode;
-                        continue mainLoop;
-                      }
-                      container = container.parentNode;
-                    }
-                  }
-                  node = node.return;
+              mainLoop: while (true) {
+                if (node === null) {
+                  return;
                 }
+                var nodeTag = node.tag;
+                if (nodeTag === HostRoot || nodeTag === HostPortal) {
+                  var container = node.stateNode.containerInfo;
+                  if (isMatchingRootContainer(container, targetContainerNode)) {
+                    break;
+                  }
+                  if (nodeTag === HostPortal) {
+                    var grandNode = node.return;
+                    while (grandNode !== null) {
+                      var grandTag = grandNode.tag;
+                      if (grandTag === HostRoot || grandTag === HostPortal) {
+                        var grandContainer = grandNode.stateNode.containerInfo;
+                        if (isMatchingRootContainer(grandContainer, targetContainerNode)) {
+                          return;
+                        }
+                      }
+                      grandNode = grandNode.return;
+                    }
+                  }
+                  while (container !== null) {
+                    var parentNode = getClosestInstanceFromNode(container);
+                    if (parentNode === null) {
+                      return;
+                    }
+                    var parentTag = parentNode.tag;
+                    if (parentTag === HostComponent || parentTag === HostText) {
+                      node = ancestorInst = parentNode;
+                      continue mainLoop;
+                    }
+                    container = container.parentNode;
+                  }
+                }
+                node = node.return;
+              }
             }
           }
           batchedUpdates(function() {
@@ -7449,10 +7479,8 @@ var require_react_dom_development = __commonJS({
               } else if (typeof nextProp === "number") {
                 setTextContent(domElement, "" + nextProp);
               }
-            } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING)
-              ;
-            else if (propKey === AUTOFOCUS)
-              ;
+            } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING) ;
+            else if (propKey === AUTOFOCUS) ;
             else if (registrationNameDependencies.hasOwnProperty(propKey)) {
               if (nextProp != null) {
                 if (typeof nextProp !== "function") {
@@ -7468,9 +7496,9 @@ var require_react_dom_development = __commonJS({
           }
         }
         function updateDOMProperties(domElement, updatePayload, wasCustomComponentTag, isCustomComponentTag) {
-          for (var i = 0; i < updatePayload.length; i += 2) {
-            var propKey = updatePayload[i];
-            var propValue = updatePayload[i + 1];
+          for (var i3 = 0; i3 < updatePayload.length; i3 += 2) {
+            var propKey = updatePayload[i3];
+            var propValue = updatePayload[i3 + 1];
             if (propKey === STYLE) {
               setValueForStyles(domElement, propValue);
             } else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
@@ -7553,8 +7581,8 @@ var require_react_dom_development = __commonJS({
               break;
             case "video":
             case "audio":
-              for (var i = 0; i < mediaEventTypes.length; i++) {
-                listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
+              for (var i3 = 0; i3 < mediaEventTypes.length; i3++) {
+                listenToNonDelegatedEvent(mediaEventTypes[i3], domElement);
               }
               props = rawProps;
               break;
@@ -7668,12 +7696,9 @@ var require_react_dom_development = __commonJS({
                   styleUpdates[styleName] = "";
                 }
               }
-            } else if (propKey === DANGEROUSLY_SET_INNER_HTML || propKey === CHILDREN)
-              ;
-            else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING)
-              ;
-            else if (propKey === AUTOFOCUS)
-              ;
+            } else if (propKey === DANGEROUSLY_SET_INNER_HTML || propKey === CHILDREN) ;
+            else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING) ;
+            else if (propKey === AUTOFOCUS) ;
             else if (registrationNameDependencies.hasOwnProperty(propKey)) {
               if (!updatePayload) {
                 updatePayload = [];
@@ -7732,8 +7757,7 @@ var require_react_dom_development = __commonJS({
               if (typeof nextProp === "string" || typeof nextProp === "number") {
                 (updatePayload = updatePayload || []).push(propKey, "" + nextProp);
               }
-            } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING)
-              ;
+            } else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING) ;
             else if (registrationNameDependencies.hasOwnProperty(propKey)) {
               if (nextProp != null) {
                 if (typeof nextProp !== "function") {
@@ -7805,8 +7829,8 @@ var require_react_dom_development = __commonJS({
               break;
             case "video":
             case "audio":
-              for (var i = 0; i < mediaEventTypes.length; i++) {
-                listenToNonDelegatedEvent(mediaEventTypes[i], domElement);
+              for (var i3 = 0; i3 < mediaEventTypes.length; i3++) {
+                listenToNonDelegatedEvent(mediaEventTypes[i3], domElement);
               }
               break;
             case "source":
@@ -7844,6 +7868,8 @@ var require_react_dom_development = __commonJS({
             for (var _i = 0; _i < attributes.length; _i++) {
               var name = attributes[_i].name.toLowerCase();
               switch (name) {
+                // Controlled attributes are not validated
+                // TODO: Only ignore them on controlled tags.
                 case "value":
                   break;
                 case "checked":
@@ -7890,12 +7916,10 @@ var require_react_dom_development = __commonJS({
             typeof isCustomComponentTag === "boolean") {
               var serverValue = void 0;
               var propertyInfo = isCustomComponentTag && enableCustomElementPropertySupport ? null : getPropertyInfo(propKey);
-              if (rawProps[SUPPRESS_HYDRATION_WARNING] === true)
-                ;
+              if (rawProps[SUPPRESS_HYDRATION_WARNING] === true) ;
               else if (propKey === SUPPRESS_CONTENT_EDITABLE_WARNING || propKey === SUPPRESS_HYDRATION_WARNING || // Controlled attributes are not validated
               // TODO: Only ignore them on controlled tags.
-              propKey === "value" || propKey === "checked" || propKey === "selected")
-                ;
+              propKey === "value" || propKey === "checked" || propKey === "selected") ;
               else if (propKey === DANGEROUSLY_SET_INNER_HTML) {
                 var serverHTML = domElement.innerHTML;
                 var nextHtml = nextProp ? nextProp[HTML$1] : void 0;
@@ -8113,24 +8137,37 @@ var require_react_dom_development = __commonJS({
           };
           var isTagValidWithParent = function(tag, parentTag) {
             switch (parentTag) {
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-inselect
               case "select":
                 return tag === "option" || tag === "optgroup" || tag === "#text";
               case "optgroup":
                 return tag === "option" || tag === "#text";
+              // Strictly speaking, seeing an <option> doesn't mean we're in a <select>
+              // but
               case "option":
                 return tag === "#text";
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intd
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-incaption
+              // No special behavior since these rules fall back to "in body" mode for
+              // all except special table nodes which cause bad parsing behavior anyway.
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intr
               case "tr":
                 return tag === "th" || tag === "td" || tag === "style" || tag === "script" || tag === "template";
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intbody
               case "tbody":
               case "thead":
               case "tfoot":
                 return tag === "tr" || tag === "style" || tag === "script" || tag === "template";
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-incolgroup
               case "colgroup":
                 return tag === "col" || tag === "template";
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-intable
               case "table":
                 return tag === "caption" || tag === "colgroup" || tag === "tbody" || tag === "tfoot" || tag === "thead" || tag === "style" || tag === "script" || tag === "template";
+              // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-inhead
               case "head":
                 return tag === "base" || tag === "basefont" || tag === "bgsound" || tag === "link" || tag === "meta" || tag === "title" || tag === "noscript" || tag === "noframes" || tag === "style" || tag === "script" || tag === "template";
+              // https://html.spec.whatwg.org/multipage/semantics.html#the-html-element
               case "html":
                 return tag === "head" || tag === "body" || tag === "frameset";
               case "frameset":
@@ -8691,8 +8728,7 @@ var require_react_dom_development = __commonJS({
           {
             if (instance.nodeType === ELEMENT_NODE) {
               warnForDeletedHydratableElement(parentContainer, instance);
-            } else if (instance.nodeType === COMMENT_NODE)
-              ;
+            } else if (instance.nodeType === COMMENT_NODE) ;
             else {
               warnForDeletedHydratableText(parentContainer, instance);
             }
@@ -8704,8 +8740,7 @@ var require_react_dom_development = __commonJS({
             if (parentNode !== null) {
               if (instance.nodeType === ELEMENT_NODE) {
                 warnForDeletedHydratableElement(parentNode, instance);
-              } else if (instance.nodeType === COMMENT_NODE)
-                ;
+              } else if (instance.nodeType === COMMENT_NODE) ;
               else {
                 warnForDeletedHydratableText(parentNode, instance);
               }
@@ -8717,8 +8752,7 @@ var require_react_dom_development = __commonJS({
             if (isConcurrentMode || parentProps[SUPPRESS_HYDRATION_WARNING$1] !== true) {
               if (instance.nodeType === ELEMENT_NODE) {
                 warnForDeletedHydratableElement(parentInstance, instance);
-              } else if (instance.nodeType === COMMENT_NODE)
-                ;
+              } else if (instance.nodeType === COMMENT_NODE) ;
               else {
                 warnForDeletedHydratableText(parentInstance, instance);
               }
@@ -8738,15 +8772,13 @@ var require_react_dom_development = __commonJS({
         function didNotFindHydratableInstanceWithinSuspenseInstance(parentInstance, type, props) {
           {
             var parentNode = parentInstance.parentNode;
-            if (parentNode !== null)
-              warnForInsertedHydratedElement(parentNode, type);
+            if (parentNode !== null) warnForInsertedHydratedElement(parentNode, type);
           }
         }
         function didNotFindHydratableTextInstanceWithinSuspenseInstance(parentInstance, text) {
           {
             var parentNode = parentInstance.parentNode;
-            if (parentNode !== null)
-              warnForInsertedHydratedText(parentNode, text);
+            if (parentNode !== null) warnForInsertedHydratedText(parentNode, text);
           }
         }
         function didNotFindHydratableInstance(parentType, parentProps, parentInstance, type, props, isConcurrentMode) {
@@ -9122,14 +9154,14 @@ var require_react_dom_development = __commonJS({
         function flushSyncCallbacks() {
           if (!isFlushingSyncQueue && syncQueue !== null) {
             isFlushingSyncQueue = true;
-            var i = 0;
+            var i3 = 0;
             var previousUpdatePriority = getCurrentUpdatePriority();
             try {
               var isSync = true;
               var queue = syncQueue;
               setCurrentUpdatePriority(DiscreteEventPriority);
-              for (; i < queue.length; i++) {
-                var callback = queue[i];
+              for (; i3 < queue.length; i3++) {
+                var callback = queue[i3];
                 do {
                   callback = callback(isSync);
                 } while (callback !== null);
@@ -9138,7 +9170,7 @@ var require_react_dom_development = __commonJS({
               includesLegacySyncCallbacks = false;
             } catch (error2) {
               if (syncQueue !== null) {
-                syncQueue = syncQueue.slice(i + 1);
+                syncQueue = syncQueue.slice(i3 + 1);
               }
               scheduleCallback(ImmediatePriority, flushSyncCallbacks);
               throw error2;
@@ -9333,8 +9365,7 @@ var require_react_dom_development = __commonJS({
               }
               case SuspenseComponent: {
                 var suspenseState = returnFiber.memoizedState;
-                if (suspenseState.dehydrated !== null)
-                  didNotHydrateInstanceWithinSuspenseInstance(suspenseState.dehydrated, instance);
+                if (suspenseState.dehydrated !== null) didNotHydrateInstanceWithinSuspenseInstance(suspenseState.dehydrated, instance);
                 break;
               }
             }
@@ -9413,18 +9444,17 @@ var require_react_dom_development = __commonJS({
               case SuspenseComponent: {
                 var suspenseState = returnFiber.memoizedState;
                 var _parentInstance = suspenseState.dehydrated;
-                if (_parentInstance !== null)
-                  switch (fiber.tag) {
-                    case HostComponent:
-                      var _type2 = fiber.type;
-                      var _props2 = fiber.pendingProps;
-                      didNotFindHydratableInstanceWithinSuspenseInstance(_parentInstance, _type2);
-                      break;
-                    case HostText:
-                      var _text2 = fiber.pendingProps;
-                      didNotFindHydratableTextInstanceWithinSuspenseInstance(_parentInstance, _text2);
-                      break;
-                  }
+                if (_parentInstance !== null) switch (fiber.tag) {
+                  case HostComponent:
+                    var _type2 = fiber.type;
+                    var _props2 = fiber.pendingProps;
+                    didNotFindHydratableInstanceWithinSuspenseInstance(_parentInstance, _type2);
+                    break;
+                  case HostText:
+                    var _text2 = fiber.pendingProps;
+                    didNotFindHydratableTextInstanceWithinSuspenseInstance(_parentInstance, _text2);
+                    break;
+                }
                 break;
               }
               default:
@@ -9849,1279 +9879,6 @@ var require_react_dom_development = __commonJS({
             pendingLegacyContextWarning = /* @__PURE__ */ new Map();
           };
         }
-        function resolveDefaultProps(Component, baseProps) {
-          if (Component && Component.defaultProps) {
-            var props = assign({}, baseProps);
-            var defaultProps = Component.defaultProps;
-            for (var propName in defaultProps) {
-              if (props[propName] === void 0) {
-                props[propName] = defaultProps[propName];
-              }
-            }
-            return props;
-          }
-          return baseProps;
-        }
-        var valueCursor = createCursor(null);
-        var rendererSigil;
-        {
-          rendererSigil = {};
-        }
-        var currentlyRenderingFiber = null;
-        var lastContextDependency = null;
-        var lastFullyObservedContext = null;
-        var isDisallowedContextReadInDEV = false;
-        function resetContextDependencies() {
-          currentlyRenderingFiber = null;
-          lastContextDependency = null;
-          lastFullyObservedContext = null;
-          {
-            isDisallowedContextReadInDEV = false;
-          }
-        }
-        function enterDisallowedContextReadInDEV() {
-          {
-            isDisallowedContextReadInDEV = true;
-          }
-        }
-        function exitDisallowedContextReadInDEV() {
-          {
-            isDisallowedContextReadInDEV = false;
-          }
-        }
-        function pushProvider(providerFiber, context, nextValue) {
-          {
-            push(valueCursor, context._currentValue, providerFiber);
-            context._currentValue = nextValue;
-            {
-              if (context._currentRenderer !== void 0 && context._currentRenderer !== null && context._currentRenderer !== rendererSigil) {
-                error("Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.");
-              }
-              context._currentRenderer = rendererSigil;
-            }
-          }
-        }
-        function popProvider(context, providerFiber) {
-          var currentValue = valueCursor.current;
-          pop(valueCursor, providerFiber);
-          {
-            {
-              context._currentValue = currentValue;
-            }
-          }
-        }
-        function scheduleContextWorkOnParentPath(parent, renderLanes2, propagationRoot) {
-          var node = parent;
-          while (node !== null) {
-            var alternate = node.alternate;
-            if (!isSubsetOfLanes(node.childLanes, renderLanes2)) {
-              node.childLanes = mergeLanes(node.childLanes, renderLanes2);
-              if (alternate !== null) {
-                alternate.childLanes = mergeLanes(alternate.childLanes, renderLanes2);
-              }
-            } else if (alternate !== null && !isSubsetOfLanes(alternate.childLanes, renderLanes2)) {
-              alternate.childLanes = mergeLanes(alternate.childLanes, renderLanes2);
-            }
-            if (node === propagationRoot) {
-              break;
-            }
-            node = node.return;
-          }
-          {
-            if (node !== propagationRoot) {
-              error("Expected to find the propagation root when scheduling context work. This error is likely caused by a bug in React. Please file an issue.");
-            }
-          }
-        }
-        function propagateContextChange(workInProgress2, context, renderLanes2) {
-          {
-            propagateContextChange_eager(workInProgress2, context, renderLanes2);
-          }
-        }
-        function propagateContextChange_eager(workInProgress2, context, renderLanes2) {
-          var fiber = workInProgress2.child;
-          if (fiber !== null) {
-            fiber.return = workInProgress2;
-          }
-          while (fiber !== null) {
-            var nextFiber = void 0;
-            var list = fiber.dependencies;
-            if (list !== null) {
-              nextFiber = fiber.child;
-              var dependency = list.firstContext;
-              while (dependency !== null) {
-                if (dependency.context === context) {
-                  if (fiber.tag === ClassComponent) {
-                    var lane = pickArbitraryLane(renderLanes2);
-                    var update = createUpdate(NoTimestamp, lane);
-                    update.tag = ForceUpdate;
-                    var updateQueue = fiber.updateQueue;
-                    if (updateQueue === null)
-                      ;
-                    else {
-                      var sharedQueue = updateQueue.shared;
-                      var pending = sharedQueue.pending;
-                      if (pending === null) {
-                        update.next = update;
-                      } else {
-                        update.next = pending.next;
-                        pending.next = update;
-                      }
-                      sharedQueue.pending = update;
-                    }
-                  }
-                  fiber.lanes = mergeLanes(fiber.lanes, renderLanes2);
-                  var alternate = fiber.alternate;
-                  if (alternate !== null) {
-                    alternate.lanes = mergeLanes(alternate.lanes, renderLanes2);
-                  }
-                  scheduleContextWorkOnParentPath(fiber.return, renderLanes2, workInProgress2);
-                  list.lanes = mergeLanes(list.lanes, renderLanes2);
-                  break;
-                }
-                dependency = dependency.next;
-              }
-            } else if (fiber.tag === ContextProvider) {
-              nextFiber = fiber.type === workInProgress2.type ? null : fiber.child;
-            } else if (fiber.tag === DehydratedFragment) {
-              var parentSuspense = fiber.return;
-              if (parentSuspense === null) {
-                throw new Error("We just came from a parent so we must have had a parent. This is a bug in React.");
-              }
-              parentSuspense.lanes = mergeLanes(parentSuspense.lanes, renderLanes2);
-              var _alternate = parentSuspense.alternate;
-              if (_alternate !== null) {
-                _alternate.lanes = mergeLanes(_alternate.lanes, renderLanes2);
-              }
-              scheduleContextWorkOnParentPath(parentSuspense, renderLanes2, workInProgress2);
-              nextFiber = fiber.sibling;
-            } else {
-              nextFiber = fiber.child;
-            }
-            if (nextFiber !== null) {
-              nextFiber.return = fiber;
-            } else {
-              nextFiber = fiber;
-              while (nextFiber !== null) {
-                if (nextFiber === workInProgress2) {
-                  nextFiber = null;
-                  break;
-                }
-                var sibling = nextFiber.sibling;
-                if (sibling !== null) {
-                  sibling.return = nextFiber.return;
-                  nextFiber = sibling;
-                  break;
-                }
-                nextFiber = nextFiber.return;
-              }
-            }
-            fiber = nextFiber;
-          }
-        }
-        function prepareToReadContext(workInProgress2, renderLanes2) {
-          currentlyRenderingFiber = workInProgress2;
-          lastContextDependency = null;
-          lastFullyObservedContext = null;
-          var dependencies = workInProgress2.dependencies;
-          if (dependencies !== null) {
-            {
-              var firstContext = dependencies.firstContext;
-              if (firstContext !== null) {
-                if (includesSomeLane(dependencies.lanes, renderLanes2)) {
-                  markWorkInProgressReceivedUpdate();
-                }
-                dependencies.firstContext = null;
-              }
-            }
-          }
-        }
-        function readContext(context) {
-          {
-            if (isDisallowedContextReadInDEV) {
-              error("Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().");
-            }
-          }
-          var value = context._currentValue;
-          if (lastFullyObservedContext === context)
-            ;
-          else {
-            var contextItem = {
-              context,
-              memoizedValue: value,
-              next: null
-            };
-            if (lastContextDependency === null) {
-              if (currentlyRenderingFiber === null) {
-                throw new Error("Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().");
-              }
-              lastContextDependency = contextItem;
-              currentlyRenderingFiber.dependencies = {
-                lanes: NoLanes,
-                firstContext: contextItem
-              };
-            } else {
-              lastContextDependency = lastContextDependency.next = contextItem;
-            }
-          }
-          return value;
-        }
-        var concurrentQueues = null;
-        function pushConcurrentUpdateQueue(queue) {
-          if (concurrentQueues === null) {
-            concurrentQueues = [queue];
-          } else {
-            concurrentQueues.push(queue);
-          }
-        }
-        function finishQueueingConcurrentUpdates() {
-          if (concurrentQueues !== null) {
-            for (var i = 0; i < concurrentQueues.length; i++) {
-              var queue = concurrentQueues[i];
-              var lastInterleavedUpdate = queue.interleaved;
-              if (lastInterleavedUpdate !== null) {
-                queue.interleaved = null;
-                var firstInterleavedUpdate = lastInterleavedUpdate.next;
-                var lastPendingUpdate = queue.pending;
-                if (lastPendingUpdate !== null) {
-                  var firstPendingUpdate = lastPendingUpdate.next;
-                  lastPendingUpdate.next = firstInterleavedUpdate;
-                  lastInterleavedUpdate.next = firstPendingUpdate;
-                }
-                queue.pending = lastInterleavedUpdate;
-              }
-            }
-            concurrentQueues = null;
-          }
-        }
-        function enqueueConcurrentHookUpdate(fiber, queue, update, lane) {
-          var interleaved = queue.interleaved;
-          if (interleaved === null) {
-            update.next = update;
-            pushConcurrentUpdateQueue(queue);
-          } else {
-            update.next = interleaved.next;
-            interleaved.next = update;
-          }
-          queue.interleaved = update;
-          return markUpdateLaneFromFiberToRoot(fiber, lane);
-        }
-        function enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane) {
-          var interleaved = queue.interleaved;
-          if (interleaved === null) {
-            update.next = update;
-            pushConcurrentUpdateQueue(queue);
-          } else {
-            update.next = interleaved.next;
-            interleaved.next = update;
-          }
-          queue.interleaved = update;
-        }
-        function enqueueConcurrentClassUpdate(fiber, queue, update, lane) {
-          var interleaved = queue.interleaved;
-          if (interleaved === null) {
-            update.next = update;
-            pushConcurrentUpdateQueue(queue);
-          } else {
-            update.next = interleaved.next;
-            interleaved.next = update;
-          }
-          queue.interleaved = update;
-          return markUpdateLaneFromFiberToRoot(fiber, lane);
-        }
-        function enqueueConcurrentRenderForLane(fiber, lane) {
-          return markUpdateLaneFromFiberToRoot(fiber, lane);
-        }
-        var unsafe_markUpdateLaneFromFiberToRoot = markUpdateLaneFromFiberToRoot;
-        function markUpdateLaneFromFiberToRoot(sourceFiber, lane) {
-          sourceFiber.lanes = mergeLanes(sourceFiber.lanes, lane);
-          var alternate = sourceFiber.alternate;
-          if (alternate !== null) {
-            alternate.lanes = mergeLanes(alternate.lanes, lane);
-          }
-          {
-            if (alternate === null && (sourceFiber.flags & (Placement | Hydrating)) !== NoFlags) {
-              warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber);
-            }
-          }
-          var node = sourceFiber;
-          var parent = sourceFiber.return;
-          while (parent !== null) {
-            parent.childLanes = mergeLanes(parent.childLanes, lane);
-            alternate = parent.alternate;
-            if (alternate !== null) {
-              alternate.childLanes = mergeLanes(alternate.childLanes, lane);
-            } else {
-              {
-                if ((parent.flags & (Placement | Hydrating)) !== NoFlags) {
-                  warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber);
-                }
-              }
-            }
-            node = parent;
-            parent = parent.return;
-          }
-          if (node.tag === HostRoot) {
-            var root2 = node.stateNode;
-            return root2;
-          } else {
-            return null;
-          }
-        }
-        var UpdateState = 0;
-        var ReplaceState = 1;
-        var ForceUpdate = 2;
-        var CaptureUpdate = 3;
-        var hasForceUpdate = false;
-        var didWarnUpdateInsideUpdate;
-        var currentlyProcessingQueue;
-        {
-          didWarnUpdateInsideUpdate = false;
-          currentlyProcessingQueue = null;
-        }
-        function initializeUpdateQueue(fiber) {
-          var queue = {
-            baseState: fiber.memoizedState,
-            firstBaseUpdate: null,
-            lastBaseUpdate: null,
-            shared: {
-              pending: null,
-              interleaved: null,
-              lanes: NoLanes
-            },
-            effects: null
-          };
-          fiber.updateQueue = queue;
-        }
-        function cloneUpdateQueue(current2, workInProgress2) {
-          var queue = workInProgress2.updateQueue;
-          var currentQueue = current2.updateQueue;
-          if (queue === currentQueue) {
-            var clone = {
-              baseState: currentQueue.baseState,
-              firstBaseUpdate: currentQueue.firstBaseUpdate,
-              lastBaseUpdate: currentQueue.lastBaseUpdate,
-              shared: currentQueue.shared,
-              effects: currentQueue.effects
-            };
-            workInProgress2.updateQueue = clone;
-          }
-        }
-        function createUpdate(eventTime, lane) {
-          var update = {
-            eventTime,
-            lane,
-            tag: UpdateState,
-            payload: null,
-            callback: null,
-            next: null
-          };
-          return update;
-        }
-        function enqueueUpdate(fiber, update, lane) {
-          var updateQueue = fiber.updateQueue;
-          if (updateQueue === null) {
-            return null;
-          }
-          var sharedQueue = updateQueue.shared;
-          {
-            if (currentlyProcessingQueue === sharedQueue && !didWarnUpdateInsideUpdate) {
-              error("An update (setState, replaceState, or forceUpdate) was scheduled from inside an update function. Update functions should be pure, with zero side-effects. Consider using componentDidUpdate or a callback.");
-              didWarnUpdateInsideUpdate = true;
-            }
-          }
-          if (isUnsafeClassRenderPhaseUpdate()) {
-            var pending = sharedQueue.pending;
-            if (pending === null) {
-              update.next = update;
-            } else {
-              update.next = pending.next;
-              pending.next = update;
-            }
-            sharedQueue.pending = update;
-            return unsafe_markUpdateLaneFromFiberToRoot(fiber, lane);
-          } else {
-            return enqueueConcurrentClassUpdate(fiber, sharedQueue, update, lane);
-          }
-        }
-        function entangleTransitions(root2, fiber, lane) {
-          var updateQueue = fiber.updateQueue;
-          if (updateQueue === null) {
-            return;
-          }
-          var sharedQueue = updateQueue.shared;
-          if (isTransitionLane(lane)) {
-            var queueLanes = sharedQueue.lanes;
-            queueLanes = intersectLanes(queueLanes, root2.pendingLanes);
-            var newQueueLanes = mergeLanes(queueLanes, lane);
-            sharedQueue.lanes = newQueueLanes;
-            markRootEntangled(root2, newQueueLanes);
-          }
-        }
-        function enqueueCapturedUpdate(workInProgress2, capturedUpdate) {
-          var queue = workInProgress2.updateQueue;
-          var current2 = workInProgress2.alternate;
-          if (current2 !== null) {
-            var currentQueue = current2.updateQueue;
-            if (queue === currentQueue) {
-              var newFirst = null;
-              var newLast = null;
-              var firstBaseUpdate = queue.firstBaseUpdate;
-              if (firstBaseUpdate !== null) {
-                var update = firstBaseUpdate;
-                do {
-                  var clone = {
-                    eventTime: update.eventTime,
-                    lane: update.lane,
-                    tag: update.tag,
-                    payload: update.payload,
-                    callback: update.callback,
-                    next: null
-                  };
-                  if (newLast === null) {
-                    newFirst = newLast = clone;
-                  } else {
-                    newLast.next = clone;
-                    newLast = clone;
-                  }
-                  update = update.next;
-                } while (update !== null);
-                if (newLast === null) {
-                  newFirst = newLast = capturedUpdate;
-                } else {
-                  newLast.next = capturedUpdate;
-                  newLast = capturedUpdate;
-                }
-              } else {
-                newFirst = newLast = capturedUpdate;
-              }
-              queue = {
-                baseState: currentQueue.baseState,
-                firstBaseUpdate: newFirst,
-                lastBaseUpdate: newLast,
-                shared: currentQueue.shared,
-                effects: currentQueue.effects
-              };
-              workInProgress2.updateQueue = queue;
-              return;
-            }
-          }
-          var lastBaseUpdate = queue.lastBaseUpdate;
-          if (lastBaseUpdate === null) {
-            queue.firstBaseUpdate = capturedUpdate;
-          } else {
-            lastBaseUpdate.next = capturedUpdate;
-          }
-          queue.lastBaseUpdate = capturedUpdate;
-        }
-        function getStateFromUpdate(workInProgress2, queue, update, prevState, nextProps, instance) {
-          switch (update.tag) {
-            case ReplaceState: {
-              var payload = update.payload;
-              if (typeof payload === "function") {
-                {
-                  enterDisallowedContextReadInDEV();
-                }
-                var nextState = payload.call(instance, prevState, nextProps);
-                {
-                  if (workInProgress2.mode & StrictLegacyMode) {
-                    setIsStrictModeForDevtools(true);
-                    try {
-                      payload.call(instance, prevState, nextProps);
-                    } finally {
-                      setIsStrictModeForDevtools(false);
-                    }
-                  }
-                  exitDisallowedContextReadInDEV();
-                }
-                return nextState;
-              }
-              return payload;
-            }
-            case CaptureUpdate: {
-              workInProgress2.flags = workInProgress2.flags & ~ShouldCapture | DidCapture;
-            }
-            case UpdateState: {
-              var _payload = update.payload;
-              var partialState;
-              if (typeof _payload === "function") {
-                {
-                  enterDisallowedContextReadInDEV();
-                }
-                partialState = _payload.call(instance, prevState, nextProps);
-                {
-                  if (workInProgress2.mode & StrictLegacyMode) {
-                    setIsStrictModeForDevtools(true);
-                    try {
-                      _payload.call(instance, prevState, nextProps);
-                    } finally {
-                      setIsStrictModeForDevtools(false);
-                    }
-                  }
-                  exitDisallowedContextReadInDEV();
-                }
-              } else {
-                partialState = _payload;
-              }
-              if (partialState === null || partialState === void 0) {
-                return prevState;
-              }
-              return assign({}, prevState, partialState);
-            }
-            case ForceUpdate: {
-              hasForceUpdate = true;
-              return prevState;
-            }
-          }
-          return prevState;
-        }
-        function processUpdateQueue(workInProgress2, props, instance, renderLanes2) {
-          var queue = workInProgress2.updateQueue;
-          hasForceUpdate = false;
-          {
-            currentlyProcessingQueue = queue.shared;
-          }
-          var firstBaseUpdate = queue.firstBaseUpdate;
-          var lastBaseUpdate = queue.lastBaseUpdate;
-          var pendingQueue = queue.shared.pending;
-          if (pendingQueue !== null) {
-            queue.shared.pending = null;
-            var lastPendingUpdate = pendingQueue;
-            var firstPendingUpdate = lastPendingUpdate.next;
-            lastPendingUpdate.next = null;
-            if (lastBaseUpdate === null) {
-              firstBaseUpdate = firstPendingUpdate;
-            } else {
-              lastBaseUpdate.next = firstPendingUpdate;
-            }
-            lastBaseUpdate = lastPendingUpdate;
-            var current2 = workInProgress2.alternate;
-            if (current2 !== null) {
-              var currentQueue = current2.updateQueue;
-              var currentLastBaseUpdate = currentQueue.lastBaseUpdate;
-              if (currentLastBaseUpdate !== lastBaseUpdate) {
-                if (currentLastBaseUpdate === null) {
-                  currentQueue.firstBaseUpdate = firstPendingUpdate;
-                } else {
-                  currentLastBaseUpdate.next = firstPendingUpdate;
-                }
-                currentQueue.lastBaseUpdate = lastPendingUpdate;
-              }
-            }
-          }
-          if (firstBaseUpdate !== null) {
-            var newState = queue.baseState;
-            var newLanes = NoLanes;
-            var newBaseState = null;
-            var newFirstBaseUpdate = null;
-            var newLastBaseUpdate = null;
-            var update = firstBaseUpdate;
-            do {
-              var updateLane = update.lane;
-              var updateEventTime = update.eventTime;
-              if (!isSubsetOfLanes(renderLanes2, updateLane)) {
-                var clone = {
-                  eventTime: updateEventTime,
-                  lane: updateLane,
-                  tag: update.tag,
-                  payload: update.payload,
-                  callback: update.callback,
-                  next: null
-                };
-                if (newLastBaseUpdate === null) {
-                  newFirstBaseUpdate = newLastBaseUpdate = clone;
-                  newBaseState = newState;
-                } else {
-                  newLastBaseUpdate = newLastBaseUpdate.next = clone;
-                }
-                newLanes = mergeLanes(newLanes, updateLane);
-              } else {
-                if (newLastBaseUpdate !== null) {
-                  var _clone = {
-                    eventTime: updateEventTime,
-                    // This update is going to be committed so we never want uncommit
-                    // it. Using NoLane works because 0 is a subset of all bitmasks, so
-                    // this will never be skipped by the check above.
-                    lane: NoLane,
-                    tag: update.tag,
-                    payload: update.payload,
-                    callback: update.callback,
-                    next: null
-                  };
-                  newLastBaseUpdate = newLastBaseUpdate.next = _clone;
-                }
-                newState = getStateFromUpdate(workInProgress2, queue, update, newState, props, instance);
-                var callback = update.callback;
-                if (callback !== null && // If the update was already committed, we should not queue its
-                // callback again.
-                update.lane !== NoLane) {
-                  workInProgress2.flags |= Callback;
-                  var effects = queue.effects;
-                  if (effects === null) {
-                    queue.effects = [update];
-                  } else {
-                    effects.push(update);
-                  }
-                }
-              }
-              update = update.next;
-              if (update === null) {
-                pendingQueue = queue.shared.pending;
-                if (pendingQueue === null) {
-                  break;
-                } else {
-                  var _lastPendingUpdate = pendingQueue;
-                  var _firstPendingUpdate = _lastPendingUpdate.next;
-                  _lastPendingUpdate.next = null;
-                  update = _firstPendingUpdate;
-                  queue.lastBaseUpdate = _lastPendingUpdate;
-                  queue.shared.pending = null;
-                }
-              }
-            } while (true);
-            if (newLastBaseUpdate === null) {
-              newBaseState = newState;
-            }
-            queue.baseState = newBaseState;
-            queue.firstBaseUpdate = newFirstBaseUpdate;
-            queue.lastBaseUpdate = newLastBaseUpdate;
-            var lastInterleaved = queue.shared.interleaved;
-            if (lastInterleaved !== null) {
-              var interleaved = lastInterleaved;
-              do {
-                newLanes = mergeLanes(newLanes, interleaved.lane);
-                interleaved = interleaved.next;
-              } while (interleaved !== lastInterleaved);
-            } else if (firstBaseUpdate === null) {
-              queue.shared.lanes = NoLanes;
-            }
-            markSkippedUpdateLanes(newLanes);
-            workInProgress2.lanes = newLanes;
-            workInProgress2.memoizedState = newState;
-          }
-          {
-            currentlyProcessingQueue = null;
-          }
-        }
-        function callCallback(callback, context) {
-          if (typeof callback !== "function") {
-            throw new Error("Invalid argument passed as callback. Expected a function. Instead " + ("received: " + callback));
-          }
-          callback.call(context);
-        }
-        function resetHasForceUpdateBeforeProcessing() {
-          hasForceUpdate = false;
-        }
-        function checkHasForceUpdateAfterProcessing() {
-          return hasForceUpdate;
-        }
-        function commitUpdateQueue(finishedWork, finishedQueue, instance) {
-          var effects = finishedQueue.effects;
-          finishedQueue.effects = null;
-          if (effects !== null) {
-            for (var i = 0; i < effects.length; i++) {
-              var effect = effects[i];
-              var callback = effect.callback;
-              if (callback !== null) {
-                effect.callback = null;
-                callCallback(callback, instance);
-              }
-            }
-          }
-        }
-        var fakeInternalInstance = {};
-        var emptyRefsObject = new React2.Component().refs;
-        var didWarnAboutStateAssignmentForComponent;
-        var didWarnAboutUninitializedState;
-        var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
-        var didWarnAboutLegacyLifecyclesAndDerivedState;
-        var didWarnAboutUndefinedDerivedState;
-        var warnOnUndefinedDerivedState;
-        var warnOnInvalidCallback;
-        var didWarnAboutDirectlyAssigningPropsToState;
-        var didWarnAboutContextTypeAndContextTypes;
-        var didWarnAboutInvalidateContextType;
-        {
-          didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set();
-          didWarnAboutUninitializedState = /* @__PURE__ */ new Set();
-          didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set();
-          didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set();
-          didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set();
-          didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set();
-          didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set();
-          didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
-          var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
-          warnOnInvalidCallback = function(callback, callerName) {
-            if (callback === null || typeof callback === "function") {
-              return;
-            }
-            var key = callerName + "_" + callback;
-            if (!didWarnOnInvalidCallback.has(key)) {
-              didWarnOnInvalidCallback.add(key);
-              error("%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.", callerName, callback);
-            }
-          };
-          warnOnUndefinedDerivedState = function(type, partialState) {
-            if (partialState === void 0) {
-              var componentName = getComponentNameFromType(type) || "Component";
-              if (!didWarnAboutUndefinedDerivedState.has(componentName)) {
-                didWarnAboutUndefinedDerivedState.add(componentName);
-                error("%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.", componentName);
-              }
-            }
-          };
-          Object.defineProperty(fakeInternalInstance, "_processChildContext", {
-            enumerable: false,
-            value: function() {
-              throw new Error("_processChildContext is not available in React 16+. This likely means you have multiple copies of React and are attempting to nest a React 15 tree inside a React 16 tree using unstable_renderSubtreeIntoContainer, which isn't supported. Try to make sure you have only one copy of React (and ideally, switch to ReactDOM.createPortal).");
-            }
-          });
-          Object.freeze(fakeInternalInstance);
-        }
-        function applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, nextProps) {
-          var prevState = workInProgress2.memoizedState;
-          var partialState = getDerivedStateFromProps(nextProps, prevState);
-          {
-            if (workInProgress2.mode & StrictLegacyMode) {
-              setIsStrictModeForDevtools(true);
-              try {
-                partialState = getDerivedStateFromProps(nextProps, prevState);
-              } finally {
-                setIsStrictModeForDevtools(false);
-              }
-            }
-            warnOnUndefinedDerivedState(ctor, partialState);
-          }
-          var memoizedState = partialState === null || partialState === void 0 ? prevState : assign({}, prevState, partialState);
-          workInProgress2.memoizedState = memoizedState;
-          if (workInProgress2.lanes === NoLanes) {
-            var updateQueue = workInProgress2.updateQueue;
-            updateQueue.baseState = memoizedState;
-          }
-        }
-        var classComponentUpdater = {
-          isMounted,
-          enqueueSetState: function(inst, payload, callback) {
-            var fiber = get(inst);
-            var eventTime = requestEventTime();
-            var lane = requestUpdateLane(fiber);
-            var update = createUpdate(eventTime, lane);
-            update.payload = payload;
-            if (callback !== void 0 && callback !== null) {
-              {
-                warnOnInvalidCallback(callback, "setState");
-              }
-              update.callback = callback;
-            }
-            var root2 = enqueueUpdate(fiber, update, lane);
-            if (root2 !== null) {
-              scheduleUpdateOnFiber(root2, fiber, lane, eventTime);
-              entangleTransitions(root2, fiber, lane);
-            }
-            {
-              markStateUpdateScheduled(fiber, lane);
-            }
-          },
-          enqueueReplaceState: function(inst, payload, callback) {
-            var fiber = get(inst);
-            var eventTime = requestEventTime();
-            var lane = requestUpdateLane(fiber);
-            var update = createUpdate(eventTime, lane);
-            update.tag = ReplaceState;
-            update.payload = payload;
-            if (callback !== void 0 && callback !== null) {
-              {
-                warnOnInvalidCallback(callback, "replaceState");
-              }
-              update.callback = callback;
-            }
-            var root2 = enqueueUpdate(fiber, update, lane);
-            if (root2 !== null) {
-              scheduleUpdateOnFiber(root2, fiber, lane, eventTime);
-              entangleTransitions(root2, fiber, lane);
-            }
-            {
-              markStateUpdateScheduled(fiber, lane);
-            }
-          },
-          enqueueForceUpdate: function(inst, callback) {
-            var fiber = get(inst);
-            var eventTime = requestEventTime();
-            var lane = requestUpdateLane(fiber);
-            var update = createUpdate(eventTime, lane);
-            update.tag = ForceUpdate;
-            if (callback !== void 0 && callback !== null) {
-              {
-                warnOnInvalidCallback(callback, "forceUpdate");
-              }
-              update.callback = callback;
-            }
-            var root2 = enqueueUpdate(fiber, update, lane);
-            if (root2 !== null) {
-              scheduleUpdateOnFiber(root2, fiber, lane, eventTime);
-              entangleTransitions(root2, fiber, lane);
-            }
-            {
-              markForceUpdateScheduled(fiber, lane);
-            }
-          }
-        };
-        function checkShouldComponentUpdate(workInProgress2, ctor, oldProps, newProps, oldState, newState, nextContext) {
-          var instance = workInProgress2.stateNode;
-          if (typeof instance.shouldComponentUpdate === "function") {
-            var shouldUpdate = instance.shouldComponentUpdate(newProps, newState, nextContext);
-            {
-              if (workInProgress2.mode & StrictLegacyMode) {
-                setIsStrictModeForDevtools(true);
-                try {
-                  shouldUpdate = instance.shouldComponentUpdate(newProps, newState, nextContext);
-                } finally {
-                  setIsStrictModeForDevtools(false);
-                }
-              }
-              if (shouldUpdate === void 0) {
-                error("%s.shouldComponentUpdate(): Returned undefined instead of a boolean value. Make sure to return true or false.", getComponentNameFromType(ctor) || "Component");
-              }
-            }
-            return shouldUpdate;
-          }
-          if (ctor.prototype && ctor.prototype.isPureReactComponent) {
-            return !shallowEqual(oldProps, newProps) || !shallowEqual(oldState, newState);
-          }
-          return true;
-        }
-        function checkClassInstance(workInProgress2, ctor, newProps) {
-          var instance = workInProgress2.stateNode;
-          {
-            var name = getComponentNameFromType(ctor) || "Component";
-            var renderPresent = instance.render;
-            if (!renderPresent) {
-              if (ctor.prototype && typeof ctor.prototype.render === "function") {
-                error("%s(...): No `render` method found on the returned component instance: did you accidentally return an object from the constructor?", name);
-              } else {
-                error("%s(...): No `render` method found on the returned component instance: you may have forgotten to define `render`.", name);
-              }
-            }
-            if (instance.getInitialState && !instance.getInitialState.isReactClassApproved && !instance.state) {
-              error("getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?", name);
-            }
-            if (instance.getDefaultProps && !instance.getDefaultProps.isReactClassApproved) {
-              error("getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.", name);
-            }
-            if (instance.propTypes) {
-              error("propTypes was defined as an instance property on %s. Use a static property to define propTypes instead.", name);
-            }
-            if (instance.contextType) {
-              error("contextType was defined as an instance property on %s. Use a static property to define contextType instead.", name);
-            }
-            {
-              if (instance.contextTypes) {
-                error("contextTypes was defined as an instance property on %s. Use a static property to define contextTypes instead.", name);
-              }
-              if (ctor.contextType && ctor.contextTypes && !didWarnAboutContextTypeAndContextTypes.has(ctor)) {
-                didWarnAboutContextTypeAndContextTypes.add(ctor);
-                error("%s declares both contextTypes and contextType static properties. The legacy contextTypes property will be ignored.", name);
-              }
-            }
-            if (typeof instance.componentShouldUpdate === "function") {
-              error("%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.", name);
-            }
-            if (ctor.prototype && ctor.prototype.isPureReactComponent && typeof instance.shouldComponentUpdate !== "undefined") {
-              error("%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.", getComponentNameFromType(ctor) || "A pure component");
-            }
-            if (typeof instance.componentDidUnmount === "function") {
-              error("%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?", name);
-            }
-            if (typeof instance.componentDidReceiveProps === "function") {
-              error("%s has a method called componentDidReceiveProps(). But there is no such lifecycle method. If you meant to update the state in response to changing props, use componentWillReceiveProps(). If you meant to fetch data or run side-effects or mutations after React has updated the UI, use componentDidUpdate().", name);
-            }
-            if (typeof instance.componentWillRecieveProps === "function") {
-              error("%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?", name);
-            }
-            if (typeof instance.UNSAFE_componentWillRecieveProps === "function") {
-              error("%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?", name);
-            }
-            var hasMutatedProps = instance.props !== newProps;
-            if (instance.props !== void 0 && hasMutatedProps) {
-              error("%s(...): When calling super() in `%s`, make sure to pass up the same props that your component's constructor was passed.", name, name);
-            }
-            if (instance.defaultProps) {
-              error("Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.", name, name);
-            }
-            if (typeof instance.getSnapshotBeforeUpdate === "function" && typeof instance.componentDidUpdate !== "function" && !didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(ctor)) {
-              didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(ctor);
-              error("%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.", getComponentNameFromType(ctor));
-            }
-            if (typeof instance.getDerivedStateFromProps === "function") {
-              error("%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.", name);
-            }
-            if (typeof instance.getDerivedStateFromError === "function") {
-              error("%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.", name);
-            }
-            if (typeof ctor.getSnapshotBeforeUpdate === "function") {
-              error("%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.", name);
-            }
-            var _state = instance.state;
-            if (_state && (typeof _state !== "object" || isArray(_state))) {
-              error("%s.state: must be set to an object or null", name);
-            }
-            if (typeof instance.getChildContext === "function" && typeof ctor.childContextTypes !== "object") {
-              error("%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().", name);
-            }
-          }
-        }
-        function adoptClassInstance(workInProgress2, instance) {
-          instance.updater = classComponentUpdater;
-          workInProgress2.stateNode = instance;
-          set(instance, workInProgress2);
-          {
-            instance._reactInternalInstance = fakeInternalInstance;
-          }
-        }
-        function constructClassInstance(workInProgress2, ctor, props) {
-          var isLegacyContextConsumer = false;
-          var unmaskedContext = emptyContextObject;
-          var context = emptyContextObject;
-          var contextType = ctor.contextType;
-          {
-            if ("contextType" in ctor) {
-              var isValid = (
-                // Allow null for conditional declaration
-                contextType === null || contextType !== void 0 && contextType.$$typeof === REACT_CONTEXT_TYPE && contextType._context === void 0
-              );
-              if (!isValid && !didWarnAboutInvalidateContextType.has(ctor)) {
-                didWarnAboutInvalidateContextType.add(ctor);
-                var addendum = "";
-                if (contextType === void 0) {
-                  addendum = " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file.";
-                } else if (typeof contextType !== "object") {
-                  addendum = " However, it is set to a " + typeof contextType + ".";
-                } else if (contextType.$$typeof === REACT_PROVIDER_TYPE) {
-                  addendum = " Did you accidentally pass the Context.Provider instead?";
-                } else if (contextType._context !== void 0) {
-                  addendum = " Did you accidentally pass the Context.Consumer instead?";
-                } else {
-                  addendum = " However, it is set to an object with keys {" + Object.keys(contextType).join(", ") + "}.";
-                }
-                error("%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s", getComponentNameFromType(ctor) || "Component", addendum);
-              }
-            }
-          }
-          if (typeof contextType === "object" && contextType !== null) {
-            context = readContext(contextType);
-          } else {
-            unmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
-            var contextTypes = ctor.contextTypes;
-            isLegacyContextConsumer = contextTypes !== null && contextTypes !== void 0;
-            context = isLegacyContextConsumer ? getMaskedContext(workInProgress2, unmaskedContext) : emptyContextObject;
-          }
-          var instance = new ctor(props, context);
-          {
-            if (workInProgress2.mode & StrictLegacyMode) {
-              setIsStrictModeForDevtools(true);
-              try {
-                instance = new ctor(props, context);
-              } finally {
-                setIsStrictModeForDevtools(false);
-              }
-            }
-          }
-          var state = workInProgress2.memoizedState = instance.state !== null && instance.state !== void 0 ? instance.state : null;
-          adoptClassInstance(workInProgress2, instance);
-          {
-            if (typeof ctor.getDerivedStateFromProps === "function" && state === null) {
-              var componentName = getComponentNameFromType(ctor) || "Component";
-              if (!didWarnAboutUninitializedState.has(componentName)) {
-                didWarnAboutUninitializedState.add(componentName);
-                error("`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.", componentName, instance.state === null ? "null" : "undefined", componentName);
-              }
-            }
-            if (typeof ctor.getDerivedStateFromProps === "function" || typeof instance.getSnapshotBeforeUpdate === "function") {
-              var foundWillMountName = null;
-              var foundWillReceivePropsName = null;
-              var foundWillUpdateName = null;
-              if (typeof instance.componentWillMount === "function" && instance.componentWillMount.__suppressDeprecationWarning !== true) {
-                foundWillMountName = "componentWillMount";
-              } else if (typeof instance.UNSAFE_componentWillMount === "function") {
-                foundWillMountName = "UNSAFE_componentWillMount";
-              }
-              if (typeof instance.componentWillReceiveProps === "function" && instance.componentWillReceiveProps.__suppressDeprecationWarning !== true) {
-                foundWillReceivePropsName = "componentWillReceiveProps";
-              } else if (typeof instance.UNSAFE_componentWillReceiveProps === "function") {
-                foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
-              }
-              if (typeof instance.componentWillUpdate === "function" && instance.componentWillUpdate.__suppressDeprecationWarning !== true) {
-                foundWillUpdateName = "componentWillUpdate";
-              } else if (typeof instance.UNSAFE_componentWillUpdate === "function") {
-                foundWillUpdateName = "UNSAFE_componentWillUpdate";
-              }
-              if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
-                var _componentName = getComponentNameFromType(ctor) || "Component";
-                var newApiName = typeof ctor.getDerivedStateFromProps === "function" ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
-                if (!didWarnAboutLegacyLifecyclesAndDerivedState.has(_componentName)) {
-                  didWarnAboutLegacyLifecyclesAndDerivedState.add(_componentName);
-                  error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://reactjs.org/link/unsafe-component-lifecycles", _componentName, newApiName, foundWillMountName !== null ? "\n  " + foundWillMountName : "", foundWillReceivePropsName !== null ? "\n  " + foundWillReceivePropsName : "", foundWillUpdateName !== null ? "\n  " + foundWillUpdateName : "");
-                }
-              }
-            }
-          }
-          if (isLegacyContextConsumer) {
-            cacheContext(workInProgress2, unmaskedContext, context);
-          }
-          return instance;
-        }
-        function callComponentWillMount(workInProgress2, instance) {
-          var oldState = instance.state;
-          if (typeof instance.componentWillMount === "function") {
-            instance.componentWillMount();
-          }
-          if (typeof instance.UNSAFE_componentWillMount === "function") {
-            instance.UNSAFE_componentWillMount();
-          }
-          if (oldState !== instance.state) {
-            {
-              error("%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", getComponentNameFromFiber(workInProgress2) || "Component");
-            }
-            classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
-          }
-        }
-        function callComponentWillReceiveProps(workInProgress2, instance, newProps, nextContext) {
-          var oldState = instance.state;
-          if (typeof instance.componentWillReceiveProps === "function") {
-            instance.componentWillReceiveProps(newProps, nextContext);
-          }
-          if (typeof instance.UNSAFE_componentWillReceiveProps === "function") {
-            instance.UNSAFE_componentWillReceiveProps(newProps, nextContext);
-          }
-          if (instance.state !== oldState) {
-            {
-              var componentName = getComponentNameFromFiber(workInProgress2) || "Component";
-              if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
-                didWarnAboutStateAssignmentForComponent.add(componentName);
-                error("%s.componentWillReceiveProps(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", componentName);
-              }
-            }
-            classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
-          }
-        }
-        function mountClassInstance(workInProgress2, ctor, newProps, renderLanes2) {
-          {
-            checkClassInstance(workInProgress2, ctor, newProps);
-          }
-          var instance = workInProgress2.stateNode;
-          instance.props = newProps;
-          instance.state = workInProgress2.memoizedState;
-          instance.refs = emptyRefsObject;
-          initializeUpdateQueue(workInProgress2);
-          var contextType = ctor.contextType;
-          if (typeof contextType === "object" && contextType !== null) {
-            instance.context = readContext(contextType);
-          } else {
-            var unmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
-            instance.context = getMaskedContext(workInProgress2, unmaskedContext);
-          }
-          {
-            if (instance.state === newProps) {
-              var componentName = getComponentNameFromType(ctor) || "Component";
-              if (!didWarnAboutDirectlyAssigningPropsToState.has(componentName)) {
-                didWarnAboutDirectlyAssigningPropsToState.add(componentName);
-                error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", componentName);
-              }
-            }
-            if (workInProgress2.mode & StrictLegacyMode) {
-              ReactStrictModeWarnings.recordLegacyContextWarning(workInProgress2, instance);
-            }
-            {
-              ReactStrictModeWarnings.recordUnsafeLifecycleWarnings(workInProgress2, instance);
-            }
-          }
-          instance.state = workInProgress2.memoizedState;
-          var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-          if (typeof getDerivedStateFromProps === "function") {
-            applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, newProps);
-            instance.state = workInProgress2.memoizedState;
-          }
-          if (typeof ctor.getDerivedStateFromProps !== "function" && typeof instance.getSnapshotBeforeUpdate !== "function" && (typeof instance.UNSAFE_componentWillMount === "function" || typeof instance.componentWillMount === "function")) {
-            callComponentWillMount(workInProgress2, instance);
-            processUpdateQueue(workInProgress2, newProps, instance, renderLanes2);
-            instance.state = workInProgress2.memoizedState;
-          }
-          if (typeof instance.componentDidMount === "function") {
-            var fiberFlags = Update;
-            {
-              fiberFlags |= LayoutStatic;
-            }
-            if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
-              fiberFlags |= MountLayoutDev;
-            }
-            workInProgress2.flags |= fiberFlags;
-          }
-        }
-        function resumeMountClassInstance(workInProgress2, ctor, newProps, renderLanes2) {
-          var instance = workInProgress2.stateNode;
-          var oldProps = workInProgress2.memoizedProps;
-          instance.props = oldProps;
-          var oldContext = instance.context;
-          var contextType = ctor.contextType;
-          var nextContext = emptyContextObject;
-          if (typeof contextType === "object" && contextType !== null) {
-            nextContext = readContext(contextType);
-          } else {
-            var nextLegacyUnmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
-            nextContext = getMaskedContext(workInProgress2, nextLegacyUnmaskedContext);
-          }
-          var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-          var hasNewLifecycles = typeof getDerivedStateFromProps === "function" || typeof instance.getSnapshotBeforeUpdate === "function";
-          if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillReceiveProps === "function" || typeof instance.componentWillReceiveProps === "function")) {
-            if (oldProps !== newProps || oldContext !== nextContext) {
-              callComponentWillReceiveProps(workInProgress2, instance, newProps, nextContext);
-            }
-          }
-          resetHasForceUpdateBeforeProcessing();
-          var oldState = workInProgress2.memoizedState;
-          var newState = instance.state = oldState;
-          processUpdateQueue(workInProgress2, newProps, instance, renderLanes2);
-          newState = workInProgress2.memoizedState;
-          if (oldProps === newProps && oldState === newState && !hasContextChanged() && !checkHasForceUpdateAfterProcessing()) {
-            if (typeof instance.componentDidMount === "function") {
-              var fiberFlags = Update;
-              {
-                fiberFlags |= LayoutStatic;
-              }
-              if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
-                fiberFlags |= MountLayoutDev;
-              }
-              workInProgress2.flags |= fiberFlags;
-            }
-            return false;
-          }
-          if (typeof getDerivedStateFromProps === "function") {
-            applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, newProps);
-            newState = workInProgress2.memoizedState;
-          }
-          var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress2, ctor, oldProps, newProps, oldState, newState, nextContext);
-          if (shouldUpdate) {
-            if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillMount === "function" || typeof instance.componentWillMount === "function")) {
-              if (typeof instance.componentWillMount === "function") {
-                instance.componentWillMount();
-              }
-              if (typeof instance.UNSAFE_componentWillMount === "function") {
-                instance.UNSAFE_componentWillMount();
-              }
-            }
-            if (typeof instance.componentDidMount === "function") {
-              var _fiberFlags = Update;
-              {
-                _fiberFlags |= LayoutStatic;
-              }
-              if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
-                _fiberFlags |= MountLayoutDev;
-              }
-              workInProgress2.flags |= _fiberFlags;
-            }
-          } else {
-            if (typeof instance.componentDidMount === "function") {
-              var _fiberFlags2 = Update;
-              {
-                _fiberFlags2 |= LayoutStatic;
-              }
-              if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
-                _fiberFlags2 |= MountLayoutDev;
-              }
-              workInProgress2.flags |= _fiberFlags2;
-            }
-            workInProgress2.memoizedProps = newProps;
-            workInProgress2.memoizedState = newState;
-          }
-          instance.props = newProps;
-          instance.state = newState;
-          instance.context = nextContext;
-          return shouldUpdate;
-        }
-        function updateClassInstance(current2, workInProgress2, ctor, newProps, renderLanes2) {
-          var instance = workInProgress2.stateNode;
-          cloneUpdateQueue(current2, workInProgress2);
-          var unresolvedOldProps = workInProgress2.memoizedProps;
-          var oldProps = workInProgress2.type === workInProgress2.elementType ? unresolvedOldProps : resolveDefaultProps(workInProgress2.type, unresolvedOldProps);
-          instance.props = oldProps;
-          var unresolvedNewProps = workInProgress2.pendingProps;
-          var oldContext = instance.context;
-          var contextType = ctor.contextType;
-          var nextContext = emptyContextObject;
-          if (typeof contextType === "object" && contextType !== null) {
-            nextContext = readContext(contextType);
-          } else {
-            var nextUnmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
-            nextContext = getMaskedContext(workInProgress2, nextUnmaskedContext);
-          }
-          var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
-          var hasNewLifecycles = typeof getDerivedStateFromProps === "function" || typeof instance.getSnapshotBeforeUpdate === "function";
-          if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillReceiveProps === "function" || typeof instance.componentWillReceiveProps === "function")) {
-            if (unresolvedOldProps !== unresolvedNewProps || oldContext !== nextContext) {
-              callComponentWillReceiveProps(workInProgress2, instance, newProps, nextContext);
-            }
-          }
-          resetHasForceUpdateBeforeProcessing();
-          var oldState = workInProgress2.memoizedState;
-          var newState = instance.state = oldState;
-          processUpdateQueue(workInProgress2, newProps, instance, renderLanes2);
-          newState = workInProgress2.memoizedState;
-          if (unresolvedOldProps === unresolvedNewProps && oldState === newState && !hasContextChanged() && !checkHasForceUpdateAfterProcessing() && !enableLazyContextPropagation) {
-            if (typeof instance.componentDidUpdate === "function") {
-              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
-                workInProgress2.flags |= Update;
-              }
-            }
-            if (typeof instance.getSnapshotBeforeUpdate === "function") {
-              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
-                workInProgress2.flags |= Snapshot;
-              }
-            }
-            return false;
-          }
-          if (typeof getDerivedStateFromProps === "function") {
-            applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, newProps);
-            newState = workInProgress2.memoizedState;
-          }
-          var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress2, ctor, oldProps, newProps, oldState, newState, nextContext) || // TODO: In some cases, we'll end up checking if context has changed twice,
-          // both before and after `shouldComponentUpdate` has been called. Not ideal,
-          // but I'm loath to refactor this function. This only happens for memoized
-          // components so it's not that common.
-          enableLazyContextPropagation;
-          if (shouldUpdate) {
-            if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillUpdate === "function" || typeof instance.componentWillUpdate === "function")) {
-              if (typeof instance.componentWillUpdate === "function") {
-                instance.componentWillUpdate(newProps, newState, nextContext);
-              }
-              if (typeof instance.UNSAFE_componentWillUpdate === "function") {
-                instance.UNSAFE_componentWillUpdate(newProps, newState, nextContext);
-              }
-            }
-            if (typeof instance.componentDidUpdate === "function") {
-              workInProgress2.flags |= Update;
-            }
-            if (typeof instance.getSnapshotBeforeUpdate === "function") {
-              workInProgress2.flags |= Snapshot;
-            }
-          } else {
-            if (typeof instance.componentDidUpdate === "function") {
-              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
-                workInProgress2.flags |= Update;
-              }
-            }
-            if (typeof instance.getSnapshotBeforeUpdate === "function") {
-              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
-                workInProgress2.flags |= Snapshot;
-              }
-            }
-            workInProgress2.memoizedProps = newProps;
-            workInProgress2.memoizedState = newState;
-          }
-          instance.props = newProps;
-          instance.state = newState;
-          instance.context = nextContext;
-          return shouldUpdate;
-        }
         var didWarnAboutMaps;
         var didWarnAboutGenerators;
         var didWarnAboutStringRefs;
@@ -11154,6 +9911,9 @@ var require_react_dom_development = __commonJS({
             error('Each child in a list should have a unique "key" prop. See https://reactjs.org/link/warning-keys for more information.');
           };
         }
+        function isReactClass(type) {
+          return type.prototype && type.prototype.isReactComponent;
+        }
         function coerceRef(returnFiber, current2, element) {
           var mixedRef = element.ref;
           if (mixedRef !== null && typeof mixedRef !== "function" && typeof mixedRef !== "object") {
@@ -11161,11 +9921,14 @@ var require_react_dom_development = __commonJS({
               if ((returnFiber.mode & StrictLegacyMode || warnAboutStringRefs) && // We warn in ReactElement.js if owner and self are equal for string refs
               // because these cannot be automatically converted to an arrow function
               // using a codemod. Therefore, we don't have to warn about string refs again.
-              !(element._owner && element._self && element._owner.stateNode !== element._self)) {
+              !(element._owner && element._self && element._owner.stateNode !== element._self) && // Will already throw with "Function components cannot have string refs"
+              !(element._owner && element._owner.tag !== ClassComponent) && // Will already warn with "Function components cannot be given refs"
+              !(typeof element.type === "function" && !isReactClass(element.type)) && // Will already throw with "Element ref was specified as a string (someStringRef) but no owner was set"
+              element._owner) {
                 var componentName = getComponentNameFromFiber(returnFiber) || "Component";
                 if (!didWarnAboutStringRefs[componentName]) {
                   {
-                    error('A string ref, "%s", has been found within a strict mode tree. String refs are a source of potential bugs and should be avoided. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', mixedRef);
+                    error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, mixedRef);
                   }
                   didWarnAboutStringRefs[componentName] = true;
                 }
@@ -11194,9 +9957,6 @@ var require_react_dom_development = __commonJS({
               }
               var ref = function(value) {
                 var refs = resolvedInst.refs;
-                if (refs === emptyRefsObject) {
-                  refs = resolvedInst.refs = {};
-                }
                 if (value === null) {
                   delete refs[stringRef];
                 } else {
@@ -11517,8 +10277,8 @@ var require_react_dom_development = __commonJS({
           function reconcileChildrenArray(returnFiber, currentFirstChild, newChildren, lanes) {
             {
               var knownKeys = null;
-              for (var i = 0; i < newChildren.length; i++) {
-                var child = newChildren[i];
+              for (var i3 = 0; i3 < newChildren.length; i3++) {
+                var child = newChildren[i3];
                 knownKeys = warnOnInvalidKey(child, knownKeys, returnFiber);
               }
             }
@@ -11889,15 +10649,681 @@ var require_react_dom_development = __commonJS({
             child = child.sibling;
           }
         }
+        var valueCursor = createCursor(null);
+        var rendererSigil;
+        {
+          rendererSigil = {};
+        }
+        var currentlyRenderingFiber = null;
+        var lastContextDependency = null;
+        var lastFullyObservedContext = null;
+        var isDisallowedContextReadInDEV = false;
+        function resetContextDependencies() {
+          currentlyRenderingFiber = null;
+          lastContextDependency = null;
+          lastFullyObservedContext = null;
+          {
+            isDisallowedContextReadInDEV = false;
+          }
+        }
+        function enterDisallowedContextReadInDEV() {
+          {
+            isDisallowedContextReadInDEV = true;
+          }
+        }
+        function exitDisallowedContextReadInDEV() {
+          {
+            isDisallowedContextReadInDEV = false;
+          }
+        }
+        function pushProvider(providerFiber, context, nextValue) {
+          {
+            push(valueCursor, context._currentValue, providerFiber);
+            context._currentValue = nextValue;
+            {
+              if (context._currentRenderer !== void 0 && context._currentRenderer !== null && context._currentRenderer !== rendererSigil) {
+                error("Detected multiple renderers concurrently rendering the same context provider. This is currently unsupported.");
+              }
+              context._currentRenderer = rendererSigil;
+            }
+          }
+        }
+        function popProvider(context, providerFiber) {
+          var currentValue = valueCursor.current;
+          pop(valueCursor, providerFiber);
+          {
+            {
+              context._currentValue = currentValue;
+            }
+          }
+        }
+        function scheduleContextWorkOnParentPath(parent, renderLanes2, propagationRoot) {
+          var node = parent;
+          while (node !== null) {
+            var alternate = node.alternate;
+            if (!isSubsetOfLanes(node.childLanes, renderLanes2)) {
+              node.childLanes = mergeLanes(node.childLanes, renderLanes2);
+              if (alternate !== null) {
+                alternate.childLanes = mergeLanes(alternate.childLanes, renderLanes2);
+              }
+            } else if (alternate !== null && !isSubsetOfLanes(alternate.childLanes, renderLanes2)) {
+              alternate.childLanes = mergeLanes(alternate.childLanes, renderLanes2);
+            }
+            if (node === propagationRoot) {
+              break;
+            }
+            node = node.return;
+          }
+          {
+            if (node !== propagationRoot) {
+              error("Expected to find the propagation root when scheduling context work. This error is likely caused by a bug in React. Please file an issue.");
+            }
+          }
+        }
+        function propagateContextChange(workInProgress2, context, renderLanes2) {
+          {
+            propagateContextChange_eager(workInProgress2, context, renderLanes2);
+          }
+        }
+        function propagateContextChange_eager(workInProgress2, context, renderLanes2) {
+          var fiber = workInProgress2.child;
+          if (fiber !== null) {
+            fiber.return = workInProgress2;
+          }
+          while (fiber !== null) {
+            var nextFiber = void 0;
+            var list = fiber.dependencies;
+            if (list !== null) {
+              nextFiber = fiber.child;
+              var dependency = list.firstContext;
+              while (dependency !== null) {
+                if (dependency.context === context) {
+                  if (fiber.tag === ClassComponent) {
+                    var lane = pickArbitraryLane(renderLanes2);
+                    var update = createUpdate(NoTimestamp, lane);
+                    update.tag = ForceUpdate;
+                    var updateQueue = fiber.updateQueue;
+                    if (updateQueue === null) ;
+                    else {
+                      var sharedQueue = updateQueue.shared;
+                      var pending = sharedQueue.pending;
+                      if (pending === null) {
+                        update.next = update;
+                      } else {
+                        update.next = pending.next;
+                        pending.next = update;
+                      }
+                      sharedQueue.pending = update;
+                    }
+                  }
+                  fiber.lanes = mergeLanes(fiber.lanes, renderLanes2);
+                  var alternate = fiber.alternate;
+                  if (alternate !== null) {
+                    alternate.lanes = mergeLanes(alternate.lanes, renderLanes2);
+                  }
+                  scheduleContextWorkOnParentPath(fiber.return, renderLanes2, workInProgress2);
+                  list.lanes = mergeLanes(list.lanes, renderLanes2);
+                  break;
+                }
+                dependency = dependency.next;
+              }
+            } else if (fiber.tag === ContextProvider) {
+              nextFiber = fiber.type === workInProgress2.type ? null : fiber.child;
+            } else if (fiber.tag === DehydratedFragment) {
+              var parentSuspense = fiber.return;
+              if (parentSuspense === null) {
+                throw new Error("We just came from a parent so we must have had a parent. This is a bug in React.");
+              }
+              parentSuspense.lanes = mergeLanes(parentSuspense.lanes, renderLanes2);
+              var _alternate = parentSuspense.alternate;
+              if (_alternate !== null) {
+                _alternate.lanes = mergeLanes(_alternate.lanes, renderLanes2);
+              }
+              scheduleContextWorkOnParentPath(parentSuspense, renderLanes2, workInProgress2);
+              nextFiber = fiber.sibling;
+            } else {
+              nextFiber = fiber.child;
+            }
+            if (nextFiber !== null) {
+              nextFiber.return = fiber;
+            } else {
+              nextFiber = fiber;
+              while (nextFiber !== null) {
+                if (nextFiber === workInProgress2) {
+                  nextFiber = null;
+                  break;
+                }
+                var sibling = nextFiber.sibling;
+                if (sibling !== null) {
+                  sibling.return = nextFiber.return;
+                  nextFiber = sibling;
+                  break;
+                }
+                nextFiber = nextFiber.return;
+              }
+            }
+            fiber = nextFiber;
+          }
+        }
+        function prepareToReadContext(workInProgress2, renderLanes2) {
+          currentlyRenderingFiber = workInProgress2;
+          lastContextDependency = null;
+          lastFullyObservedContext = null;
+          var dependencies = workInProgress2.dependencies;
+          if (dependencies !== null) {
+            {
+              var firstContext = dependencies.firstContext;
+              if (firstContext !== null) {
+                if (includesSomeLane(dependencies.lanes, renderLanes2)) {
+                  markWorkInProgressReceivedUpdate();
+                }
+                dependencies.firstContext = null;
+              }
+            }
+          }
+        }
+        function readContext(context) {
+          {
+            if (isDisallowedContextReadInDEV) {
+              error("Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().");
+            }
+          }
+          var value = context._currentValue;
+          if (lastFullyObservedContext === context) ;
+          else {
+            var contextItem = {
+              context,
+              memoizedValue: value,
+              next: null
+            };
+            if (lastContextDependency === null) {
+              if (currentlyRenderingFiber === null) {
+                throw new Error("Context can only be read while React is rendering. In classes, you can read it in the render method or getDerivedStateFromProps. In function components, you can read it directly in the function body, but not inside Hooks like useReducer() or useMemo().");
+              }
+              lastContextDependency = contextItem;
+              currentlyRenderingFiber.dependencies = {
+                lanes: NoLanes,
+                firstContext: contextItem
+              };
+            } else {
+              lastContextDependency = lastContextDependency.next = contextItem;
+            }
+          }
+          return value;
+        }
+        var concurrentQueues = null;
+        function pushConcurrentUpdateQueue(queue) {
+          if (concurrentQueues === null) {
+            concurrentQueues = [queue];
+          } else {
+            concurrentQueues.push(queue);
+          }
+        }
+        function finishQueueingConcurrentUpdates() {
+          if (concurrentQueues !== null) {
+            for (var i3 = 0; i3 < concurrentQueues.length; i3++) {
+              var queue = concurrentQueues[i3];
+              var lastInterleavedUpdate = queue.interleaved;
+              if (lastInterleavedUpdate !== null) {
+                queue.interleaved = null;
+                var firstInterleavedUpdate = lastInterleavedUpdate.next;
+                var lastPendingUpdate = queue.pending;
+                if (lastPendingUpdate !== null) {
+                  var firstPendingUpdate = lastPendingUpdate.next;
+                  lastPendingUpdate.next = firstInterleavedUpdate;
+                  lastInterleavedUpdate.next = firstPendingUpdate;
+                }
+                queue.pending = lastInterleavedUpdate;
+              }
+            }
+            concurrentQueues = null;
+          }
+        }
+        function enqueueConcurrentHookUpdate(fiber, queue, update, lane) {
+          var interleaved = queue.interleaved;
+          if (interleaved === null) {
+            update.next = update;
+            pushConcurrentUpdateQueue(queue);
+          } else {
+            update.next = interleaved.next;
+            interleaved.next = update;
+          }
+          queue.interleaved = update;
+          return markUpdateLaneFromFiberToRoot(fiber, lane);
+        }
+        function enqueueConcurrentHookUpdateAndEagerlyBailout(fiber, queue, update, lane) {
+          var interleaved = queue.interleaved;
+          if (interleaved === null) {
+            update.next = update;
+            pushConcurrentUpdateQueue(queue);
+          } else {
+            update.next = interleaved.next;
+            interleaved.next = update;
+          }
+          queue.interleaved = update;
+        }
+        function enqueueConcurrentClassUpdate(fiber, queue, update, lane) {
+          var interleaved = queue.interleaved;
+          if (interleaved === null) {
+            update.next = update;
+            pushConcurrentUpdateQueue(queue);
+          } else {
+            update.next = interleaved.next;
+            interleaved.next = update;
+          }
+          queue.interleaved = update;
+          return markUpdateLaneFromFiberToRoot(fiber, lane);
+        }
+        function enqueueConcurrentRenderForLane(fiber, lane) {
+          return markUpdateLaneFromFiberToRoot(fiber, lane);
+        }
+        var unsafe_markUpdateLaneFromFiberToRoot = markUpdateLaneFromFiberToRoot;
+        function markUpdateLaneFromFiberToRoot(sourceFiber, lane) {
+          sourceFiber.lanes = mergeLanes(sourceFiber.lanes, lane);
+          var alternate = sourceFiber.alternate;
+          if (alternate !== null) {
+            alternate.lanes = mergeLanes(alternate.lanes, lane);
+          }
+          {
+            if (alternate === null && (sourceFiber.flags & (Placement | Hydrating)) !== NoFlags) {
+              warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber);
+            }
+          }
+          var node = sourceFiber;
+          var parent = sourceFiber.return;
+          while (parent !== null) {
+            parent.childLanes = mergeLanes(parent.childLanes, lane);
+            alternate = parent.alternate;
+            if (alternate !== null) {
+              alternate.childLanes = mergeLanes(alternate.childLanes, lane);
+            } else {
+              {
+                if ((parent.flags & (Placement | Hydrating)) !== NoFlags) {
+                  warnAboutUpdateOnNotYetMountedFiberInDEV(sourceFiber);
+                }
+              }
+            }
+            node = parent;
+            parent = parent.return;
+          }
+          if (node.tag === HostRoot) {
+            var root2 = node.stateNode;
+            return root2;
+          } else {
+            return null;
+          }
+        }
+        var UpdateState = 0;
+        var ReplaceState = 1;
+        var ForceUpdate = 2;
+        var CaptureUpdate = 3;
+        var hasForceUpdate = false;
+        var didWarnUpdateInsideUpdate;
+        var currentlyProcessingQueue;
+        {
+          didWarnUpdateInsideUpdate = false;
+          currentlyProcessingQueue = null;
+        }
+        function initializeUpdateQueue(fiber) {
+          var queue = {
+            baseState: fiber.memoizedState,
+            firstBaseUpdate: null,
+            lastBaseUpdate: null,
+            shared: {
+              pending: null,
+              interleaved: null,
+              lanes: NoLanes
+            },
+            effects: null
+          };
+          fiber.updateQueue = queue;
+        }
+        function cloneUpdateQueue(current2, workInProgress2) {
+          var queue = workInProgress2.updateQueue;
+          var currentQueue = current2.updateQueue;
+          if (queue === currentQueue) {
+            var clone = {
+              baseState: currentQueue.baseState,
+              firstBaseUpdate: currentQueue.firstBaseUpdate,
+              lastBaseUpdate: currentQueue.lastBaseUpdate,
+              shared: currentQueue.shared,
+              effects: currentQueue.effects
+            };
+            workInProgress2.updateQueue = clone;
+          }
+        }
+        function createUpdate(eventTime, lane) {
+          var update = {
+            eventTime,
+            lane,
+            tag: UpdateState,
+            payload: null,
+            callback: null,
+            next: null
+          };
+          return update;
+        }
+        function enqueueUpdate(fiber, update, lane) {
+          var updateQueue = fiber.updateQueue;
+          if (updateQueue === null) {
+            return null;
+          }
+          var sharedQueue = updateQueue.shared;
+          {
+            if (currentlyProcessingQueue === sharedQueue && !didWarnUpdateInsideUpdate) {
+              error("An update (setState, replaceState, or forceUpdate) was scheduled from inside an update function. Update functions should be pure, with zero side-effects. Consider using componentDidUpdate or a callback.");
+              didWarnUpdateInsideUpdate = true;
+            }
+          }
+          if (isUnsafeClassRenderPhaseUpdate()) {
+            var pending = sharedQueue.pending;
+            if (pending === null) {
+              update.next = update;
+            } else {
+              update.next = pending.next;
+              pending.next = update;
+            }
+            sharedQueue.pending = update;
+            return unsafe_markUpdateLaneFromFiberToRoot(fiber, lane);
+          } else {
+            return enqueueConcurrentClassUpdate(fiber, sharedQueue, update, lane);
+          }
+        }
+        function entangleTransitions(root2, fiber, lane) {
+          var updateQueue = fiber.updateQueue;
+          if (updateQueue === null) {
+            return;
+          }
+          var sharedQueue = updateQueue.shared;
+          if (isTransitionLane(lane)) {
+            var queueLanes = sharedQueue.lanes;
+            queueLanes = intersectLanes(queueLanes, root2.pendingLanes);
+            var newQueueLanes = mergeLanes(queueLanes, lane);
+            sharedQueue.lanes = newQueueLanes;
+            markRootEntangled(root2, newQueueLanes);
+          }
+        }
+        function enqueueCapturedUpdate(workInProgress2, capturedUpdate) {
+          var queue = workInProgress2.updateQueue;
+          var current2 = workInProgress2.alternate;
+          if (current2 !== null) {
+            var currentQueue = current2.updateQueue;
+            if (queue === currentQueue) {
+              var newFirst = null;
+              var newLast = null;
+              var firstBaseUpdate = queue.firstBaseUpdate;
+              if (firstBaseUpdate !== null) {
+                var update = firstBaseUpdate;
+                do {
+                  var clone = {
+                    eventTime: update.eventTime,
+                    lane: update.lane,
+                    tag: update.tag,
+                    payload: update.payload,
+                    callback: update.callback,
+                    next: null
+                  };
+                  if (newLast === null) {
+                    newFirst = newLast = clone;
+                  } else {
+                    newLast.next = clone;
+                    newLast = clone;
+                  }
+                  update = update.next;
+                } while (update !== null);
+                if (newLast === null) {
+                  newFirst = newLast = capturedUpdate;
+                } else {
+                  newLast.next = capturedUpdate;
+                  newLast = capturedUpdate;
+                }
+              } else {
+                newFirst = newLast = capturedUpdate;
+              }
+              queue = {
+                baseState: currentQueue.baseState,
+                firstBaseUpdate: newFirst,
+                lastBaseUpdate: newLast,
+                shared: currentQueue.shared,
+                effects: currentQueue.effects
+              };
+              workInProgress2.updateQueue = queue;
+              return;
+            }
+          }
+          var lastBaseUpdate = queue.lastBaseUpdate;
+          if (lastBaseUpdate === null) {
+            queue.firstBaseUpdate = capturedUpdate;
+          } else {
+            lastBaseUpdate.next = capturedUpdate;
+          }
+          queue.lastBaseUpdate = capturedUpdate;
+        }
+        function getStateFromUpdate(workInProgress2, queue, update, prevState, nextProps, instance) {
+          switch (update.tag) {
+            case ReplaceState: {
+              var payload = update.payload;
+              if (typeof payload === "function") {
+                {
+                  enterDisallowedContextReadInDEV();
+                }
+                var nextState = payload.call(instance, prevState, nextProps);
+                {
+                  if (workInProgress2.mode & StrictLegacyMode) {
+                    setIsStrictModeForDevtools(true);
+                    try {
+                      payload.call(instance, prevState, nextProps);
+                    } finally {
+                      setIsStrictModeForDevtools(false);
+                    }
+                  }
+                  exitDisallowedContextReadInDEV();
+                }
+                return nextState;
+              }
+              return payload;
+            }
+            case CaptureUpdate: {
+              workInProgress2.flags = workInProgress2.flags & ~ShouldCapture | DidCapture;
+            }
+            // Intentional fallthrough
+            case UpdateState: {
+              var _payload = update.payload;
+              var partialState;
+              if (typeof _payload === "function") {
+                {
+                  enterDisallowedContextReadInDEV();
+                }
+                partialState = _payload.call(instance, prevState, nextProps);
+                {
+                  if (workInProgress2.mode & StrictLegacyMode) {
+                    setIsStrictModeForDevtools(true);
+                    try {
+                      _payload.call(instance, prevState, nextProps);
+                    } finally {
+                      setIsStrictModeForDevtools(false);
+                    }
+                  }
+                  exitDisallowedContextReadInDEV();
+                }
+              } else {
+                partialState = _payload;
+              }
+              if (partialState === null || partialState === void 0) {
+                return prevState;
+              }
+              return assign({}, prevState, partialState);
+            }
+            case ForceUpdate: {
+              hasForceUpdate = true;
+              return prevState;
+            }
+          }
+          return prevState;
+        }
+        function processUpdateQueue(workInProgress2, props, instance, renderLanes2) {
+          var queue = workInProgress2.updateQueue;
+          hasForceUpdate = false;
+          {
+            currentlyProcessingQueue = queue.shared;
+          }
+          var firstBaseUpdate = queue.firstBaseUpdate;
+          var lastBaseUpdate = queue.lastBaseUpdate;
+          var pendingQueue = queue.shared.pending;
+          if (pendingQueue !== null) {
+            queue.shared.pending = null;
+            var lastPendingUpdate = pendingQueue;
+            var firstPendingUpdate = lastPendingUpdate.next;
+            lastPendingUpdate.next = null;
+            if (lastBaseUpdate === null) {
+              firstBaseUpdate = firstPendingUpdate;
+            } else {
+              lastBaseUpdate.next = firstPendingUpdate;
+            }
+            lastBaseUpdate = lastPendingUpdate;
+            var current2 = workInProgress2.alternate;
+            if (current2 !== null) {
+              var currentQueue = current2.updateQueue;
+              var currentLastBaseUpdate = currentQueue.lastBaseUpdate;
+              if (currentLastBaseUpdate !== lastBaseUpdate) {
+                if (currentLastBaseUpdate === null) {
+                  currentQueue.firstBaseUpdate = firstPendingUpdate;
+                } else {
+                  currentLastBaseUpdate.next = firstPendingUpdate;
+                }
+                currentQueue.lastBaseUpdate = lastPendingUpdate;
+              }
+            }
+          }
+          if (firstBaseUpdate !== null) {
+            var newState = queue.baseState;
+            var newLanes = NoLanes;
+            var newBaseState = null;
+            var newFirstBaseUpdate = null;
+            var newLastBaseUpdate = null;
+            var update = firstBaseUpdate;
+            do {
+              var updateLane = update.lane;
+              var updateEventTime = update.eventTime;
+              if (!isSubsetOfLanes(renderLanes2, updateLane)) {
+                var clone = {
+                  eventTime: updateEventTime,
+                  lane: updateLane,
+                  tag: update.tag,
+                  payload: update.payload,
+                  callback: update.callback,
+                  next: null
+                };
+                if (newLastBaseUpdate === null) {
+                  newFirstBaseUpdate = newLastBaseUpdate = clone;
+                  newBaseState = newState;
+                } else {
+                  newLastBaseUpdate = newLastBaseUpdate.next = clone;
+                }
+                newLanes = mergeLanes(newLanes, updateLane);
+              } else {
+                if (newLastBaseUpdate !== null) {
+                  var _clone = {
+                    eventTime: updateEventTime,
+                    // This update is going to be committed so we never want uncommit
+                    // it. Using NoLane works because 0 is a subset of all bitmasks, so
+                    // this will never be skipped by the check above.
+                    lane: NoLane,
+                    tag: update.tag,
+                    payload: update.payload,
+                    callback: update.callback,
+                    next: null
+                  };
+                  newLastBaseUpdate = newLastBaseUpdate.next = _clone;
+                }
+                newState = getStateFromUpdate(workInProgress2, queue, update, newState, props, instance);
+                var callback = update.callback;
+                if (callback !== null && // If the update was already committed, we should not queue its
+                // callback again.
+                update.lane !== NoLane) {
+                  workInProgress2.flags |= Callback;
+                  var effects = queue.effects;
+                  if (effects === null) {
+                    queue.effects = [update];
+                  } else {
+                    effects.push(update);
+                  }
+                }
+              }
+              update = update.next;
+              if (update === null) {
+                pendingQueue = queue.shared.pending;
+                if (pendingQueue === null) {
+                  break;
+                } else {
+                  var _lastPendingUpdate = pendingQueue;
+                  var _firstPendingUpdate = _lastPendingUpdate.next;
+                  _lastPendingUpdate.next = null;
+                  update = _firstPendingUpdate;
+                  queue.lastBaseUpdate = _lastPendingUpdate;
+                  queue.shared.pending = null;
+                }
+              }
+            } while (true);
+            if (newLastBaseUpdate === null) {
+              newBaseState = newState;
+            }
+            queue.baseState = newBaseState;
+            queue.firstBaseUpdate = newFirstBaseUpdate;
+            queue.lastBaseUpdate = newLastBaseUpdate;
+            var lastInterleaved = queue.shared.interleaved;
+            if (lastInterleaved !== null) {
+              var interleaved = lastInterleaved;
+              do {
+                newLanes = mergeLanes(newLanes, interleaved.lane);
+                interleaved = interleaved.next;
+              } while (interleaved !== lastInterleaved);
+            } else if (firstBaseUpdate === null) {
+              queue.shared.lanes = NoLanes;
+            }
+            markSkippedUpdateLanes(newLanes);
+            workInProgress2.lanes = newLanes;
+            workInProgress2.memoizedState = newState;
+          }
+          {
+            currentlyProcessingQueue = null;
+          }
+        }
+        function callCallback(callback, context) {
+          if (typeof callback !== "function") {
+            throw new Error("Invalid argument passed as callback. Expected a function. Instead " + ("received: " + callback));
+          }
+          callback.call(context);
+        }
+        function resetHasForceUpdateBeforeProcessing() {
+          hasForceUpdate = false;
+        }
+        function checkHasForceUpdateAfterProcessing() {
+          return hasForceUpdate;
+        }
+        function commitUpdateQueue(finishedWork, finishedQueue, instance) {
+          var effects = finishedQueue.effects;
+          finishedQueue.effects = null;
+          if (effects !== null) {
+            for (var i3 = 0; i3 < effects.length; i3++) {
+              var effect = effects[i3];
+              var callback = effect.callback;
+              if (callback !== null) {
+                effect.callback = null;
+                callCallback(callback, instance);
+              }
+            }
+          }
+        }
         var NO_CONTEXT = {};
         var contextStackCursor$1 = createCursor(NO_CONTEXT);
         var contextFiberStackCursor = createCursor(NO_CONTEXT);
         var rootInstanceStackCursor = createCursor(NO_CONTEXT);
-        function requiredContext(c) {
-          if (c === NO_CONTEXT) {
+        function requiredContext(c2) {
+          if (c2 === NO_CONTEXT) {
             throw new Error("Expected host context to exist. This error is likely caused by a bug in React. Please file an issue.");
           }
-          return c;
+          return c2;
         }
         function getRootHostContainer() {
           var rootInstance = requiredContext(rootInstanceStackCursor.current);
@@ -12032,8 +11458,8 @@ var require_react_dom_development = __commonJS({
         );
         var workInProgressSources = [];
         function resetWorkInProgressVersions() {
-          for (var i = 0; i < workInProgressSources.length; i++) {
-            var mutableSource = workInProgressSources[i];
+          for (var i3 = 0; i3 < workInProgressSources.length; i3++) {
+            var mutableSource = workInProgressSources[i3];
             {
               mutableSource._workInProgressVersionPrimary = null;
             }
@@ -12104,10 +11530,10 @@ var require_react_dom_development = __commonJS({
               if (hookTypesDev !== null) {
                 var table = "";
                 var secondColumnStart = 30;
-                for (var i = 0; i <= hookTypesUpdateIndexDev; i++) {
-                  var oldHookName = hookTypesDev[i];
-                  var newHookName = i === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
-                  var row = i + 1 + ". " + oldHookName;
+                for (var i3 = 0; i3 <= hookTypesUpdateIndexDev; i3++) {
+                  var oldHookName = hookTypesDev[i3];
+                  var newHookName = i3 === hookTypesUpdateIndexDev ? currentHookName : oldHookName;
+                  var row = i3 + 1 + ". " + oldHookName;
                   while (row.length < secondColumnStart) {
                     row += " ";
                   }
@@ -12139,8 +11565,8 @@ var require_react_dom_development = __commonJS({
               error("The final argument passed to %s changed size between renders. The order and size of this array must remain constant.\n\nPrevious: %s\nIncoming: %s", currentHookNameInDev, "[" + prevDeps.join(", ") + "]", "[" + nextDeps.join(", ") + "]");
             }
           }
-          for (var i = 0; i < prevDeps.length && i < nextDeps.length; i++) {
-            if (objectIs(nextDeps[i], prevDeps[i])) {
+          for (var i3 = 0; i3 < prevDeps.length && i3 < nextDeps.length; i3++) {
+            if (objectIs(nextDeps[i3], prevDeps[i3])) {
               continue;
             }
             return false;
@@ -13986,6 +13412,625 @@ var require_react_dom_development = __commonJS({
             child = child.sibling;
           }
         }
+        function resolveDefaultProps(Component, baseProps) {
+          if (Component && Component.defaultProps) {
+            var props = assign({}, baseProps);
+            var defaultProps = Component.defaultProps;
+            for (var propName in defaultProps) {
+              if (props[propName] === void 0) {
+                props[propName] = defaultProps[propName];
+              }
+            }
+            return props;
+          }
+          return baseProps;
+        }
+        var fakeInternalInstance = {};
+        var didWarnAboutStateAssignmentForComponent;
+        var didWarnAboutUninitializedState;
+        var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
+        var didWarnAboutLegacyLifecyclesAndDerivedState;
+        var didWarnAboutUndefinedDerivedState;
+        var warnOnUndefinedDerivedState;
+        var warnOnInvalidCallback;
+        var didWarnAboutDirectlyAssigningPropsToState;
+        var didWarnAboutContextTypeAndContextTypes;
+        var didWarnAboutInvalidateContextType;
+        var didWarnAboutLegacyContext$1;
+        {
+          didWarnAboutStateAssignmentForComponent = /* @__PURE__ */ new Set();
+          didWarnAboutUninitializedState = /* @__PURE__ */ new Set();
+          didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate = /* @__PURE__ */ new Set();
+          didWarnAboutLegacyLifecyclesAndDerivedState = /* @__PURE__ */ new Set();
+          didWarnAboutDirectlyAssigningPropsToState = /* @__PURE__ */ new Set();
+          didWarnAboutUndefinedDerivedState = /* @__PURE__ */ new Set();
+          didWarnAboutContextTypeAndContextTypes = /* @__PURE__ */ new Set();
+          didWarnAboutInvalidateContextType = /* @__PURE__ */ new Set();
+          didWarnAboutLegacyContext$1 = /* @__PURE__ */ new Set();
+          var didWarnOnInvalidCallback = /* @__PURE__ */ new Set();
+          warnOnInvalidCallback = function(callback, callerName) {
+            if (callback === null || typeof callback === "function") {
+              return;
+            }
+            var key = callerName + "_" + callback;
+            if (!didWarnOnInvalidCallback.has(key)) {
+              didWarnOnInvalidCallback.add(key);
+              error("%s(...): Expected the last optional `callback` argument to be a function. Instead received: %s.", callerName, callback);
+            }
+          };
+          warnOnUndefinedDerivedState = function(type, partialState) {
+            if (partialState === void 0) {
+              var componentName = getComponentNameFromType(type) || "Component";
+              if (!didWarnAboutUndefinedDerivedState.has(componentName)) {
+                didWarnAboutUndefinedDerivedState.add(componentName);
+                error("%s.getDerivedStateFromProps(): A valid state object (or null) must be returned. You have returned undefined.", componentName);
+              }
+            }
+          };
+          Object.defineProperty(fakeInternalInstance, "_processChildContext", {
+            enumerable: false,
+            value: function() {
+              throw new Error("_processChildContext is not available in React 16+. This likely means you have multiple copies of React and are attempting to nest a React 15 tree inside a React 16 tree using unstable_renderSubtreeIntoContainer, which isn't supported. Try to make sure you have only one copy of React (and ideally, switch to ReactDOM.createPortal).");
+            }
+          });
+          Object.freeze(fakeInternalInstance);
+        }
+        function applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, nextProps) {
+          var prevState = workInProgress2.memoizedState;
+          var partialState = getDerivedStateFromProps(nextProps, prevState);
+          {
+            if (workInProgress2.mode & StrictLegacyMode) {
+              setIsStrictModeForDevtools(true);
+              try {
+                partialState = getDerivedStateFromProps(nextProps, prevState);
+              } finally {
+                setIsStrictModeForDevtools(false);
+              }
+            }
+            warnOnUndefinedDerivedState(ctor, partialState);
+          }
+          var memoizedState = partialState === null || partialState === void 0 ? prevState : assign({}, prevState, partialState);
+          workInProgress2.memoizedState = memoizedState;
+          if (workInProgress2.lanes === NoLanes) {
+            var updateQueue = workInProgress2.updateQueue;
+            updateQueue.baseState = memoizedState;
+          }
+        }
+        var classComponentUpdater = {
+          isMounted,
+          enqueueSetState: function(inst, payload, callback) {
+            var fiber = get(inst);
+            var eventTime = requestEventTime();
+            var lane = requestUpdateLane(fiber);
+            var update = createUpdate(eventTime, lane);
+            update.payload = payload;
+            if (callback !== void 0 && callback !== null) {
+              {
+                warnOnInvalidCallback(callback, "setState");
+              }
+              update.callback = callback;
+            }
+            var root2 = enqueueUpdate(fiber, update, lane);
+            if (root2 !== null) {
+              scheduleUpdateOnFiber(root2, fiber, lane, eventTime);
+              entangleTransitions(root2, fiber, lane);
+            }
+            {
+              markStateUpdateScheduled(fiber, lane);
+            }
+          },
+          enqueueReplaceState: function(inst, payload, callback) {
+            var fiber = get(inst);
+            var eventTime = requestEventTime();
+            var lane = requestUpdateLane(fiber);
+            var update = createUpdate(eventTime, lane);
+            update.tag = ReplaceState;
+            update.payload = payload;
+            if (callback !== void 0 && callback !== null) {
+              {
+                warnOnInvalidCallback(callback, "replaceState");
+              }
+              update.callback = callback;
+            }
+            var root2 = enqueueUpdate(fiber, update, lane);
+            if (root2 !== null) {
+              scheduleUpdateOnFiber(root2, fiber, lane, eventTime);
+              entangleTransitions(root2, fiber, lane);
+            }
+            {
+              markStateUpdateScheduled(fiber, lane);
+            }
+          },
+          enqueueForceUpdate: function(inst, callback) {
+            var fiber = get(inst);
+            var eventTime = requestEventTime();
+            var lane = requestUpdateLane(fiber);
+            var update = createUpdate(eventTime, lane);
+            update.tag = ForceUpdate;
+            if (callback !== void 0 && callback !== null) {
+              {
+                warnOnInvalidCallback(callback, "forceUpdate");
+              }
+              update.callback = callback;
+            }
+            var root2 = enqueueUpdate(fiber, update, lane);
+            if (root2 !== null) {
+              scheduleUpdateOnFiber(root2, fiber, lane, eventTime);
+              entangleTransitions(root2, fiber, lane);
+            }
+            {
+              markForceUpdateScheduled(fiber, lane);
+            }
+          }
+        };
+        function checkShouldComponentUpdate(workInProgress2, ctor, oldProps, newProps, oldState, newState, nextContext) {
+          var instance = workInProgress2.stateNode;
+          if (typeof instance.shouldComponentUpdate === "function") {
+            var shouldUpdate = instance.shouldComponentUpdate(newProps, newState, nextContext);
+            {
+              if (workInProgress2.mode & StrictLegacyMode) {
+                setIsStrictModeForDevtools(true);
+                try {
+                  shouldUpdate = instance.shouldComponentUpdate(newProps, newState, nextContext);
+                } finally {
+                  setIsStrictModeForDevtools(false);
+                }
+              }
+              if (shouldUpdate === void 0) {
+                error("%s.shouldComponentUpdate(): Returned undefined instead of a boolean value. Make sure to return true or false.", getComponentNameFromType(ctor) || "Component");
+              }
+            }
+            return shouldUpdate;
+          }
+          if (ctor.prototype && ctor.prototype.isPureReactComponent) {
+            return !shallowEqual(oldProps, newProps) || !shallowEqual(oldState, newState);
+          }
+          return true;
+        }
+        function checkClassInstance(workInProgress2, ctor, newProps) {
+          var instance = workInProgress2.stateNode;
+          {
+            var name = getComponentNameFromType(ctor) || "Component";
+            var renderPresent = instance.render;
+            if (!renderPresent) {
+              if (ctor.prototype && typeof ctor.prototype.render === "function") {
+                error("%s(...): No `render` method found on the returned component instance: did you accidentally return an object from the constructor?", name);
+              } else {
+                error("%s(...): No `render` method found on the returned component instance: you may have forgotten to define `render`.", name);
+              }
+            }
+            if (instance.getInitialState && !instance.getInitialState.isReactClassApproved && !instance.state) {
+              error("getInitialState was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Did you mean to define a state property instead?", name);
+            }
+            if (instance.getDefaultProps && !instance.getDefaultProps.isReactClassApproved) {
+              error("getDefaultProps was defined on %s, a plain JavaScript class. This is only supported for classes created using React.createClass. Use a static property to define defaultProps instead.", name);
+            }
+            if (instance.propTypes) {
+              error("propTypes was defined as an instance property on %s. Use a static property to define propTypes instead.", name);
+            }
+            if (instance.contextType) {
+              error("contextType was defined as an instance property on %s. Use a static property to define contextType instead.", name);
+            }
+            {
+              if (ctor.childContextTypes && !didWarnAboutLegacyContext$1.has(ctor) && // Strict Mode has its own warning for legacy context, so we can skip
+              // this one.
+              (workInProgress2.mode & StrictLegacyMode) === NoMode) {
+                didWarnAboutLegacyContext$1.add(ctor);
+                error("%s uses the legacy childContextTypes API which is no longer supported and will be removed in the next major release. Use React.createContext() instead\n\n.Learn more about this warning here: https://reactjs.org/link/legacy-context", name);
+              }
+              if (ctor.contextTypes && !didWarnAboutLegacyContext$1.has(ctor) && // Strict Mode has its own warning for legacy context, so we can skip
+              // this one.
+              (workInProgress2.mode & StrictLegacyMode) === NoMode) {
+                didWarnAboutLegacyContext$1.add(ctor);
+                error("%s uses the legacy contextTypes API which is no longer supported and will be removed in the next major release. Use React.createContext() with static contextType instead.\n\nLearn more about this warning here: https://reactjs.org/link/legacy-context", name);
+              }
+              if (instance.contextTypes) {
+                error("contextTypes was defined as an instance property on %s. Use a static property to define contextTypes instead.", name);
+              }
+              if (ctor.contextType && ctor.contextTypes && !didWarnAboutContextTypeAndContextTypes.has(ctor)) {
+                didWarnAboutContextTypeAndContextTypes.add(ctor);
+                error("%s declares both contextTypes and contextType static properties. The legacy contextTypes property will be ignored.", name);
+              }
+            }
+            if (typeof instance.componentShouldUpdate === "function") {
+              error("%s has a method called componentShouldUpdate(). Did you mean shouldComponentUpdate()? The name is phrased as a question because the function is expected to return a value.", name);
+            }
+            if (ctor.prototype && ctor.prototype.isPureReactComponent && typeof instance.shouldComponentUpdate !== "undefined") {
+              error("%s has a method called shouldComponentUpdate(). shouldComponentUpdate should not be used when extending React.PureComponent. Please extend React.Component if shouldComponentUpdate is used.", getComponentNameFromType(ctor) || "A pure component");
+            }
+            if (typeof instance.componentDidUnmount === "function") {
+              error("%s has a method called componentDidUnmount(). But there is no such lifecycle method. Did you mean componentWillUnmount()?", name);
+            }
+            if (typeof instance.componentDidReceiveProps === "function") {
+              error("%s has a method called componentDidReceiveProps(). But there is no such lifecycle method. If you meant to update the state in response to changing props, use componentWillReceiveProps(). If you meant to fetch data or run side-effects or mutations after React has updated the UI, use componentDidUpdate().", name);
+            }
+            if (typeof instance.componentWillRecieveProps === "function") {
+              error("%s has a method called componentWillRecieveProps(). Did you mean componentWillReceiveProps()?", name);
+            }
+            if (typeof instance.UNSAFE_componentWillRecieveProps === "function") {
+              error("%s has a method called UNSAFE_componentWillRecieveProps(). Did you mean UNSAFE_componentWillReceiveProps()?", name);
+            }
+            var hasMutatedProps = instance.props !== newProps;
+            if (instance.props !== void 0 && hasMutatedProps) {
+              error("%s(...): When calling super() in `%s`, make sure to pass up the same props that your component's constructor was passed.", name, name);
+            }
+            if (instance.defaultProps) {
+              error("Setting defaultProps as an instance property on %s is not supported and will be ignored. Instead, define defaultProps as a static property on %s.", name, name);
+            }
+            if (typeof instance.getSnapshotBeforeUpdate === "function" && typeof instance.componentDidUpdate !== "function" && !didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.has(ctor)) {
+              didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate.add(ctor);
+              error("%s: getSnapshotBeforeUpdate() should be used with componentDidUpdate(). This component defines getSnapshotBeforeUpdate() only.", getComponentNameFromType(ctor));
+            }
+            if (typeof instance.getDerivedStateFromProps === "function") {
+              error("%s: getDerivedStateFromProps() is defined as an instance method and will be ignored. Instead, declare it as a static method.", name);
+            }
+            if (typeof instance.getDerivedStateFromError === "function") {
+              error("%s: getDerivedStateFromError() is defined as an instance method and will be ignored. Instead, declare it as a static method.", name);
+            }
+            if (typeof ctor.getSnapshotBeforeUpdate === "function") {
+              error("%s: getSnapshotBeforeUpdate() is defined as a static method and will be ignored. Instead, declare it as an instance method.", name);
+            }
+            var _state = instance.state;
+            if (_state && (typeof _state !== "object" || isArray(_state))) {
+              error("%s.state: must be set to an object or null", name);
+            }
+            if (typeof instance.getChildContext === "function" && typeof ctor.childContextTypes !== "object") {
+              error("%s.getChildContext(): childContextTypes must be defined in order to use getChildContext().", name);
+            }
+          }
+        }
+        function adoptClassInstance(workInProgress2, instance) {
+          instance.updater = classComponentUpdater;
+          workInProgress2.stateNode = instance;
+          set(instance, workInProgress2);
+          {
+            instance._reactInternalInstance = fakeInternalInstance;
+          }
+        }
+        function constructClassInstance(workInProgress2, ctor, props) {
+          var isLegacyContextConsumer = false;
+          var unmaskedContext = emptyContextObject;
+          var context = emptyContextObject;
+          var contextType = ctor.contextType;
+          {
+            if ("contextType" in ctor) {
+              var isValid = (
+                // Allow null for conditional declaration
+                contextType === null || contextType !== void 0 && contextType.$$typeof === REACT_CONTEXT_TYPE && contextType._context === void 0
+              );
+              if (!isValid && !didWarnAboutInvalidateContextType.has(ctor)) {
+                didWarnAboutInvalidateContextType.add(ctor);
+                var addendum = "";
+                if (contextType === void 0) {
+                  addendum = " However, it is set to undefined. This can be caused by a typo or by mixing up named and default imports. This can also happen due to a circular dependency, so try moving the createContext() call to a separate file.";
+                } else if (typeof contextType !== "object") {
+                  addendum = " However, it is set to a " + typeof contextType + ".";
+                } else if (contextType.$$typeof === REACT_PROVIDER_TYPE) {
+                  addendum = " Did you accidentally pass the Context.Provider instead?";
+                } else if (contextType._context !== void 0) {
+                  addendum = " Did you accidentally pass the Context.Consumer instead?";
+                } else {
+                  addendum = " However, it is set to an object with keys {" + Object.keys(contextType).join(", ") + "}.";
+                }
+                error("%s defines an invalid contextType. contextType should point to the Context object returned by React.createContext().%s", getComponentNameFromType(ctor) || "Component", addendum);
+              }
+            }
+          }
+          if (typeof contextType === "object" && contextType !== null) {
+            context = readContext(contextType);
+          } else {
+            unmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
+            var contextTypes = ctor.contextTypes;
+            isLegacyContextConsumer = contextTypes !== null && contextTypes !== void 0;
+            context = isLegacyContextConsumer ? getMaskedContext(workInProgress2, unmaskedContext) : emptyContextObject;
+          }
+          var instance = new ctor(props, context);
+          {
+            if (workInProgress2.mode & StrictLegacyMode) {
+              setIsStrictModeForDevtools(true);
+              try {
+                instance = new ctor(props, context);
+              } finally {
+                setIsStrictModeForDevtools(false);
+              }
+            }
+          }
+          var state = workInProgress2.memoizedState = instance.state !== null && instance.state !== void 0 ? instance.state : null;
+          adoptClassInstance(workInProgress2, instance);
+          {
+            if (typeof ctor.getDerivedStateFromProps === "function" && state === null) {
+              var componentName = getComponentNameFromType(ctor) || "Component";
+              if (!didWarnAboutUninitializedState.has(componentName)) {
+                didWarnAboutUninitializedState.add(componentName);
+                error("`%s` uses `getDerivedStateFromProps` but its initial state is %s. This is not recommended. Instead, define the initial state by assigning an object to `this.state` in the constructor of `%s`. This ensures that `getDerivedStateFromProps` arguments have a consistent shape.", componentName, instance.state === null ? "null" : "undefined", componentName);
+              }
+            }
+            if (typeof ctor.getDerivedStateFromProps === "function" || typeof instance.getSnapshotBeforeUpdate === "function") {
+              var foundWillMountName = null;
+              var foundWillReceivePropsName = null;
+              var foundWillUpdateName = null;
+              if (typeof instance.componentWillMount === "function" && instance.componentWillMount.__suppressDeprecationWarning !== true) {
+                foundWillMountName = "componentWillMount";
+              } else if (typeof instance.UNSAFE_componentWillMount === "function") {
+                foundWillMountName = "UNSAFE_componentWillMount";
+              }
+              if (typeof instance.componentWillReceiveProps === "function" && instance.componentWillReceiveProps.__suppressDeprecationWarning !== true) {
+                foundWillReceivePropsName = "componentWillReceiveProps";
+              } else if (typeof instance.UNSAFE_componentWillReceiveProps === "function") {
+                foundWillReceivePropsName = "UNSAFE_componentWillReceiveProps";
+              }
+              if (typeof instance.componentWillUpdate === "function" && instance.componentWillUpdate.__suppressDeprecationWarning !== true) {
+                foundWillUpdateName = "componentWillUpdate";
+              } else if (typeof instance.UNSAFE_componentWillUpdate === "function") {
+                foundWillUpdateName = "UNSAFE_componentWillUpdate";
+              }
+              if (foundWillMountName !== null || foundWillReceivePropsName !== null || foundWillUpdateName !== null) {
+                var _componentName = getComponentNameFromType(ctor) || "Component";
+                var newApiName = typeof ctor.getDerivedStateFromProps === "function" ? "getDerivedStateFromProps()" : "getSnapshotBeforeUpdate()";
+                if (!didWarnAboutLegacyLifecyclesAndDerivedState.has(_componentName)) {
+                  didWarnAboutLegacyLifecyclesAndDerivedState.add(_componentName);
+                  error("Unsafe legacy lifecycles will not be called for components using new component APIs.\n\n%s uses %s but also contains the following legacy lifecycles:%s%s%s\n\nThe above lifecycles should be removed. Learn more about this warning here:\nhttps://reactjs.org/link/unsafe-component-lifecycles", _componentName, newApiName, foundWillMountName !== null ? "\n  " + foundWillMountName : "", foundWillReceivePropsName !== null ? "\n  " + foundWillReceivePropsName : "", foundWillUpdateName !== null ? "\n  " + foundWillUpdateName : "");
+                }
+              }
+            }
+          }
+          if (isLegacyContextConsumer) {
+            cacheContext(workInProgress2, unmaskedContext, context);
+          }
+          return instance;
+        }
+        function callComponentWillMount(workInProgress2, instance) {
+          var oldState = instance.state;
+          if (typeof instance.componentWillMount === "function") {
+            instance.componentWillMount();
+          }
+          if (typeof instance.UNSAFE_componentWillMount === "function") {
+            instance.UNSAFE_componentWillMount();
+          }
+          if (oldState !== instance.state) {
+            {
+              error("%s.componentWillMount(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", getComponentNameFromFiber(workInProgress2) || "Component");
+            }
+            classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
+          }
+        }
+        function callComponentWillReceiveProps(workInProgress2, instance, newProps, nextContext) {
+          var oldState = instance.state;
+          if (typeof instance.componentWillReceiveProps === "function") {
+            instance.componentWillReceiveProps(newProps, nextContext);
+          }
+          if (typeof instance.UNSAFE_componentWillReceiveProps === "function") {
+            instance.UNSAFE_componentWillReceiveProps(newProps, nextContext);
+          }
+          if (instance.state !== oldState) {
+            {
+              var componentName = getComponentNameFromFiber(workInProgress2) || "Component";
+              if (!didWarnAboutStateAssignmentForComponent.has(componentName)) {
+                didWarnAboutStateAssignmentForComponent.add(componentName);
+                error("%s.componentWillReceiveProps(): Assigning directly to this.state is deprecated (except inside a component's constructor). Use setState instead.", componentName);
+              }
+            }
+            classComponentUpdater.enqueueReplaceState(instance, instance.state, null);
+          }
+        }
+        function mountClassInstance(workInProgress2, ctor, newProps, renderLanes2) {
+          {
+            checkClassInstance(workInProgress2, ctor, newProps);
+          }
+          var instance = workInProgress2.stateNode;
+          instance.props = newProps;
+          instance.state = workInProgress2.memoizedState;
+          instance.refs = {};
+          initializeUpdateQueue(workInProgress2);
+          var contextType = ctor.contextType;
+          if (typeof contextType === "object" && contextType !== null) {
+            instance.context = readContext(contextType);
+          } else {
+            var unmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
+            instance.context = getMaskedContext(workInProgress2, unmaskedContext);
+          }
+          {
+            if (instance.state === newProps) {
+              var componentName = getComponentNameFromType(ctor) || "Component";
+              if (!didWarnAboutDirectlyAssigningPropsToState.has(componentName)) {
+                didWarnAboutDirectlyAssigningPropsToState.add(componentName);
+                error("%s: It is not recommended to assign props directly to state because updates to props won't be reflected in state. In most cases, it is better to use props directly.", componentName);
+              }
+            }
+            if (workInProgress2.mode & StrictLegacyMode) {
+              ReactStrictModeWarnings.recordLegacyContextWarning(workInProgress2, instance);
+            }
+            {
+              ReactStrictModeWarnings.recordUnsafeLifecycleWarnings(workInProgress2, instance);
+            }
+          }
+          instance.state = workInProgress2.memoizedState;
+          var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
+          if (typeof getDerivedStateFromProps === "function") {
+            applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, newProps);
+            instance.state = workInProgress2.memoizedState;
+          }
+          if (typeof ctor.getDerivedStateFromProps !== "function" && typeof instance.getSnapshotBeforeUpdate !== "function" && (typeof instance.UNSAFE_componentWillMount === "function" || typeof instance.componentWillMount === "function")) {
+            callComponentWillMount(workInProgress2, instance);
+            processUpdateQueue(workInProgress2, newProps, instance, renderLanes2);
+            instance.state = workInProgress2.memoizedState;
+          }
+          if (typeof instance.componentDidMount === "function") {
+            var fiberFlags = Update;
+            {
+              fiberFlags |= LayoutStatic;
+            }
+            if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
+              fiberFlags |= MountLayoutDev;
+            }
+            workInProgress2.flags |= fiberFlags;
+          }
+        }
+        function resumeMountClassInstance(workInProgress2, ctor, newProps, renderLanes2) {
+          var instance = workInProgress2.stateNode;
+          var oldProps = workInProgress2.memoizedProps;
+          instance.props = oldProps;
+          var oldContext = instance.context;
+          var contextType = ctor.contextType;
+          var nextContext = emptyContextObject;
+          if (typeof contextType === "object" && contextType !== null) {
+            nextContext = readContext(contextType);
+          } else {
+            var nextLegacyUnmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
+            nextContext = getMaskedContext(workInProgress2, nextLegacyUnmaskedContext);
+          }
+          var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
+          var hasNewLifecycles = typeof getDerivedStateFromProps === "function" || typeof instance.getSnapshotBeforeUpdate === "function";
+          if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillReceiveProps === "function" || typeof instance.componentWillReceiveProps === "function")) {
+            if (oldProps !== newProps || oldContext !== nextContext) {
+              callComponentWillReceiveProps(workInProgress2, instance, newProps, nextContext);
+            }
+          }
+          resetHasForceUpdateBeforeProcessing();
+          var oldState = workInProgress2.memoizedState;
+          var newState = instance.state = oldState;
+          processUpdateQueue(workInProgress2, newProps, instance, renderLanes2);
+          newState = workInProgress2.memoizedState;
+          if (oldProps === newProps && oldState === newState && !hasContextChanged() && !checkHasForceUpdateAfterProcessing()) {
+            if (typeof instance.componentDidMount === "function") {
+              var fiberFlags = Update;
+              {
+                fiberFlags |= LayoutStatic;
+              }
+              if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
+                fiberFlags |= MountLayoutDev;
+              }
+              workInProgress2.flags |= fiberFlags;
+            }
+            return false;
+          }
+          if (typeof getDerivedStateFromProps === "function") {
+            applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, newProps);
+            newState = workInProgress2.memoizedState;
+          }
+          var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress2, ctor, oldProps, newProps, oldState, newState, nextContext);
+          if (shouldUpdate) {
+            if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillMount === "function" || typeof instance.componentWillMount === "function")) {
+              if (typeof instance.componentWillMount === "function") {
+                instance.componentWillMount();
+              }
+              if (typeof instance.UNSAFE_componentWillMount === "function") {
+                instance.UNSAFE_componentWillMount();
+              }
+            }
+            if (typeof instance.componentDidMount === "function") {
+              var _fiberFlags = Update;
+              {
+                _fiberFlags |= LayoutStatic;
+              }
+              if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
+                _fiberFlags |= MountLayoutDev;
+              }
+              workInProgress2.flags |= _fiberFlags;
+            }
+          } else {
+            if (typeof instance.componentDidMount === "function") {
+              var _fiberFlags2 = Update;
+              {
+                _fiberFlags2 |= LayoutStatic;
+              }
+              if ((workInProgress2.mode & StrictEffectsMode) !== NoMode) {
+                _fiberFlags2 |= MountLayoutDev;
+              }
+              workInProgress2.flags |= _fiberFlags2;
+            }
+            workInProgress2.memoizedProps = newProps;
+            workInProgress2.memoizedState = newState;
+          }
+          instance.props = newProps;
+          instance.state = newState;
+          instance.context = nextContext;
+          return shouldUpdate;
+        }
+        function updateClassInstance(current2, workInProgress2, ctor, newProps, renderLanes2) {
+          var instance = workInProgress2.stateNode;
+          cloneUpdateQueue(current2, workInProgress2);
+          var unresolvedOldProps = workInProgress2.memoizedProps;
+          var oldProps = workInProgress2.type === workInProgress2.elementType ? unresolvedOldProps : resolveDefaultProps(workInProgress2.type, unresolvedOldProps);
+          instance.props = oldProps;
+          var unresolvedNewProps = workInProgress2.pendingProps;
+          var oldContext = instance.context;
+          var contextType = ctor.contextType;
+          var nextContext = emptyContextObject;
+          if (typeof contextType === "object" && contextType !== null) {
+            nextContext = readContext(contextType);
+          } else {
+            var nextUnmaskedContext = getUnmaskedContext(workInProgress2, ctor, true);
+            nextContext = getMaskedContext(workInProgress2, nextUnmaskedContext);
+          }
+          var getDerivedStateFromProps = ctor.getDerivedStateFromProps;
+          var hasNewLifecycles = typeof getDerivedStateFromProps === "function" || typeof instance.getSnapshotBeforeUpdate === "function";
+          if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillReceiveProps === "function" || typeof instance.componentWillReceiveProps === "function")) {
+            if (unresolvedOldProps !== unresolvedNewProps || oldContext !== nextContext) {
+              callComponentWillReceiveProps(workInProgress2, instance, newProps, nextContext);
+            }
+          }
+          resetHasForceUpdateBeforeProcessing();
+          var oldState = workInProgress2.memoizedState;
+          var newState = instance.state = oldState;
+          processUpdateQueue(workInProgress2, newProps, instance, renderLanes2);
+          newState = workInProgress2.memoizedState;
+          if (unresolvedOldProps === unresolvedNewProps && oldState === newState && !hasContextChanged() && !checkHasForceUpdateAfterProcessing() && !enableLazyContextPropagation) {
+            if (typeof instance.componentDidUpdate === "function") {
+              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
+                workInProgress2.flags |= Update;
+              }
+            }
+            if (typeof instance.getSnapshotBeforeUpdate === "function") {
+              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
+                workInProgress2.flags |= Snapshot;
+              }
+            }
+            return false;
+          }
+          if (typeof getDerivedStateFromProps === "function") {
+            applyDerivedStateFromProps(workInProgress2, ctor, getDerivedStateFromProps, newProps);
+            newState = workInProgress2.memoizedState;
+          }
+          var shouldUpdate = checkHasForceUpdateAfterProcessing() || checkShouldComponentUpdate(workInProgress2, ctor, oldProps, newProps, oldState, newState, nextContext) || // TODO: In some cases, we'll end up checking if context has changed twice,
+          // both before and after `shouldComponentUpdate` has been called. Not ideal,
+          // but I'm loath to refactor this function. This only happens for memoized
+          // components so it's not that common.
+          enableLazyContextPropagation;
+          if (shouldUpdate) {
+            if (!hasNewLifecycles && (typeof instance.UNSAFE_componentWillUpdate === "function" || typeof instance.componentWillUpdate === "function")) {
+              if (typeof instance.componentWillUpdate === "function") {
+                instance.componentWillUpdate(newProps, newState, nextContext);
+              }
+              if (typeof instance.UNSAFE_componentWillUpdate === "function") {
+                instance.UNSAFE_componentWillUpdate(newProps, newState, nextContext);
+              }
+            }
+            if (typeof instance.componentDidUpdate === "function") {
+              workInProgress2.flags |= Update;
+            }
+            if (typeof instance.getSnapshotBeforeUpdate === "function") {
+              workInProgress2.flags |= Snapshot;
+            }
+          } else {
+            if (typeof instance.componentDidUpdate === "function") {
+              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
+                workInProgress2.flags |= Update;
+              }
+            }
+            if (typeof instance.getSnapshotBeforeUpdate === "function") {
+              if (unresolvedOldProps !== current2.memoizedProps || oldState !== current2.memoizedState) {
+                workInProgress2.flags |= Snapshot;
+              }
+            }
+            workInProgress2.memoizedProps = newProps;
+            workInProgress2.memoizedState = newState;
+          }
+          instance.props = newProps;
+          instance.state = newState;
+          instance.context = nextContext;
+          return shouldUpdate;
+        }
         function createCapturedValueAtFiber(value, source) {
           return {
             value,
@@ -14036,9 +14081,9 @@ var require_react_dom_development = __commonJS({
             } else {
               console["error"](error2);
             }
-          } catch (e) {
+          } catch (e2) {
             setTimeout(function() {
-              throw e;
+              throw e2;
             });
           }
         }
@@ -14276,6 +14321,7 @@ var require_react_dom_development = __commonJS({
         var didWarnAboutReassigningProps;
         var didWarnAboutRevealOrder;
         var didWarnAboutTailOptions;
+        var didWarnAboutDefaultPropsOnFunctionComponent;
         {
           didWarnAboutBadClass = {};
           didWarnAboutModulePatternComponent = {};
@@ -14285,6 +14331,7 @@ var require_react_dom_development = __commonJS({
           didWarnAboutReassigningProps = false;
           didWarnAboutRevealOrder = {};
           didWarnAboutTailOptions = {};
+          didWarnAboutDefaultPropsOnFunctionComponent = {};
         }
         function reconcileChildren(current2, workInProgress2, nextChildren, renderLanes2) {
           if (current2 === null) {
@@ -14377,6 +14424,13 @@ var require_react_dom_development = __commonJS({
                   getComponentNameFromType(type)
                 );
               }
+              if (Component.defaultProps !== void 0) {
+                var componentName = getComponentNameFromType(type) || "Unknown";
+                if (!didWarnAboutDefaultPropsOnFunctionComponent[componentName]) {
+                  error("%s: Support for defaultProps will be removed from memo components in a future major release. Use JavaScript default parameters instead.", componentName);
+                  didWarnAboutDefaultPropsOnFunctionComponent[componentName] = true;
+                }
+              }
             }
             var child = createFiberFromTypeAndProps(Component.type, null, nextProps, workInProgress2, workInProgress2.mode, renderLanes2);
             child.ref = workInProgress2.ref;
@@ -14424,7 +14478,7 @@ var require_react_dom_development = __commonJS({
                 var init = lazyComponent._init;
                 try {
                   outerMemoType = init(payload);
-                } catch (x) {
+                } catch (x2) {
                   outerMemoType = null;
                 }
                 var outerPropTypes = outerMemoType && outerMemoType.propTypes;
@@ -15007,6 +15061,13 @@ var require_react_dom_development = __commonJS({
                 error("Function components cannot be given refs. Attempts to access this ref will fail. Did you mean to use React.forwardRef()?%s", info);
               }
             }
+            if (Component.defaultProps !== void 0) {
+              var componentName = getComponentNameFromType(Component) || "Unknown";
+              if (!didWarnAboutDefaultPropsOnFunctionComponent[componentName]) {
+                error("%s: Support for defaultProps will be removed from function components in a future major release. Use JavaScript default parameters instead.", componentName);
+                didWarnAboutDefaultPropsOnFunctionComponent[componentName] = true;
+              }
+            }
             if (typeof Component.getDerivedStateFromProps === "function") {
               var _componentName3 = getComponentNameFromType(Component) || "Unknown";
               if (!didWarnAboutGetDerivedStateOnFunctionComponent[_componentName3]) {
@@ -15468,8 +15529,8 @@ var require_react_dom_development = __commonJS({
           {
             if ((revealOrder === "forwards" || revealOrder === "backwards") && children !== void 0 && children !== null && children !== false) {
               if (isArray(children)) {
-                for (var i = 0; i < children.length; i++) {
-                  if (!validateSuspenseListNestedChild(children[i], i)) {
+                for (var i3 = 0; i3 < children.length; i3++) {
+                  if (!validateSuspenseListNestedChild(children[i3], i3)) {
                     return;
                   }
                 }
@@ -16003,8 +16064,7 @@ var require_react_dom_development = __commonJS({
             while (node !== null) {
               if (node.tag === HostComponent || node.tag === HostText) {
                 appendInitialChild(parent, node.stateNode);
-              } else if (node.tag === HostPortal)
-                ;
+              } else if (node.tag === HostPortal) ;
               else if (node.child !== null) {
                 node.child.return = node;
                 node = node.child;
@@ -16958,20 +17018,19 @@ var require_react_dom_development = __commonJS({
                     onPostCommit(id, phase, passiveEffectDuration, commitTime2);
                   }
                   var parentFiber = finishedWork.return;
-                  outer:
-                    while (parentFiber !== null) {
-                      switch (parentFiber.tag) {
-                        case HostRoot:
-                          var root2 = parentFiber.stateNode;
-                          root2.passiveEffectDuration += passiveEffectDuration;
-                          break outer;
-                        case Profiler:
-                          var parentStateNode = parentFiber.stateNode;
-                          parentStateNode.passiveEffectDuration += passiveEffectDuration;
-                          break outer;
-                      }
-                      parentFiber = parentFiber.return;
+                  outer: while (parentFiber !== null) {
+                    switch (parentFiber.tag) {
+                      case HostRoot:
+                        var root2 = parentFiber.stateNode;
+                        root2.passiveEffectDuration += passiveEffectDuration;
+                        break outer;
+                      case Profiler:
+                        var parentStateNode = parentFiber.stateNode;
+                        parentStateNode.passiveEffectDuration += passiveEffectDuration;
+                        break outer;
                     }
+                    parentFiber = parentFiber.return;
+                  }
                   break;
                 }
               }
@@ -17118,20 +17177,19 @@ var require_react_dom_development = __commonJS({
                     }
                     enqueuePendingPassiveProfilerEffect(finishedWork);
                     var parentFiber = finishedWork.return;
-                    outer:
-                      while (parentFiber !== null) {
-                        switch (parentFiber.tag) {
-                          case HostRoot:
-                            var root2 = parentFiber.stateNode;
-                            root2.effectDuration += effectDuration;
-                            break outer;
-                          case Profiler:
-                            var parentStateNode = parentFiber.stateNode;
-                            parentStateNode.effectDuration += effectDuration;
-                            break outer;
-                        }
-                        parentFiber = parentFiber.return;
+                    outer: while (parentFiber !== null) {
+                      switch (parentFiber.tag) {
+                        case HostRoot:
+                          var root2 = parentFiber.stateNode;
+                          root2.effectDuration += effectDuration;
+                          break outer;
+                        case Profiler:
+                          var parentStateNode = parentFiber.stateNode;
+                          parentStateNode.effectDuration += effectDuration;
+                          break outer;
                       }
+                      parentFiber = parentFiber.return;
+                    }
                   }
                 }
                 break;
@@ -17223,8 +17281,7 @@ var require_react_dom_development = __commonJS({
                     captureCommitPhaseError(finishedWork, finishedWork.return, error2);
                   }
                 }
-              } else if ((node.tag === OffscreenComponent || node.tag === LegacyHiddenComponent) && node.memoizedState !== null && node !== finishedWork)
-                ;
+              } else if ((node.tag === OffscreenComponent || node.tag === LegacyHiddenComponent) && node.memoizedState !== null && node !== finishedWork) ;
               else if (node.child !== null) {
                 node.child.return = node;
                 node = node.child;
@@ -17342,31 +17399,30 @@ var require_react_dom_development = __commonJS({
         }
         function getHostSibling(fiber) {
           var node = fiber;
-          siblings:
-            while (true) {
-              while (node.sibling === null) {
-                if (node.return === null || isHostParent(node.return)) {
-                  return null;
-                }
-                node = node.return;
+          siblings: while (true) {
+            while (node.sibling === null) {
+              if (node.return === null || isHostParent(node.return)) {
+                return null;
               }
-              node.sibling.return = node.return;
-              node = node.sibling;
-              while (node.tag !== HostComponent && node.tag !== HostText && node.tag !== DehydratedFragment) {
-                if (node.flags & Placement) {
-                  continue siblings;
-                }
-                if (node.child === null || node.tag === HostPortal) {
-                  continue siblings;
-                } else {
-                  node.child.return = node;
-                  node = node.child;
-                }
+              node = node.return;
+            }
+            node.sibling.return = node.return;
+            node = node.sibling;
+            while (node.tag !== HostComponent && node.tag !== HostText && node.tag !== DehydratedFragment) {
+              if (node.flags & Placement) {
+                continue siblings;
               }
-              if (!(node.flags & Placement)) {
-                return node.stateNode;
+              if (node.child === null || node.tag === HostPortal) {
+                continue siblings;
+              } else {
+                node.child.return = node;
+                node = node.child;
               }
             }
+            if (!(node.flags & Placement)) {
+              return node.stateNode;
+            }
+          }
         }
         function commitPlacement(finishedWork) {
           var parentFiber = getHostParentFiber(finishedWork);
@@ -17388,6 +17444,7 @@ var require_react_dom_development = __commonJS({
               insertOrAppendPlacementNodeIntoContainer(finishedWork, _before, _parent);
               break;
             }
+            // eslint-disable-next-line-no-fallthrough
             default:
               throw new Error("Invalid host parent fiber. This error is likely caused by a bug in React. Please file an issue.");
           }
@@ -17402,8 +17459,7 @@ var require_react_dom_development = __commonJS({
             } else {
               appendChildToContainer(parent, stateNode);
             }
-          } else if (tag === HostPortal)
-            ;
+          } else if (tag === HostPortal) ;
           else {
             var child = node.child;
             if (child !== null) {
@@ -17426,8 +17482,7 @@ var require_react_dom_development = __commonJS({
             } else {
               appendChild(parent, stateNode);
             }
-          } else if (tag === HostPortal)
-            ;
+          } else if (tag === HostPortal) ;
           else {
             var child = node.child;
             if (child !== null) {
@@ -17445,27 +17500,26 @@ var require_react_dom_development = __commonJS({
         function commitDeletionEffects(root2, returnFiber, deletedFiber) {
           {
             var parent = returnFiber;
-            findParent:
-              while (parent !== null) {
-                switch (parent.tag) {
-                  case HostComponent: {
-                    hostParent = parent.stateNode;
-                    hostParentIsContainer = false;
-                    break findParent;
-                  }
-                  case HostRoot: {
-                    hostParent = parent.stateNode.containerInfo;
-                    hostParentIsContainer = true;
-                    break findParent;
-                  }
-                  case HostPortal: {
-                    hostParent = parent.stateNode.containerInfo;
-                    hostParentIsContainer = true;
-                    break findParent;
-                  }
+            findParent: while (parent !== null) {
+              switch (parent.tag) {
+                case HostComponent: {
+                  hostParent = parent.stateNode;
+                  hostParentIsContainer = false;
+                  break findParent;
                 }
-                parent = parent.return;
+                case HostRoot: {
+                  hostParent = parent.stateNode.containerInfo;
+                  hostParentIsContainer = true;
+                  break findParent;
+                }
+                case HostPortal: {
+                  hostParent = parent.stateNode.containerInfo;
+                  hostParentIsContainer = true;
+                  break findParent;
+                }
               }
+              parent = parent.return;
+            }
             if (hostParent === null) {
               throw new Error("Expected to find a host parent. This error is likely caused by a bug in React. Please file an issue.");
             }
@@ -17490,6 +17544,7 @@ var require_react_dom_development = __commonJS({
                 safelyDetachRef(deletedFiber, nearestMountedAncestor);
               }
             }
+            // eslint-disable-next-line-no-fallthrough
             case HostText: {
               {
                 var prevHostParent = hostParent;
@@ -17663,8 +17718,8 @@ var require_react_dom_development = __commonJS({
         function recursivelyTraverseMutationEffects(root2, parentFiber, lanes) {
           var deletions = parentFiber.deletions;
           if (deletions !== null) {
-            for (var i = 0; i < deletions.length; i++) {
-              var childToDelete = deletions[i];
+            for (var i3 = 0; i3 < deletions.length; i3++) {
+              var childToDelete = deletions[i3];
               try {
                 commitDeletionEffects(root2, parentFiber, childToDelete);
               } catch (error2) {
@@ -18170,8 +18225,8 @@ var require_react_dom_development = __commonJS({
             if ((nextEffect.flags & ChildDeletion) !== NoFlags) {
               var deletions = fiber.deletions;
               if (deletions !== null) {
-                for (var i = 0; i < deletions.length; i++) {
-                  var fiberToDelete = deletions[i];
+                for (var i3 = 0; i3 < deletions.length; i3++) {
+                  var fiberToDelete = deletions[i3];
                   nextEffect = fiberToDelete;
                   commitPassiveUnmountEffectsInsideOfDeletedTree_begin(fiberToDelete, fiber);
                 }
@@ -18751,6 +18806,9 @@ var require_react_dom_development = __commonJS({
             case RootFatalErrored: {
               throw new Error("Root did not complete. This is a bug in React.");
             }
+            // Flow knows about invariant, so it complains if I add a break
+            // statement, but eslint doesn't know about invariant, so it complains
+            // if I do. eslint-disable-next-line no-fallthrough
             case RootErrored: {
               commitRoot(root2, workInProgressRootRecoverableErrors, workInProgressTransitions);
               break;
@@ -18813,8 +18871,8 @@ var require_react_dom_development = __commonJS({
               if (updateQueue !== null) {
                 var checks = updateQueue.stores;
                 if (checks !== null) {
-                  for (var i = 0; i < checks.length; i++) {
-                    var check = checks[i];
+                  for (var i3 = 0; i3 < checks.length; i3++) {
+                    var check = checks[i3];
                     var getSnapshot = check.getSnapshot;
                     var renderedValue = check.value;
                     try {
@@ -18915,13 +18973,13 @@ var require_react_dom_development = __commonJS({
             }
           }
         }
-        function discreteUpdates(fn, a, b, c, d) {
+        function discreteUpdates(fn, a, b, c2, d2) {
           var previousPriority = getCurrentUpdatePriority();
           var prevTransition = ReactCurrentBatchConfig$3.transition;
           try {
             ReactCurrentBatchConfig$3.transition = null;
             setCurrentUpdatePriority(DiscreteEventPriority);
-            return fn(a, b, c, d);
+            return fn(a, b, c2, d2);
           } finally {
             setCurrentUpdatePriority(previousPriority);
             ReactCurrentBatchConfig$3.transition = prevTransition;
@@ -19391,8 +19449,8 @@ var require_react_dom_development = __commonJS({
           ensureRootIsScheduled(root2, now());
           if (recoverableErrors !== null) {
             var onRecoverableError = root2.onRecoverableError;
-            for (var i = 0; i < recoverableErrors.length; i++) {
-              var recoverableError = recoverableErrors[i];
+            for (var i3 = 0; i3 < recoverableErrors.length; i3++) {
+              var recoverableError = recoverableErrors[i3];
               var componentStack = recoverableError.stack;
               var digest = recoverableError.digest;
               onRecoverableError(recoverableError.value, {
@@ -19486,8 +19544,8 @@ var require_react_dom_development = __commonJS({
           {
             var profilerEffects = pendingPassiveProfilerEffects;
             pendingPassiveProfilerEffects = [];
-            for (var i = 0; i < profilerEffects.length; i++) {
-              var _fiber = profilerEffects[i];
+            for (var i3 = 0; i3 < profilerEffects.length; i3++) {
+              var _fiber = profilerEffects[i3];
               commitPassiveEffectDurations(root2, _fiber);
             }
           }
@@ -20170,7 +20228,7 @@ var require_react_dom_development = __commonJS({
             var nonExtensibleObject = Object.preventExtensions({});
             /* @__PURE__ */ new Map([[nonExtensibleObject, null]]);
             /* @__PURE__ */ new Set([nonExtensibleObject]);
-          } catch (e) {
+          } catch (e2) {
             hasBadMapPolyfill = true;
           }
         }
@@ -20377,67 +20435,71 @@ var require_react_dom_development = __commonJS({
           } else if (typeof type === "string") {
             fiberTag = HostComponent;
           } else {
-            getTag:
-              switch (type) {
-                case REACT_FRAGMENT_TYPE:
-                  return createFiberFromFragment(pendingProps.children, mode, lanes, key);
-                case REACT_STRICT_MODE_TYPE:
-                  fiberTag = Mode;
-                  mode |= StrictLegacyMode;
-                  if ((mode & ConcurrentMode) !== NoMode) {
-                    mode |= StrictEffectsMode;
-                  }
-                  break;
-                case REACT_PROFILER_TYPE:
-                  return createFiberFromProfiler(pendingProps, mode, lanes, key);
-                case REACT_SUSPENSE_TYPE:
-                  return createFiberFromSuspense(pendingProps, mode, lanes, key);
-                case REACT_SUSPENSE_LIST_TYPE:
-                  return createFiberFromSuspenseList(pendingProps, mode, lanes, key);
-                case REACT_OFFSCREEN_TYPE:
-                  return createFiberFromOffscreen(pendingProps, mode, lanes, key);
-                case REACT_LEGACY_HIDDEN_TYPE:
-                case REACT_SCOPE_TYPE:
-                case REACT_CACHE_TYPE:
-                case REACT_TRACING_MARKER_TYPE:
-                case REACT_DEBUG_TRACING_MODE_TYPE:
-                default: {
-                  if (typeof type === "object" && type !== null) {
-                    switch (type.$$typeof) {
-                      case REACT_PROVIDER_TYPE:
-                        fiberTag = ContextProvider;
-                        break getTag;
-                      case REACT_CONTEXT_TYPE:
-                        fiberTag = ContextConsumer;
-                        break getTag;
-                      case REACT_FORWARD_REF_TYPE:
-                        fiberTag = ForwardRef;
-                        {
-                          resolvedType = resolveForwardRefForHotReloading(resolvedType);
-                        }
-                        break getTag;
-                      case REACT_MEMO_TYPE:
-                        fiberTag = MemoComponent;
-                        break getTag;
-                      case REACT_LAZY_TYPE:
-                        fiberTag = LazyComponent;
-                        resolvedType = null;
-                        break getTag;
-                    }
-                  }
-                  var info = "";
-                  {
-                    if (type === void 0 || typeof type === "object" && type !== null && Object.keys(type).length === 0) {
-                      info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
-                    }
-                    var ownerName = owner ? getComponentNameFromFiber(owner) : null;
-                    if (ownerName) {
-                      info += "\n\nCheck the render method of `" + ownerName + "`.";
-                    }
-                  }
-                  throw new Error("Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) " + ("but got: " + (type == null ? type : typeof type) + "." + info));
+            getTag: switch (type) {
+              case REACT_FRAGMENT_TYPE:
+                return createFiberFromFragment(pendingProps.children, mode, lanes, key);
+              case REACT_STRICT_MODE_TYPE:
+                fiberTag = Mode;
+                mode |= StrictLegacyMode;
+                if ((mode & ConcurrentMode) !== NoMode) {
+                  mode |= StrictEffectsMode;
                 }
+                break;
+              case REACT_PROFILER_TYPE:
+                return createFiberFromProfiler(pendingProps, mode, lanes, key);
+              case REACT_SUSPENSE_TYPE:
+                return createFiberFromSuspense(pendingProps, mode, lanes, key);
+              case REACT_SUSPENSE_LIST_TYPE:
+                return createFiberFromSuspenseList(pendingProps, mode, lanes, key);
+              case REACT_OFFSCREEN_TYPE:
+                return createFiberFromOffscreen(pendingProps, mode, lanes, key);
+              case REACT_LEGACY_HIDDEN_TYPE:
+              // eslint-disable-next-line no-fallthrough
+              case REACT_SCOPE_TYPE:
+              // eslint-disable-next-line no-fallthrough
+              case REACT_CACHE_TYPE:
+              // eslint-disable-next-line no-fallthrough
+              case REACT_TRACING_MARKER_TYPE:
+              // eslint-disable-next-line no-fallthrough
+              case REACT_DEBUG_TRACING_MODE_TYPE:
+              // eslint-disable-next-line no-fallthrough
+              default: {
+                if (typeof type === "object" && type !== null) {
+                  switch (type.$$typeof) {
+                    case REACT_PROVIDER_TYPE:
+                      fiberTag = ContextProvider;
+                      break getTag;
+                    case REACT_CONTEXT_TYPE:
+                      fiberTag = ContextConsumer;
+                      break getTag;
+                    case REACT_FORWARD_REF_TYPE:
+                      fiberTag = ForwardRef;
+                      {
+                        resolvedType = resolveForwardRefForHotReloading(resolvedType);
+                      }
+                      break getTag;
+                    case REACT_MEMO_TYPE:
+                      fiberTag = MemoComponent;
+                      break getTag;
+                    case REACT_LAZY_TYPE:
+                      fiberTag = LazyComponent;
+                      resolvedType = null;
+                      break getTag;
+                  }
+                }
+                var info = "";
+                {
+                  if (type === void 0 || typeof type === "object" && type !== null && Object.keys(type).length === 0) {
+                    info += " You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports.";
+                  }
+                  var ownerName = owner ? getComponentNameFromFiber(owner) : null;
+                  if (ownerName) {
+                    info += "\n\nCheck the render method of `" + ownerName + "`.";
+                  }
+                }
+                throw new Error("Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) " + ("but got: " + (type == null ? type : typeof type) + "." + info));
               }
+            }
           }
           var fiber = createFiber(fiberTag, pendingProps, key, mode);
           fiber.elementType = type;
@@ -20640,7 +20702,7 @@ var require_react_dom_development = __commonJS({
           initializeUpdateQueue(uninitializedFiber);
           return root2;
         }
-        var ReactVersion = "18.2.0";
+        var ReactVersion = "18.3.1";
         function createPortal(children, containerInfo, implementation) {
           var key = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null;
           {
@@ -20920,8 +20982,8 @@ var require_react_dom_development = __commonJS({
               warn("copyWithRename() expects paths of the same length");
               return;
             } else {
-              for (var i = 0; i < newPath.length - 1; i++) {
-                if (oldPath[i] !== newPath[i]) {
+              for (var i3 = 0; i3 < newPath.length - 1; i3++) {
+                if (oldPath[i3] !== newPath[i3]) {
                   warn("copyWithRename() expects paths to be the same except for the deepest key");
                   return;
                 }
@@ -21211,8 +21273,8 @@ var require_react_dom_development = __commonJS({
           markContainerAsRoot(root2.current, container);
           listenToAllSupportedEvents(container);
           if (mutableSources) {
-            for (var i = 0; i < mutableSources.length; i++) {
-              var mutableSource = mutableSources[i];
+            for (var i3 = 0; i3 < mutableSources.length; i3++) {
+              var mutableSource = mutableSources[i3];
               registerMutableSourceForHydration(root2, mutableSource);
             }
           }
@@ -21367,8 +21429,13 @@ var require_react_dom_development = __commonJS({
           }
           return getPublicRootInstance(root2);
         }
+        var didWarnAboutFindDOMNode = false;
         function findDOMNode(componentOrElement) {
           {
+            if (!didWarnAboutFindDOMNode) {
+              didWarnAboutFindDOMNode = true;
+              error("findDOMNode is deprecated and will be removed in the next major release. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node");
+            }
             var owner = ReactCurrentOwner$3.current;
             if (owner !== null && owner.stateNode !== null) {
               var warnedAboutRefsInRender = owner.stateNode._warnedAboutRefsInRender;
@@ -21430,7 +21497,14 @@ var require_react_dom_development = __commonJS({
           }
           return legacyRenderSubtreeIntoContainer(parentComponent, element, containerNode, false, callback);
         }
+        var didWarnAboutUnmountComponentAtNode = false;
         function unmountComponentAtNode(container) {
+          {
+            if (!didWarnAboutUnmountComponentAtNode) {
+              didWarnAboutUnmountComponentAtNode = true;
+              error("unmountComponentAtNode is deprecated and will be removed in the next major release. Switch to the createRoot API. Learn more: https://reactjs.org/link/switch-to-createroot");
+            }
+          }
           if (!isValidContainerLegacy(container)) {
             throw new Error("unmountComponentAtNode(...): Target container is not a DOM element.");
           }
@@ -21557,9 +21631,9 @@ var require_react_dom_development = __commonJS({
   }
 });
 
-// ../../../../../../node_modules/react-dom/index.js
+// node_modules/react-dom/index.js
 var require_react_dom = __commonJS({
-  "../../../../../../node_modules/react-dom/index.js"(exports, module) {
+  "node_modules/react-dom/index.js"(exports, module) {
     "use strict";
     if (false) {
       checkDCE();
@@ -21570,45 +21644,941 @@ var require_react_dom = __commonJS({
   }
 });
 
-// ../../../../../../node_modules/react-dom/client.js
+// node_modules/react-dom/client.js
 var require_client = __commonJS({
-  "../../../../../../node_modules/react-dom/client.js"(exports) {
+  "node_modules/react-dom/client.js"(exports) {
     "use strict";
-    var m = require_react_dom();
+    var m2 = require_react_dom();
     if (false) {
-      exports.createRoot = m.createRoot;
-      exports.hydrateRoot = m.hydrateRoot;
+      exports.createRoot = m2.createRoot;
+      exports.hydrateRoot = m2.hydrateRoot;
     } else {
-      i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-      exports.createRoot = function(c, o) {
-        i.usingClientEntryPoint = true;
+      i3 = m2.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+      exports.createRoot = function(c2, o) {
+        i3.usingClientEntryPoint = true;
         try {
-          return m.createRoot(c, o);
+          return m2.createRoot(c2, o);
         } finally {
-          i.usingClientEntryPoint = false;
+          i3.usingClientEntryPoint = false;
         }
       };
-      exports.hydrateRoot = function(c, h, o) {
-        i.usingClientEntryPoint = true;
+      exports.hydrateRoot = function(c2, h, o) {
+        i3.usingClientEntryPoint = true;
         try {
-          return m.hydrateRoot(c, h, o);
+          return m2.hydrateRoot(c2, h, o);
         } finally {
-          i.usingClientEntryPoint = false;
+          i3.usingClientEntryPoint = false;
         }
       };
     }
-    var i;
+    var i3;
   }
 });
 
 // src/client/index.tsx
-var import_react = __toESM(require_react());
+var import_react3 = __toESM(require_react());
 var import_client = __toESM(require_client());
-import createGlobe from "cobe";
-import usePartySocket from "partysocket/react";
-function App() {
-  const [route, setRoute] = (0, import_react.useState)(window.location.pathname);
+
+// node_modules/phenomenon/dist/phenomenon.mjs
+var t = ["x", "y", "z"];
+var e = function(t2) {
+  Object.assign(this, { uniforms: {}, geometry: { vertices: [{ x: 0, y: 0, z: 0 }] }, mode: 0, modifiers: {}, attributes: [], multiplier: 1, buffers: [] }), Object.assign(this, t2), this.prepareProgram(), this.prepareUniforms(), this.prepareAttributes();
+};
+e.prototype.compileShader = function(t2, e2) {
+  var i3 = this.gl.createShader(t2);
+  return this.gl.shaderSource(i3, e2), this.gl.compileShader(i3), i3;
+}, e.prototype.prepareProgram = function() {
+  var t2 = this.gl, e2 = this.vertex, i3 = this.fragment, r = t2.createProgram();
+  t2.attachShader(r, this.compileShader(35633, e2)), t2.attachShader(r, this.compileShader(35632, i3)), t2.linkProgram(r), t2.useProgram(r), this.program = r;
+}, e.prototype.prepareUniforms = function() {
+  for (var t2 = Object.keys(this.uniforms), e2 = 0; e2 < t2.length; e2 += 1) {
+    var i3 = this.gl.getUniformLocation(this.program, t2[e2]);
+    this.uniforms[t2[e2]].location = i3;
+  }
+}, e.prototype.prepareAttributes = function() {
+  void 0 !== this.geometry.vertices && this.attributes.push({ name: "aPosition", size: 3 }), void 0 !== this.geometry.normal && this.attributes.push({ name: "aNormal", size: 3 }), this.attributeKeys = [];
+  for (var t2 = 0; t2 < this.attributes.length; t2 += 1) this.attributeKeys.push(this.attributes[t2].name), this.prepareAttribute(this.attributes[t2]);
+}, e.prototype.prepareAttribute = function(e2) {
+  for (var i3 = this.geometry, r = this.multiplier, s2 = i3.vertices, n = i3.normal, a = new Float32Array(r * s2.length * e2.size), o = 0; o < r; o += 1) for (var h = e2.data && e2.data(o, r), u2 = o * s2.length * e2.size, f2 = 0; f2 < s2.length; f2 += 1) for (var c2 = 0; c2 < e2.size; c2 += 1) {
+    var l2 = this.modifiers[e2.name];
+    a[u2] = void 0 !== l2 ? l2(h, f2, c2, this) : "aPosition" === e2.name ? s2[f2][t[c2]] : "aNormal" === e2.name ? n[f2][t[c2]] : h[c2], u2 += 1;
+  }
+  this.attributes[this.attributeKeys.indexOf(e2.name)].data = a, this.prepareBuffer(this.attributes[this.attributeKeys.indexOf(e2.name)]);
+}, e.prototype.prepareBuffer = function(t2) {
+  var e2 = t2.data, i3 = t2.name, r = t2.size, s2 = this.gl.createBuffer();
+  this.gl.bindBuffer(34962, s2), this.gl.bufferData(34962, e2, 35044);
+  var n = this.gl.getAttribLocation(this.program, i3);
+  this.gl.enableVertexAttribArray(n), this.gl.vertexAttribPointer(n, r, 5126, false, 0, 0), this.buffers[this.attributeKeys.indexOf(t2.name)] = { buffer: s2, location: n, size: r };
+}, e.prototype.render = function(t2) {
+  var e2 = this, i3 = this.uniforms, r = this.multiplier, s2 = this.gl;
+  s2.useProgram(this.program);
+  for (var n = 0; n < this.buffers.length; n += 1) {
+    var a = this.buffers[n], o = a.location, h = a.buffer, u2 = a.size;
+    s2.enableVertexAttribArray(o), s2.bindBuffer(34962, h), s2.vertexAttribPointer(o, u2, 5126, false, 0, 0);
+  }
+  Object.keys(t2).forEach(function(e3) {
+    i3[e3].value = t2[e3].value;
+  }), Object.keys(i3).forEach(function(t3) {
+    var r2 = i3[t3];
+    e2.uniformMap[r2.type](r2.location, r2.value);
+  }), s2.drawArrays(this.mode, 0, r * this.geometry.vertices.length), this.onRender && this.onRender(this);
+}, e.prototype.destroy = function() {
+  for (var t2 = 0; t2 < this.buffers.length; t2 += 1) this.gl.deleteBuffer(this.buffers[t2].buffer);
+  this.gl.deleteProgram(this.program), this.gl = null;
+};
+var i = function(t2) {
+  var e2 = this, i3 = t2 || {}, r = i3.canvas;
+  void 0 === r && (r = document.querySelector("canvas"));
+  var s2 = i3.context;
+  void 0 === s2 && (s2 = {});
+  var n = i3.contextType;
+  void 0 === n && (n = "experimental-webgl");
+  var a = i3.settings;
+  void 0 === a && (a = {});
+  var o = r.getContext(n, Object.assign({ alpha: false, antialias: false }, s2));
+  Object.assign(this, { gl: o, canvas: r, uniforms: {}, instances: /* @__PURE__ */ new Map(), shouldRender: true }), Object.assign(this, { devicePixelRatio: 1, clearColor: [1, 1, 1, 1], position: { x: 0, y: 0, z: 2 }, clip: [1e-3, 100] }), Object.assign(this, a), this.uniformMap = { float: function(t3, e3) {
+    return o.uniform1f(t3, e3);
+  }, vec2: function(t3, e3) {
+    return o.uniform2fv(t3, e3);
+  }, vec3: function(t3, e3) {
+    return o.uniform3fv(t3, e3);
+  }, vec4: function(t3, e3) {
+    return o.uniform4fv(t3, e3);
+  }, mat2: function(t3, e3) {
+    return o.uniformMatrix2fv(t3, false, e3);
+  }, mat3: function(t3, e3) {
+    return o.uniformMatrix3fv(t3, false, e3);
+  }, mat4: function(t3, e3) {
+    return o.uniformMatrix4fv(t3, false, e3);
+  } }, o.enable(o.DEPTH_TEST), o.depthFunc(o.LEQUAL), false === o.getContextAttributes().alpha && (o.clearColor.apply(o, this.clearColor), o.clearDepth(1)), this.onSetup && this.onSetup(o), window.addEventListener("resize", function() {
+    return e2.resize();
+  }), this.resize(), this.render();
+};
+i.prototype.resize = function() {
+  var t2 = this.gl, e2 = this.canvas, i3 = this.devicePixelRatio, r = this.position;
+  e2.width = e2.clientWidth * i3, e2.height = e2.clientHeight * i3;
+  var s2 = t2.drawingBufferWidth, n = t2.drawingBufferHeight, a = s2 / n;
+  t2.viewport(0, 0, s2, n);
+  var o = Math.tan(Math.PI / 180 * 22.5), h = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, r.x, r.y, (a < 1 ? 1 : a) * -r.z, 1];
+  this.uniforms.uProjectionMatrix = { type: "mat4", value: [0.5 / o, 0, 0, 0, 0, a / o * 0.5, 0, 0, 0, 0, -(this.clip[1] + this.clip[0]) / (this.clip[1] - this.clip[0]), -1, 0, 0, -2 * this.clip[1] * (this.clip[0] / (this.clip[1] - this.clip[0])), 0] }, this.uniforms.uViewMatrix = { type: "mat4", value: [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1] }, this.uniforms.uModelMatrix = { type: "mat4", value: h };
+}, i.prototype.toggle = function(t2) {
+  t2 !== this.shouldRender && (this.shouldRender = void 0 !== t2 ? t2 : !this.shouldRender, this.shouldRender && this.render());
+}, i.prototype.render = function() {
+  var t2 = this;
+  this.gl.clear(16640), this.instances.forEach(function(e2) {
+    e2.render(t2.uniforms);
+  }), this.onRender && this.onRender(this), this.shouldRender && requestAnimationFrame(function() {
+    return t2.render();
+  });
+}, i.prototype.add = function(t2, i3) {
+  void 0 === i3 && (i3 = { uniforms: {} }), void 0 === i3.uniforms && (i3.uniforms = {}), Object.assign(i3.uniforms, JSON.parse(JSON.stringify(this.uniforms))), Object.assign(i3, { gl: this.gl, uniformMap: this.uniformMap });
+  var r = new e(i3);
+  return this.instances.set(t2, r), r;
+}, i.prototype.remove = function(t2) {
+  var e2 = this.instances.get(t2);
+  void 0 !== e2 && (e2.destroy(), this.instances.delete(t2));
+}, i.prototype.destroy = function() {
+  var t2 = this;
+  this.instances.forEach(function(e2, i3) {
+    e2.destroy(), t2.instances.delete(i3);
+  }), this.toggle(false);
+};
+var phenomenon_default = i;
+
+// node_modules/cobe/dist/index.esm.js
+var M = "phi";
+var R = "theta";
+var c = "mapSamples";
+var O = "mapBrightness";
+var N = "baseColor";
+var G = "markerColor";
+var s = "glowColor";
+var S = "markers";
+var P = "diffuse";
+var X = "devicePixelRatio";
+var f = "dark";
+var u = "offset";
+var m = "scale";
+var x = "opacity";
+var l = "mapBaseBrightness";
+var I = { [M]: "A", [R]: "B", [c]: "l", [O]: "E", [N]: "R", [G]: "S", [s]: "y", [P]: "F", [f]: "G", [u]: "x", [m]: "C", [x]: "H", [l]: "I" };
+var { PI: i2, sin: d, cos: U } = Math;
+var C = (r) => [].concat(...r.map((E) => {
+  let [_, o] = E.location;
+  _ = _ * i2 / 180, o = o * i2 / 180 - i2;
+  let a = U(_);
+  return [-a * U(o), d(_), a * d(o), E.size];
+}), [0, 0, 0, 0]);
+var p = (r, E) => {
+  let _ = (e2, t2, L) => ({ type: e2, value: typeof E[t2] == "undefined" ? L : E[t2] }), o = r.getContext("webgl") ? "webgl" : "experimental-webgl", a = new phenomenon_default({ canvas: r, contextType: o, context: { alpha: true, stencil: false, antialias: true, depth: false, preserveDrawingBuffer: false, ...E.context }, settings: { [X]: E[X] || 1, onSetup: (e2) => {
+    let t2 = e2.RGB, L = e2.UNSIGNED_BYTE, n = e2.TEXTURE_2D, T = e2.createTexture();
+    e2.bindTexture(n, T), e2.texImage2D(n, 0, t2, 1, 1, 0, t2, L, new Uint8Array([0, 0, 0, 0]));
+    let A = new Image();
+    A.onload = () => {
+      e2.bindTexture(n, T), e2.texImage2D(n, 0, t2, t2, L, A), e2.generateMipmap(n);
+      let h = e2.getParameter(e2.CURRENT_PROGRAM), v = e2.getUniformLocation(h, "J");
+      e2.texParameteri(n, e2.TEXTURE_MIN_FILTER, e2.NEAREST), e2.texParameteri(n, e2.TEXTURE_MAG_FILTER, e2.NEAREST), e2.uniform1i(v, 0);
+    }, A.src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAACAAQAAAADMzoqnAAAAAXNSR0IArs4c6QAABA5JREFUeNrV179uHEUAx/Hf3JpbF+E2VASBsmVKTBcpKJs3SMEDcDwBiVJAAewYEBUivIHT0uUBIt0YCovKD0CRjUC4QfHYh8hYXu+P25vZ2Zm9c66gMd/GJ/tz82d3bk8GN4SrByYF2366FNTACIAkivVAAazQdnf3MvAlbNUQfOPAdQDvSAimMWhwy4I2g4SU+Kp04ISLpPBAKLxPyic3O/CCi+Y7rUJbiodcpDOFY7CgxCEXmdYD2EYK2s5lApOx5pEDDYCUwM1XdJUwBV11QQMg59kePSCaPAASQMEL2hwo6TJFgxpg+TgC2ymXPbuvc40awr3D1QCFfbH9kcoqAOkZozpQo0aqAGQRKCog/+tjkgbNFEtg2FffBvBGlSxHoAaAa1u6X4PBAwDiR8FFsrQgeUhfJTSALaB9jy5NCybJPn1SVFiWk7ywN+KzhH1aKAuydhGkbEF4lWohLXDXavlyFgHY7LBnLRdlAP6BS5Cc8RfVDXbkwN/oIvmY+6obbNeBP0JwTuMGu9gTzy1Q4RS/cWpfzszeYwd+CAFrtBW/Hur0gLbJGlD+/OjVwe/drfBxkbbg63dndEDfiEBlAd7ac0BPe1D6Jd8dfbLH+RI0OzseFB5s01/M+gMdAeluLOCAuaUA9Lezo/vSgXoCX9rtEiXnp7Q1W/CNyWcd8DXoS6jH/YZ5vAJEWY2dXFQe2TUgaFaNejCzJ98g6HnlVrsE58sDcYqg+9XY75fPqdoh/kRQWiXKg8MWlJQxUFMPjqnyujhFBE7UxIMjyszk0QwQlFsezImsyvUYYYVED2pk6m0Tg8T04Fwjk2kdAwSACqlM6gRRt3vQYAFGX0Ah7Ebx1H+MDRI5ui0QldH4j7FGcm90XdxD2Jg1AOEAVAKhEFXSn4cKUELurIAKwJ3MArypPscQaLhJFICJ0ohjDySAdH8AhDtCiTuMycH8CXzhH9jUACAO5uMhoAwA5i+T6WAKmmAqnLy80wxHqIPFYpqCwxGaYLt4Dyievg5kEoVEUAhs6pqKgFtDQYOuaXypaWKQfIuwwoGSZgfLsu/XAtI8cGN+h7Cc1A5oLOMhwlIPXuhu48AIvsSBkvtV9wsJRKCyYLfq5lTrQMFd1a262oqBck9K1V0YjQg0iEYYgpS1A9GlXQV5cykwm4A7BzVsxQqo7E+zCegO7Ma7yKgsuOcfKbMBwLC8wvVNYDsANYalEpOAa6zpWjTeMKGwEwC1CiQewJc5EKfgy7GmRAZA4vUVGwE2dPM/g0xuAInE/yG5aZ8ISxWGfYigUVbdyBElTHh2uCwGdfCkOLGgQVBh3Ewp+/QK4CDlR5Ws/Zf7yhCf8pH7vinWAvoVCQ6zz0NX5V/6GkAVV+2/5qsJ/gU8bsxpM8IeAQAAAABJRU5ErkJggg==";
+  } } });
+  return a.add("", { vertex: "attribute vec3 aPosition;uniform mat4 uProjectionMatrix;uniform mat4 uModelMatrix;uniform mat4 uViewMatrix;void main(){gl_Position=uProjectionMatrix*uModelMatrix*uViewMatrix*vec4(aPosition,1.);}", fragment: "precision highp float;uniform vec2 t,x;uniform vec3 R,S,y;uniform vec4 z[64];uniform float A,B,l,C,D,E,F,G,H,I;uniform sampler2D J;float K=1./l;mat3 L(float a,float b){float c=cos(a),d=cos(b),e=sin(a),f=sin(b);return mat3(d,f*e,-f*c,0.,c,e,f,d*-e,d*c);}vec3 w(vec3 c,out float v){c=c.xzy;float p=max(2.,floor(log2(2.236068*l*3.141593*(1.-c.z*c.z))*.72021));vec2 g=floor(pow(1.618034,p)/2.236068*vec2(1.,1.618034)+.5),d=fract((g+1.)*.618034)*6.283185-3.883222,e=-2.*g,f=vec2(atan(c.y,c.x),c.z-1.),q=floor(vec2(e.y*f.x-d.y*(f.y*l+1.),-e.x*f.x+d.x*(f.y*l+1.))/(d.x*e.y-e.x*d.y));float n=3.141593;vec3 r;for(float h=0.;h<4.;h+=1.){vec2 s=vec2(mod(h,2.),floor(h*.5));float j=dot(g,q+s);if(j>l)continue;float a=j,b=0.;if(a>=524288.)a-=524288.,b+=.803894;if(a>=262144.)a-=262144.,b+=.901947;if(a>=131072.)a-=131072.,b+=.950973;if(a>=65536.)a-=65536.,b+=.475487;if(a>=32768.)a-=32768.,b+=.737743;if(a>=16384.)a-=16384.,b+=.868872;if(a>=8192.)a-=8192.,b+=.934436;if(a>=4096.)a-=4096.,b+=.467218;if(a>=2048.)a-=2048.,b+=.733609;if(a>=1024.)a-=1024.,b+=.866804;if(a>=512.)a-=512.,b+=.433402;if(a>=256.)a-=256.,b+=.216701;if(a>=128.)a-=128.,b+=.108351;if(a>=64.)a-=64.,b+=.554175;if(a>=32.)a-=32.,b+=.777088;if(a>=16.)a-=16.,b+=.888544;if(a>=8.)a-=8.,b+=.944272;if(a>=4.)a-=4.,b+=.472136;if(a>=2.)a-=2.,b+=.236068;if(a>=1.)a-=1.,b+=.618034;float k=fract(b)*6.283185,i=1.-2.*j*K,m=sqrt(1.-i*i);vec3 o=vec3(cos(k)*m,sin(k)*m,i);float u=length(c-o);if(u<n)n=u,r=o;}v=n;return r.xzy;}void main(){vec2 b=(gl_FragCoord.xy/t*2.-1.)/C-x*vec2(1.,-1.)/t;b.x*=t.x/t.y;float c=dot(b,b);vec4 M=vec4(0.);float m=0.;if(c<=.64){for(int d=0;d<2;d++){vec4 e=vec4(0.);float a;vec3 u=vec3(0.,0.,1.),f=normalize(vec3(b,sqrt(.64-c)));f.z*=d>0?-1.:1.,u.z*=d>0?-1.:1.;vec3 g=f*L(B,A),h=w(g,a);float n=asin(h.y),i=acos(-h.x/cos(n));i=h.z<0.?-i:i;float N=max(texture2D(J,vec2(i*.5/3.141593,-(n/3.141593+.5))).x,I),O=smoothstep(8e-3,0.,a),j=dot(f,u),v=pow(j,F)*E,o=N*O*v,T=mix((1.-o)*pow(j,.4),o,G)+.1;e+=vec4(R*T,1.);int U=int(D);float p=0.;for(int k=0;k<64;k++){if(k>=U)break;vec4 q=z[k];vec3 r=q.xyz,P=r-g;float s=q.w;if(dot(P,P)>s*s*4.)continue;vec3 V=w(r,a);a=length(V-g),a<s?p+=smoothstep(s*.5,0.,a):0.;}p=min(1.,p*v),e.xyz=mix(e.xyz,S,p),e.xyz+=pow(1.-j,4.)*y,M+=e*(1.+(d>0?-H:H))/2.;}m=pow(dot(normalize(vec3(-b,sqrt(1.-c))),vec3(0.,0.,1.)),4.)*smoothstep(0.,1.,.2/(c-.64));}else{float Q=sqrt(.2/(c-.64));m=smoothstep(.5,1.,Q/(Q+1.));}gl_FragColor=M+vec4(m*y,m);}", uniforms: { t: { type: "vec2", value: [E.width, E.height] }, A: _("float", M), B: _("float", R), l: _("float", c), E: _("float", O), I: _("float", l), R: _("vec3", N), S: _("vec3", G), F: _("float", P), y: _("vec3", s), G: _("float", f), z: { type: "vec4", value: C(E[S]) }, D: { type: "float", value: E[S].length }, x: _("vec2", u, [0, 0]), C: _("float", m, 1), H: _("float", x, 1) }, mode: 4, geometry: { vertices: [{ x: -100, y: 100, z: 0 }, { x: -100, y: -100, z: 0 }, { x: 100, y: 100, z: 0 }, { x: 100, y: -100, z: 0 }, { x: -100, y: -100, z: 0 }, { x: 100, y: 100, z: 0 }] }, onRender: ({ uniforms: e2 }) => {
+    let t2 = {};
+    if (E.onRender) {
+      t2 = E.onRender(t2) || t2;
+      for (let L in I) t2[L] !== void 0 && (e2[I[L]].value = t2[L]);
+      t2[S] !== void 0 && (e2["z"].value = C(t2[S]), e2["D"].value = t2[S].length), t2.width && t2.height && (e2["t"].value = [t2.width, t2.height]);
+    }
+  } }), a;
+};
+
+// node_modules/partysocket/dist/chunk-S74YV6PU.mjs
+if (!globalThis.EventTarget || !globalThis.Event) {
+  console.error(`
+  PartySocket requires a global 'EventTarget' class to be available!
+  You can polyfill this global by adding this to your code before any partysocket imports: 
+  
+  \`\`\`
+  import 'partysocket/event-target-polyfill';
+  \`\`\`
+  Please file an issue at https://github.com/partykit/partykit if you're still having trouble.
+`);
+}
+var ErrorEvent = class extends Event {
+  // biome-ignore lint/suspicious/noExplicitAny: vibes
+  constructor(error, target) {
+    super("error", target);
+    __publicField(this, "message");
+    __publicField(this, "error");
+    this.message = error.message;
+    this.error = error;
+  }
+};
+var CloseEvent = class extends Event {
+  // biome-ignore lint/style/useDefaultParameterLast: legacy
+  // biome-ignore lint/suspicious/noExplicitAny: legacy
+  constructor(code = 1e3, reason = "", target) {
+    super("close", target);
+    __publicField(this, "code");
+    __publicField(this, "reason");
+    __publicField(this, "wasClean", true);
+    this.code = code;
+    this.reason = reason;
+  }
+};
+var Events = {
+  Event,
+  ErrorEvent,
+  CloseEvent
+};
+function assert(condition, msg) {
+  if (!condition) {
+    throw new Error(msg);
+  }
+}
+function cloneEventBrowser(e2) {
+  return new e2.constructor(e2.type, e2);
+}
+function cloneEventNode(e2) {
+  if ("data" in e2) {
+    const evt2 = new MessageEvent(e2.type, e2);
+    return evt2;
+  }
+  if ("code" in e2 || "reason" in e2) {
+    const evt2 = new CloseEvent(
+      // @ts-expect-error we need to fix event/listener types
+      e2.code || 1999,
+      // @ts-expect-error we need to fix event/listener types
+      e2.reason || "unknown reason",
+      e2
+    );
+    return evt2;
+  }
+  if ("error" in e2) {
+    const evt2 = new ErrorEvent(e2.error, e2);
+    return evt2;
+  }
+  const evt = new Event(e2.type, e2);
+  return evt;
+}
+var _a;
+var isNode = typeof process !== "undefined" && typeof ((_a = process.versions) == null ? void 0 : _a.node) !== "undefined" && typeof document === "undefined";
+var cloneEvent = isNode ? cloneEventNode : cloneEventBrowser;
+var DEFAULT = {
+  maxReconnectionDelay: 1e4,
+  minReconnectionDelay: 1e3 + Math.random() * 4e3,
+  minUptime: 5e3,
+  reconnectionDelayGrowFactor: 1.3,
+  connectionTimeout: 4e3,
+  maxRetries: Number.POSITIVE_INFINITY,
+  maxEnqueuedMessages: Number.POSITIVE_INFINITY,
+  startClosed: false,
+  debug: false
+};
+var didWarnAboutMissingWebSocket = false;
+var ReconnectingWebSocket = class _ReconnectingWebSocket extends EventTarget {
+  constructor(url, protocols, options = {}) {
+    super();
+    __publicField(this, "_ws");
+    __publicField(this, "_retryCount", -1);
+    __publicField(this, "_uptimeTimeout");
+    __publicField(this, "_connectTimeout");
+    __publicField(this, "_shouldReconnect", true);
+    __publicField(this, "_connectLock", false);
+    __publicField(this, "_binaryType", "blob");
+    __publicField(this, "_closeCalled", false);
+    __publicField(this, "_messageQueue", []);
+    __publicField(this, "_debugLogger", console.log.bind(console));
+    __publicField(this, "_url");
+    __publicField(this, "_protocols");
+    __publicField(this, "_options");
+    /**
+     * An event listener to be called when the WebSocket connection's readyState changes to CLOSED
+     */
+    __publicField(this, "onclose", null);
+    /**
+     * An event listener to be called when an error occurs
+     */
+    __publicField(this, "onerror", null);
+    /**
+     * An event listener to be called when a message is received from the server
+     */
+    __publicField(this, "onmessage", null);
+    /**
+     * An event listener to be called when the WebSocket connection's readyState changes to OPEN;
+     * this indicates that the connection is ready to send and receive data
+     */
+    __publicField(this, "onopen", null);
+    __publicField(this, "_handleOpen", (event) => {
+      this._debug("open event");
+      const { minUptime = DEFAULT.minUptime } = this._options;
+      clearTimeout(this._connectTimeout);
+      this._uptimeTimeout = setTimeout(() => this._acceptOpen(), minUptime);
+      assert(this._ws, "WebSocket is not defined");
+      this._ws.binaryType = this._binaryType;
+      this._messageQueue.forEach((message) => {
+        var _a2;
+        return (_a2 = this._ws) == null ? void 0 : _a2.send(message);
+      });
+      this._messageQueue = [];
+      if (this.onopen) {
+        this.onopen(event);
+      }
+      this.dispatchEvent(cloneEvent(event));
+    });
+    __publicField(this, "_handleMessage", (event) => {
+      this._debug("message event");
+      if (this.onmessage) {
+        this.onmessage(event);
+      }
+      this.dispatchEvent(cloneEvent(event));
+    });
+    __publicField(this, "_handleError", (event) => {
+      this._debug("error event", event.message);
+      this._disconnect(void 0, event.message === "TIMEOUT" ? "timeout" : void 0);
+      if (this.onerror) {
+        this.onerror(event);
+      }
+      this._debug("exec error listeners");
+      this.dispatchEvent(cloneEvent(event));
+      this._connect();
+    });
+    __publicField(this, "_handleClose", (event) => {
+      this._debug("close event");
+      this._clearTimeouts();
+      if (this._shouldReconnect) {
+        this._connect();
+      }
+      if (this.onclose) {
+        this.onclose(event);
+      }
+      this.dispatchEvent(cloneEvent(event));
+    });
+    this._url = url;
+    this._protocols = protocols;
+    this._options = options;
+    if (this._options.startClosed) {
+      this._shouldReconnect = false;
+    }
+    if (this._options.debugLogger) {
+      this._debugLogger = this._options.debugLogger;
+    }
+    this._connect();
+  }
+  static get CONNECTING() {
+    return 0;
+  }
+  static get OPEN() {
+    return 1;
+  }
+  static get CLOSING() {
+    return 2;
+  }
+  static get CLOSED() {
+    return 3;
+  }
+  get CONNECTING() {
+    return _ReconnectingWebSocket.CONNECTING;
+  }
+  get OPEN() {
+    return _ReconnectingWebSocket.OPEN;
+  }
+  get CLOSING() {
+    return _ReconnectingWebSocket.CLOSING;
+  }
+  get CLOSED() {
+    return _ReconnectingWebSocket.CLOSED;
+  }
+  get binaryType() {
+    return this._ws ? this._ws.binaryType : this._binaryType;
+  }
+  set binaryType(value) {
+    this._binaryType = value;
+    if (this._ws) {
+      this._ws.binaryType = value;
+    }
+  }
+  /**
+   * Returns the number or connection retries
+   */
+  get retryCount() {
+    return Math.max(this._retryCount, 0);
+  }
+  /**
+   * The number of bytes of data that have been queued using calls to send() but not yet
+   * transmitted to the network. This value resets to zero once all queued data has been sent.
+   * This value does not reset to zero when the connection is closed; if you keep calling send(),
+   * this will continue to climb. Read only
+   */
+  get bufferedAmount() {
+    const bytes = this._messageQueue.reduce((acc, message) => {
+      if (typeof message === "string") {
+        acc += message.length;
+      } else if (message instanceof Blob) {
+        acc += message.size;
+      } else {
+        acc += message.byteLength;
+      }
+      return acc;
+    }, 0);
+    return bytes + (this._ws ? this._ws.bufferedAmount : 0);
+  }
+  /**
+   * The extensions selected by the server. This is currently only the empty string or a list of
+   * extensions as negotiated by the connection
+   */
+  get extensions() {
+    return this._ws ? this._ws.extensions : "";
+  }
+  /**
+   * A string indicating the name of the sub-protocol the server selected;
+   * this will be one of the strings specified in the protocols parameter when creating the
+   * WebSocket object
+   */
+  get protocol() {
+    return this._ws ? this._ws.protocol : "";
+  }
+  /**
+   * The current state of the connection; this is one of the Ready state constants
+   */
+  get readyState() {
+    if (this._ws) {
+      return this._ws.readyState;
+    }
+    return this._options.startClosed ? _ReconnectingWebSocket.CLOSED : _ReconnectingWebSocket.CONNECTING;
+  }
+  /**
+   * The URL as resolved by the constructor
+   */
+  get url() {
+    return this._ws ? this._ws.url : "";
+  }
+  /**
+   * Whether the websocket object is now in reconnectable state
+   */
+  get shouldReconnect() {
+    return this._shouldReconnect;
+  }
+  /**
+   * Closes the WebSocket connection or connection attempt, if any. If the connection is already
+   * CLOSED, this method does nothing
+   */
+  close(code = 1e3, reason) {
+    this._closeCalled = true;
+    this._shouldReconnect = false;
+    this._clearTimeouts();
+    if (!this._ws) {
+      this._debug("close enqueued: no ws instance");
+      return;
+    }
+    if (this._ws.readyState === this.CLOSED) {
+      this._debug("close: already closed");
+      return;
+    }
+    this._ws.close(code, reason);
+  }
+  /**
+   * Closes the WebSocket connection or connection attempt and connects again.
+   * Resets retry counter;
+   */
+  reconnect(code, reason) {
+    this._shouldReconnect = true;
+    this._closeCalled = false;
+    this._retryCount = -1;
+    if (!this._ws || this._ws.readyState === this.CLOSED) {
+      this._connect();
+    } else {
+      this._disconnect(code, reason);
+      this._connect();
+    }
+  }
+  /**
+   * Enqueue specified data to be transmitted to the server over the WebSocket connection
+   */
+  send(data) {
+    if (this._ws && this._ws.readyState === this.OPEN) {
+      this._debug("send", data);
+      this._ws.send(data);
+    } else {
+      const { maxEnqueuedMessages = DEFAULT.maxEnqueuedMessages } = this._options;
+      if (this._messageQueue.length < maxEnqueuedMessages) {
+        this._debug("enqueue", data);
+        this._messageQueue.push(data);
+      }
+    }
+  }
+  _debug(...args) {
+    if (this._options.debug) {
+      this._debugLogger("RWS>", ...args);
+    }
+  }
+  _getNextDelay() {
+    const {
+      reconnectionDelayGrowFactor = DEFAULT.reconnectionDelayGrowFactor,
+      minReconnectionDelay = DEFAULT.minReconnectionDelay,
+      maxReconnectionDelay = DEFAULT.maxReconnectionDelay
+    } = this._options;
+    let delay = 0;
+    if (this._retryCount > 0) {
+      delay = minReconnectionDelay * reconnectionDelayGrowFactor ** (this._retryCount - 1);
+      if (delay > maxReconnectionDelay) {
+        delay = maxReconnectionDelay;
+      }
+    }
+    this._debug("next delay", delay);
+    return delay;
+  }
+  _wait() {
+    return new Promise((resolve) => {
+      setTimeout(resolve, this._getNextDelay());
+    });
+  }
+  _getNextProtocols(protocolsProvider) {
+    if (!protocolsProvider) return Promise.resolve(null);
+    if (typeof protocolsProvider === "string" || Array.isArray(protocolsProvider)) {
+      return Promise.resolve(protocolsProvider);
+    }
+    if (typeof protocolsProvider === "function") {
+      const protocols = protocolsProvider();
+      if (!protocols) return Promise.resolve(null);
+      if (typeof protocols === "string" || Array.isArray(protocols)) {
+        return Promise.resolve(protocols);
+      }
+      if (protocols.then) {
+        return protocols;
+      }
+    }
+    throw Error("Invalid protocols");
+  }
+  _getNextUrl(urlProvider) {
+    if (typeof urlProvider === "string") {
+      return Promise.resolve(urlProvider);
+    }
+    if (typeof urlProvider === "function") {
+      const url = urlProvider();
+      if (typeof url === "string") {
+        return Promise.resolve(url);
+      }
+      if (url.then) {
+        return url;
+      }
+    }
+    throw Error("Invalid URL");
+  }
+  _connect() {
+    if (this._connectLock || !this._shouldReconnect) {
+      return;
+    }
+    this._connectLock = true;
+    const {
+      maxRetries = DEFAULT.maxRetries,
+      connectionTimeout = DEFAULT.connectionTimeout
+    } = this._options;
+    if (this._retryCount >= maxRetries) {
+      this._debug("max retries reached", this._retryCount, ">=", maxRetries);
+      return;
+    }
+    this._retryCount++;
+    this._debug("connect", this._retryCount);
+    this._removeListeners();
+    this._wait().then(
+      () => Promise.all([
+        this._getNextUrl(this._url),
+        this._getNextProtocols(this._protocols || null)
+      ])
+    ).then(([url, protocols]) => {
+      if (this._closeCalled) {
+        this._connectLock = false;
+        return;
+      }
+      if (!this._options.WebSocket && typeof WebSocket === "undefined" && !didWarnAboutMissingWebSocket) {
+        console.error(`\u203C\uFE0F No WebSocket implementation available. You should define options.WebSocket. 
+
+For example, if you're using node.js, run \`npm install ws\`, and then in your code:
+
+import PartySocket from 'partysocket';
+import WS from 'ws';
+
+const partysocket = new PartySocket({
+  host: "127.0.0.1:1999",
+  room: "test-room",
+  WebSocket: WS
+});
+
+`);
+        didWarnAboutMissingWebSocket = true;
+      }
+      const WS = this._options.WebSocket || WebSocket;
+      this._debug("connect", { url, protocols });
+      this._ws = protocols ? new WS(url, protocols) : new WS(url);
+      this._ws.binaryType = this._binaryType;
+      this._connectLock = false;
+      this._addListeners();
+      this._connectTimeout = setTimeout(
+        () => this._handleTimeout(),
+        connectionTimeout
+      );
+    }).catch((err) => {
+      this._connectLock = false;
+      this._handleError(new Events.ErrorEvent(Error(err.message), this));
+    });
+  }
+  _handleTimeout() {
+    this._debug("timeout event");
+    this._handleError(new Events.ErrorEvent(Error("TIMEOUT"), this));
+  }
+  _disconnect(code = 1e3, reason) {
+    this._clearTimeouts();
+    if (!this._ws) {
+      return;
+    }
+    this._removeListeners();
+    try {
+      if (this._ws.readyState === this.OPEN) {
+        this._ws.close(code, reason);
+      }
+      this._handleClose(new Events.CloseEvent(code, reason, this));
+    } catch (error) {
+    }
+  }
+  _acceptOpen() {
+    this._debug("accept open");
+    this._retryCount = 0;
+  }
+  _removeListeners() {
+    if (!this._ws) {
+      return;
+    }
+    this._debug("removeListeners");
+    this._ws.removeEventListener("open", this._handleOpen);
+    this._ws.removeEventListener("close", this._handleClose);
+    this._ws.removeEventListener("message", this._handleMessage);
+    this._ws.removeEventListener("error", this._handleError);
+  }
+  _addListeners() {
+    if (!this._ws) {
+      return;
+    }
+    this._debug("addListeners");
+    this._ws.addEventListener("open", this._handleOpen);
+    this._ws.addEventListener("close", this._handleClose);
+    this._ws.addEventListener("message", this._handleMessage);
+    this._ws.addEventListener("error", this._handleError);
+  }
+  _clearTimeouts() {
+    clearTimeout(this._connectTimeout);
+    clearTimeout(this._uptimeTimeout);
+  }
+};
+
+// node_modules/partysocket/dist/chunk-HAC622V3.mjs
+var valueIsNotNil = (keyValuePair) => keyValuePair[1] !== null && keyValuePair[1] !== void 0;
+function generateUUID() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  let d2 = /* @__PURE__ */ (/* @__PURE__ */ new Date()).getTime();
+  let d22 = typeof performance !== "undefined" && performance.now && performance.now() * 1e3 || 0;
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c2) {
+    let r = Math.random() * 16;
+    if (d2 > 0) {
+      r = (d2 + r) % 16 | 0;
+      d2 = Math.floor(d2 / 16);
+    } else {
+      r = (d22 + r) % 16 | 0;
+      d22 = Math.floor(d22 / 16);
+    }
+    return (c2 === "x" ? r : r & 3 | 8).toString(16);
+  });
+}
+function getPartyInfo(partySocketOptions, defaultProtocol, defaultParams = {}) {
+  const {
+    host: rawHost,
+    path: rawPath,
+    protocol: rawProtocol,
+    room,
+    party,
+    basePath,
+    prefix,
+    query
+  } = partySocketOptions;
+  let host = rawHost.replace(/^(http|https|ws|wss):\/\//, "");
+  if (host.endsWith("/")) {
+    host = host.slice(0, -1);
+  }
+  if (rawPath == null ? void 0 : rawPath.startsWith("/")) {
+    throw new Error("path must not start with a slash");
+  }
+  const name = party ?? "main";
+  const path = rawPath ? `/${rawPath}` : "";
+  const protocol = rawProtocol || (host.startsWith("localhost:") || host.startsWith("127.0.0.1:") || host.startsWith("192.168.") || host.startsWith("10.") || host.startsWith("172.") && host.split(".")[1] >= "16" && host.split(".")[1] <= "31" || host.startsWith("[::ffff:7f00:1]:") ? (
+    // http / ws
+    defaultProtocol
+  ) : (
+    // https / wss
+    `${defaultProtocol}s`
+  ));
+  const baseUrl = `${protocol}://${host}/${basePath || `${prefix || "parties"}/${name}/${room}`}${path}`;
+  const makeUrl = (query2 = {}) => `${baseUrl}?${new URLSearchParams([
+    ...Object.entries(defaultParams),
+    ...Object.entries(query2).filter(valueIsNotNil)
+  ])}`;
+  const urlProvider = typeof query === "function" ? async () => makeUrl(await query()) : makeUrl(query);
+  return {
+    host,
+    path,
+    room,
+    name,
+    protocol,
+    partyUrl: baseUrl,
+    urlProvider
+  };
+}
+var PartySocket = class extends ReconnectingWebSocket {
+  constructor(partySocketOptions) {
+    const wsOptions = getWSOptions(partySocketOptions);
+    super(wsOptions.urlProvider, wsOptions.protocols, wsOptions.socketOptions);
+    __publicField(this, "_pk");
+    __publicField(this, "_pkurl");
+    __publicField(this, "name");
+    __publicField(this, "room");
+    __publicField(this, "host");
+    __publicField(this, "path");
+    this.partySocketOptions = partySocketOptions;
+    this.setWSProperties(wsOptions);
+  }
+  updateProperties(partySocketOptions) {
+    const wsOptions = getWSOptions({
+      ...this.partySocketOptions,
+      ...partySocketOptions,
+      host: partySocketOptions.host ?? this.host,
+      room: partySocketOptions.room ?? this.room,
+      path: partySocketOptions.path ?? this.path
+    });
+    this._url = wsOptions.urlProvider;
+    this._protocols = wsOptions.protocols;
+    this._options = wsOptions.socketOptions;
+    this.setWSProperties(wsOptions);
+  }
+  setWSProperties(wsOptions) {
+    const { _pk, _pkurl, name, room, host, path } = wsOptions;
+    this._pk = _pk;
+    this._pkurl = _pkurl;
+    this.name = name;
+    this.room = room;
+    this.host = host;
+    this.path = path;
+  }
+  reconnect(code, reason) {
+    if (!this.room || !this.host) {
+      throw new Error(
+        "The room and host must be set before connecting, use `updateProperties` method to set them or pass them to the constructor."
+      );
+    }
+    super.reconnect(code, reason);
+  }
+  get id() {
+    return this._pk;
+  }
+  /**
+   * Exposes the static PartyKit room URL without applying query parameters.
+   * To access the currently connected WebSocket url, use PartySocket#url.
+   */
+  get roomUrl() {
+    return this._pkurl;
+  }
+  // a `fetch` method that uses (almost) the same options as `PartySocket`
+  static async fetch(options, init) {
+    const party = getPartyInfo(options, "http");
+    const url = typeof party.urlProvider === "string" ? party.urlProvider : await party.urlProvider();
+    const doFetch = options.fetch ?? fetch;
+    return doFetch(url, init);
+  }
+};
+function getWSOptions(partySocketOptions) {
+  const {
+    id,
+    host: _host,
+    path: _path,
+    party: _party,
+    room: _room,
+    protocol: _protocol,
+    query: _query,
+    protocols,
+    ...socketOptions
+  } = partySocketOptions;
+  const _pk = id || generateUUID();
+  const party = getPartyInfo(partySocketOptions, "ws", { _pk });
+  return {
+    _pk,
+    _pkurl: party.partyUrl,
+    name: party.name,
+    room: party.room,
+    host: party.host,
+    path: party.path,
+    protocols,
+    socketOptions,
+    urlProvider: party.urlProvider
+  };
+}
+
+// node_modules/partysocket/dist/chunk-EQIKRCA3.mjs
+var import_react = __toESM(require_react(), 1);
+var import_react2 = __toESM(require_react(), 1);
+var useAttachWebSocketEventHandlers = (socket, options) => {
+  const handlersRef = (0, import_react.useRef)(options);
+  handlersRef.current = options;
   (0, import_react.useEffect)(() => {
+    const onOpen = (event) => {
+      var _a2, _b;
+      return (_b = (_a2 = handlersRef.current) == null ? void 0 : _a2.onOpen) == null ? void 0 : _b.call(_a2, event);
+    };
+    const onMessage = (event) => {
+      var _a2, _b;
+      return (_b = (_a2 = handlersRef.current) == null ? void 0 : _a2.onMessage) == null ? void 0 : _b.call(_a2, event);
+    };
+    const onClose = (event) => {
+      var _a2, _b;
+      return (_b = (_a2 = handlersRef.current) == null ? void 0 : _a2.onClose) == null ? void 0 : _b.call(_a2, event);
+    };
+    const onError = (event) => {
+      var _a2, _b;
+      return (_b = (_a2 = handlersRef.current) == null ? void 0 : _a2.onError) == null ? void 0 : _b.call(_a2, event);
+    };
+    socket.addEventListener("open", onOpen);
+    socket.addEventListener("close", onClose);
+    socket.addEventListener("error", onError);
+    socket.addEventListener("message", onMessage);
+    return () => {
+      socket.removeEventListener("open", onOpen);
+      socket.removeEventListener("close", onClose);
+      socket.removeEventListener("error", onError);
+      socket.removeEventListener("message", onMessage);
+    };
+  }, [socket]);
+};
+var getOptionsThatShouldCauseRestartWhenChanged = (options) => [
+  options.startClosed,
+  options.minUptime,
+  options.maxRetries,
+  options.connectionTimeout,
+  options.maxEnqueuedMessages,
+  options.maxReconnectionDelay,
+  options.minReconnectionDelay,
+  options.reconnectionDelayGrowFactor,
+  options.debug
+];
+function useStableSocket({
+  options,
+  createSocket,
+  createSocketMemoKey: createOptionsMemoKey
+}) {
+  const shouldReconnect = createOptionsMemoKey(options);
+  const socketOptions = (0, import_react2.useMemo)(() => {
+    return options;
+  }, [shouldReconnect]);
+  const [socket, setSocket] = (0, import_react2.useState)(
+    () => (
+      // only connect on first mount
+      createSocket({ ...socketOptions, startClosed: true })
+    )
+  );
+  const socketInitializedRef = (0, import_react2.useRef)(null);
+  const createSocketRef = (0, import_react2.useRef)(createSocket);
+  createSocketRef.current = createSocket;
+  (0, import_react2.useEffect)(() => {
+    if (socketInitializedRef.current === socket) {
+      const newSocket = createSocketRef.current({
+        ...socketOptions,
+        // when reconnecting because of options change, we always reconnect
+        // (startClosed only applies to initial mount)
+        startClosed: false
+      });
+      setSocket(newSocket);
+    } else {
+      if (!socketInitializedRef.current && socketOptions.startClosed !== true) {
+        socket.reconnect();
+      }
+      socketInitializedRef.current = socket;
+      return () => {
+        socket.close();
+      };
+    }
+  }, [socket, socketOptions]);
+  return socket;
+}
+
+// node_modules/partysocket/dist/react.mjs
+function usePartySocket(options) {
+  const { host, ...otherOptions } = options;
+  const socket = useStableSocket({
+    options: {
+      host: host || (typeof window !== "undefined" ? window.location.host : "dummy-domain.com"),
+      ...otherOptions
+    },
+    createSocket: (options2) => new PartySocket(options2),
+    createSocketMemoKey: (options2) => JSON.stringify([
+      // NOTE: if query is defined as a function, the socket
+      // won't reconnect when you change the function identity
+      options2.query,
+      options2.id,
+      options2.host,
+      options2.room,
+      options2.party,
+      options2.path,
+      options2.protocol,
+      options2.protocols,
+      options2.basePath,
+      options2.prefix,
+      ...getOptionsThatShouldCauseRestartWhenChanged(options2)
+    ])
+  });
+  useAttachWebSocketEventHandlers(socket, options);
+  return socket;
+}
+
+// src/client/index.tsx
+function App() {
+  const [route, setRoute] = (0, import_react3.useState)(window.location.pathname);
+  (0, import_react3.useEffect)(() => {
     const onPopState = () => setRoute(window.location.pathname);
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
@@ -21618,15 +22588,15 @@ function App() {
     setRoute(path);
   };
   if (route === "/privacy-policy") {
-    const PrivacyPolicy = import_react.default.lazy(() => import("./PrivacyPolicy-BKKK45AK.js"));
-    return /* @__PURE__ */ import_react.default.createElement(import_react.default.Suspense, { fallback: /* @__PURE__ */ import_react.default.createElement("div", { style: { color: "#ccc" } }, "Loading\u2026") }, /* @__PURE__ */ import_react.default.createElement(PrivacyPolicy, null), /* @__PURE__ */ import_react.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#", onClick: (e) => {
-      e.preventDefault();
+    const PrivacyPolicy = import_react3.default.lazy(() => import("./PrivacyPolicy-M6WKD3ZC.js"));
+    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Suspense, { fallback: /* @__PURE__ */ import_react3.default.createElement("div", { style: { color: "#ccc" } }, "Loading\u2026") }, /* @__PURE__ */ import_react3.default.createElement(PrivacyPolicy, null), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
+      e2.preventDefault();
       navigate("/");
     }, style: { color: "#ccc" } }, "\u2190 Back to Home")));
   }
-  const canvasRef = (0, import_react.useRef)();
-  const [counter, setCounter] = (0, import_react.useState)(0);
-  const positions = (0, import_react.useRef)(/* @__PURE__ */ new Map());
+  const canvasRef = (0, import_react3.useRef)();
+  const [counter, setCounter] = (0, import_react3.useState)(0);
+  const positions = (0, import_react3.useRef)(/* @__PURE__ */ new Map());
   const socket = usePartySocket({
     room: "default",
     party: "globe",
@@ -21637,16 +22607,16 @@ function App() {
           location: [message.position.lat, message.position.lng],
           size: message.position.id === socket.id ? 0.1 : 0.05
         });
-        setCounter((c) => c + 1);
+        setCounter((c2) => c2 + 1);
       } else {
         positions.current.delete(message.id);
-        setCounter((c) => c - 1);
+        setCounter((c2) => c2 - 1);
       }
     }
   });
-  (0, import_react.useEffect)(() => {
+  (0, import_react3.useEffect)(() => {
     let phi = 0;
-    const globe = createGlobe(canvasRef.current, {
+    const globe = p(canvasRef.current, {
       devicePixelRatio: 2,
       width: 400 * 2,
       height: 400 * 2,
@@ -21671,18 +22641,18 @@ function App() {
       globe.destroy();
     };
   }, []);
-  return /* @__PURE__ */ import_react.default.createElement("div", { className: "App" }, /* @__PURE__ */ import_react.default.createElement("h1", null, "Where's everyone at?"), counter !== 0 ? /* @__PURE__ */ import_react.default.createElement("p", null, /* @__PURE__ */ import_react.default.createElement("b", null, counter), " ", counter === 1 ? "person" : "people", " connected.") : /* @__PURE__ */ import_react.default.createElement("p", null, "\xA0"), /* @__PURE__ */ import_react.default.createElement(
+  return /* @__PURE__ */ import_react3.default.createElement("div", { className: "App" }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Where's everyone at?"), counter !== 0 ? /* @__PURE__ */ import_react3.default.createElement("p", null, /* @__PURE__ */ import_react3.default.createElement("b", null, counter), " ", counter === 1 ? "person" : "people", " connected.") : /* @__PURE__ */ import_react3.default.createElement("p", null, "\xA0"), /* @__PURE__ */ import_react3.default.createElement(
     "canvas",
     {
       ref: canvasRef,
       style: { width: 400, height: 400, maxWidth: "100%", aspectRatio: 1 }
     }
-  ), /* @__PURE__ */ import_react.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react.default.createElement("a", { href: "#", onClick: (e) => {
-    e.preventDefault();
+  ), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
+    e2.preventDefault();
     navigate("/privacy-policy");
   }, style: { color: "#ccc" } }, "Privacy Policy")));
 }
-(0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ import_react.default.createElement(App, null));
+(0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ import_react3.default.createElement(App, null));
 /*! Bundled license information:
 
 scheduler/cjs/scheduler.development.js:
@@ -21718,6 +22688,14 @@ react-dom/cjs/react-dom.development.js:
    * @return {boolean} True if the event is supported.
    * @internal
    * @license Modernizr 3.0.0pre (Custom Build) | MIT
+   *)
+
+partysocket/dist/chunk-S74YV6PU.mjs:
+  (*!
+   * Reconnecting WebSocket
+   * by Pedro Ladaria <pedro.ladaria@gmail.com>
+   * https://github.com/pladaria/reconnecting-websocket
+   * License MIT
    *)
 */
 //# sourceMappingURL=index.js.map

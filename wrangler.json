@@ -12,7 +12,7 @@
     "directory": "public"
   },
   "build": {
-    "command": "npx esbuild src/client/index.tsx --bundle --outdir=public/dist --splitting --sourcemap --format=esm --external:cobe --external:partysocket/react"
+    "command": "npx esbuild src/client/index.tsx --bundle --outdir=public/dist --splitting --sourcemap --format=esm --platform=browser --target=es2020"
   },
   "durable_objects": {
     "bindings": [

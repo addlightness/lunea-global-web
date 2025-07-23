@@ -180,3 +180,6 @@ build/
 
 # Turbo output
 .turbo/
+
+# Allow public/dist for Cloudflare Pages deployment
+!public/dist/
