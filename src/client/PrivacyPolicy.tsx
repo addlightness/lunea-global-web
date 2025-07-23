@@ -13,9 +13,7 @@ export default function PrivacyPolicy() {
       <hr />
       <h3>1. Who We Are</h3>
       <p>Lunea (“<b>we</b>,” “<b>our</b>,” or “<b>us</b>”) is a mobile application that delivers personalized lunar, astrological, and wellness content.<br />
-      • Developer: Lunea, Inc.<br />
-      • Address: [Postal address]<br />
-      • Email: <a href="mailto:privacy@lunea-example.com">privacy@lunea-example.com</a></p>
+      • Email: <a href="mailto:support@lunea-astrology.com">support@lunea-astrology.com</a></p>
       <hr />
       <h3>2. Scope & Acceptance</h3>
       <p>By installing or using Lunea you agree to the collection, use, disclosure, and retention of information as described below. If you do not agree, please uninstall the app and discontinue use.</p>
@@ -109,13 +107,8 @@ export default function PrivacyPolicy() {
       <p>We may update this Policy to reflect changes in law or product features. Material changes will be announced in-app or by email at least 14 days before they take effect. Continued use after the effective date constitutes acceptance.</p>
       <hr />
       <h3>12. Contact Us</h3>
-      <p>For privacy questions, data requests, or complaints, please email <a href="mailto:privacy@lunea-example.com">privacy@lunea-example.com</a> or write to:</p>
+      <p>For privacy questions, data requests, or complaints, please email <a href="mailto:support@lunea-astrology.com">support@lunea-astrology.com</a></p>
       <blockquote style={{ color: "#aaa", fontStyle: "italic" }}>
-        Privacy Officer<br />
-        Lunea<br />
-        [Street Address]<br />
-        [City, State ZIP]<br />
-        United States
       </blockquote>
       <hr />
       <em>Last revised: {today}</em>
