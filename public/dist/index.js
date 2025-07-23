@@ -22642,7 +22642,7 @@ function App() {
       navigate("/");
     }, style: { color: "#ccc" } }, "\u2190 Back to Home")));
   }
-  return /* @__PURE__ */ import_react3.default.createElement("div", { className: "App" }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Where's everyone at?"), counter !== 0 ? /* @__PURE__ */ import_react3.default.createElement("p", null, /* @__PURE__ */ import_react3.default.createElement("b", null, counter), " ", counter === 1 ? "person" : "people", " connected.") : /* @__PURE__ */ import_react3.default.createElement("p", null, "\xA0"), /* @__PURE__ */ import_react3.default.createElement(
+  return /* @__PURE__ */ import_react3.default.createElement("div", { className: "App" }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Lunea Astrology"), counter !== 0 ? /* @__PURE__ */ import_react3.default.createElement("p", null, /* @__PURE__ */ import_react3.default.createElement("b", null, counter), " ", counter === 1 ? "person" : "people", " orbiting on purpose.") : /* @__PURE__ */ import_react3.default.createElement("p", null, "\xA0"), /* @__PURE__ */ import_react3.default.createElement(
     "canvas",
     {
       ref: canvasRef,
