@@ -117,10 +117,10 @@ function App() {
   // Home page render
   return (
     <div className="App">
-      <h1>Where's everyone at?</h1>
+      <h1>Lunea Astrology</h1>
       {counter !== 0 ? (
         <p>
-          <b>{counter}</b> {counter === 1 ? "person" : "people"} connected.
+          <b>{counter}</b> {counter === 1 ? "person" : "people"} orbiting on purpose.
         </p>
       ) : (
         <p>&nbsp;</p>
