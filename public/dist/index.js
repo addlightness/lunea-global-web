@@ -22578,25 +22578,14 @@ function usePartySocket(options) {
 // src/client/index.tsx
 function App() {
   const [route, setRoute] = (0, import_react3.useState)(window.location.pathname);
+  const [counter, setCounter] = (0, import_react3.useState)(0);
+  const canvasRef = (0, import_react3.useRef)();
+  const positions = (0, import_react3.useRef)(/* @__PURE__ */ new Map());
   (0, import_react3.useEffect)(() => {
     const onPopState = () => setRoute(window.location.pathname);
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
-  const navigate = (path) => {
-    window.history.pushState({}, "", path);
-    setRoute(path);
-  };
-  if (route === "/privacy-policy") {
-    const PrivacyPolicy = import_react3.default.lazy(() => import("./PrivacyPolicy-M6WKD3ZC.js"));
-    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Suspense, { fallback: /* @__PURE__ */ import_react3.default.createElement("div", { style: { color: "#ccc" } }, "Loading\u2026") }, /* @__PURE__ */ import_react3.default.createElement(PrivacyPolicy, null), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
-      e2.preventDefault();
-      navigate("/");
-    }, style: { color: "#ccc" } }, "\u2190 Back to Home")));
-  }
-  const canvasRef = (0, import_react3.useRef)();
-  const [counter, setCounter] = (0, import_react3.useState)(0);
-  const positions = (0, import_react3.useRef)(/* @__PURE__ */ new Map());
   const socket = usePartySocket({
     room: "default",
     party: "globe",
@@ -22615,6 +22604,7 @@ function App() {
     }
   });
   (0, import_react3.useEffect)(() => {
+    if (route !== "/") return;
     let phi = 0;
     const globe = p(canvasRef.current, {
       devicePixelRatio: 2,
@@ -22640,14 +22630,25 @@ function App() {
     return () => {
       globe.destroy();
     };
-  }, []);
+  }, [route]);
+  const navigate = (path) => {
+    window.history.pushState({}, "", path);
+    setRoute(path);
+  };
+  if (route === "/privacy-policy") {
+    const PrivacyPolicy = import_react3.default.lazy(() => import("./PrivacyPolicy-M6WKD3ZC.js"));
+    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Suspense, { fallback: /* @__PURE__ */ import_react3.default.createElement("div", { style: { color: "#ccc" } }, "Loading\u2026") }, /* @__PURE__ */ import_react3.default.createElement(PrivacyPolicy, null), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
+      e2.preventDefault();
+      navigate("/");
+    }, style: { color: "#ccc" } }, "\u2190 Back to Home")));
+  }
   return /* @__PURE__ */ import_react3.default.createElement("div", { className: "App" }, /* @__PURE__ */ import_react3.default.createElement("h1", null, "Where's everyone at?"), counter !== 0 ? /* @__PURE__ */ import_react3.default.createElement("p", null, /* @__PURE__ */ import_react3.default.createElement("b", null, counter), " ", counter === 1 ? "person" : "people", " connected.") : /* @__PURE__ */ import_react3.default.createElement("p", null, "\xA0"), /* @__PURE__ */ import_react3.default.createElement(
     "canvas",
     {
       ref: canvasRef,
       style: { width: 400, height: 400, maxWidth: "100%", aspectRatio: 1 }
     }
-  ), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
+  ), /* @__PURE__ */ import_react3.default.createElement("p", null, "Powered by ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://cobe.vercel.app/" }, "\u{1F30F} Cobe"), ",", " ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://www.npmjs.com/package/phenomenon" }, "Phenomenon"), " and", " ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://npmjs.com/package/partyserver/" }, "\u{1F388} PartyServer")), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
     e2.preventDefault();
     navigate("/privacy-policy");
   }, style: { color: "#ccc" } }, "Privacy Policy")));

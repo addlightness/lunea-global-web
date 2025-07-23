@@ -10,38 +10,10 @@ import type { OutgoingMessage } from "../shared";
 import type { LegacyRef } from "react";
 
 function App() {
+  // All hooks must be called unconditionally at the top level
   const [route, setRoute] = useState(window.location.pathname);
-  useEffect(() => {
-    const onPopState = () => setRoute(window.location.pathname);
-    window.addEventListener("popstate", onPopState);
-    return () => window.removeEventListener("popstate", onPopState);
-  }, []);
-
-  const navigate = (path: string) => {
-    window.history.pushState({}, "", path);
-    setRoute(path);
-  };
-
-  if (route === "/privacy-policy") {
-    const PrivacyPolicy = React.lazy(() => import("./PrivacyPolicy"));
-    return (
-      <React.Suspense fallback={<div style={{color:'#ccc'}}>Loading…</div>}>
-        <PrivacyPolicy />
-        <p style={{marginTop:32}}>
-          <a href="#" onClick={e => { e.preventDefault(); navigate("/"); }} style={{color:'#ccc'}}>← Back to Home</a>
-        </p>
-      </React.Suspense>
-    );
-  }
-
-  // A reference to the canvas element where we'll render the globe
-  const canvasRef = useRef<HTMLCanvasElement>();
-  // The number of markers we're currently displaying
   const [counter, setCounter] = useState(0);
-  // A map of marker IDs to their positions
-  // Note that we use a ref because the globe's `onRender` callback
-  // is called on every animation frame, and we don't want to re-render
-  // the component on every frame.
+  const canvasRef = useRef<HTMLCanvasElement>();
   const positions = useRef<
     Map<
       string,
@@ -51,6 +23,14 @@ function App() {
       }
     >
   >(new Map());
+
+  // Navigation effect
+  useEffect(() => {
+    const onPopState = () => setRoute(window.location.pathname);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
   // Connect to the PartyServer server
   const socket = usePartySocket({
     room: "default",
@@ -74,7 +54,11 @@ function App() {
     },
   });
 
+  // Globe effect
   useEffect(() => {
+    // Only create globe if we're on the home route
+    if (route !== "/") return;
+
     // The angle of rotation of the globe
     // We'll update this on every frame to make the globe spin
     let phi = 0;
@@ -110,8 +94,27 @@ function App() {
     return () => {
       globe.destroy();
     };
-  }, []);
+  }, [route]);
 
+  const navigate = (path: string) => {
+    window.history.pushState({}, "", path);
+    setRoute(path);
+  };
+
+  // Conditional rendering after all hooks are declared
+  if (route === "/privacy-policy") {
+    const PrivacyPolicy = React.lazy(() => import("./PrivacyPolicy"));
+    return (
+      <React.Suspense fallback={<div style={{color:'#ccc'}}>Loading…</div>}>
+        <PrivacyPolicy />
+        <p style={{marginTop:32}}>
+          <a href="#" onClick={e => { e.preventDefault(); navigate("/"); }} style={{color:'#ccc'}}>← Back to Home</a>
+        </p>
+      </React.Suspense>
+    );
+  }
+
+  // Home page render
   return (
     <div className="App">
       <h1>Where's everyone at?</h1>
@@ -129,6 +132,12 @@ function App() {
         style={{ width: 400, height: 400, maxWidth: "100%", aspectRatio: 1 }}
       />
 
+      {/* Let's give some credit */}
+      <p>
+        Powered by <a href="https://cobe.vercel.app/">🌏 Cobe</a>,{" "}
+        <a href="https://www.npmjs.com/package/phenomenon">Phenomenon</a> and{" "}
+        <a href="https://npmjs.com/package/partyserver/">🎈 PartyServer</a>
+      </p>
       <p style={{marginTop:32}}>
         <a href="#" onClick={e => { e.preventDefault(); navigate("/privacy-policy"); }} style={{color:'#ccc'}}>Privacy Policy</a>
       </p>
