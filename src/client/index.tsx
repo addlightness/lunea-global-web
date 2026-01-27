@@ -102,6 +102,27 @@ function App() {
   };
 
   // Conditional rendering after all hooks are declared
+  if (route === "/support") {
+    const SupportPage = React.lazy(() => import("./SupportPage"));
+    return (
+      <React.Suspense fallback={<div style={{ color: "#ccc" }}>Loading…</div>}>
+        <SupportPage />
+        <p style={{ marginTop: 32 }}>
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/");
+            }}
+            style={{ color: "#ccc" }}
+          >
+            ← Back to Home
+          </a>
+        </p>
+      </React.Suspense>
+    );
+  }
+
   if (route === "/privacy-policy") {
     const PrivacyPolicy = React.lazy(() => import("./PrivacyPolicy"));
     return (
@@ -138,8 +159,28 @@ function App() {
         <a href="https://www.npmjs.com/package/phenomenon">Phenomenon</a> and{" "}
         <a href="https://npmjs.com/package/partyserver/">🎈 PartyServer</a>
       </p>
-      <p style={{marginTop:32}}>
-        <a href="#" onClick={e => { e.preventDefault(); navigate("/privacy-policy"); }} style={{color:'#ccc'}}>Privacy Policy</a>
+      <p style={{ marginTop: 32 }}>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/privacy-policy");
+          }}
+          style={{ color: "#ccc" }}
+        >
+          Privacy Policy
+        </a>
+        {" • "}
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            navigate("/support");
+          }}
+          style={{ color: "#ccc" }}
+        >
+          Support
+        </a>
       </p>
     </div>
   );

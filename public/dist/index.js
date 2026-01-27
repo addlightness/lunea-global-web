@@ -22635,8 +22635,23 @@ function App() {
     window.history.pushState({}, "", path);
     setRoute(path);
   };
+  if (route === "/support") {
+    const SupportPage = import_react3.default.lazy(() => import("./SupportPage-6XNNNB2Q.js"));
+    return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Suspense, { fallback: /* @__PURE__ */ import_react3.default.createElement("div", { style: { color: "#ccc" } }, "Loading\u2026") }, /* @__PURE__ */ import_react3.default.createElement(SupportPage, null), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement(
+      "a",
+      {
+        href: "#",
+        onClick: (e2) => {
+          e2.preventDefault();
+          navigate("/");
+        },
+        style: { color: "#ccc" }
+      },
+      "\u2190 Back to Home"
+    )));
+  }
   if (route === "/privacy-policy") {
-    const PrivacyPolicy = import_react3.default.lazy(() => import("./PrivacyPolicy-M6WKD3ZC.js"));
+    const PrivacyPolicy = import_react3.default.lazy(() => import("./PrivacyPolicy-LXGZTSRT.js"));
     return /* @__PURE__ */ import_react3.default.createElement(import_react3.default.Suspense, { fallback: /* @__PURE__ */ import_react3.default.createElement("div", { style: { color: "#ccc" } }, "Loading\u2026") }, /* @__PURE__ */ import_react3.default.createElement(PrivacyPolicy, null), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
       e2.preventDefault();
       navigate("/");
@@ -22648,10 +22663,29 @@ function App() {
       ref: canvasRef,
       style: { width: 400, height: 400, maxWidth: "100%", aspectRatio: 1 }
     }
-  ), /* @__PURE__ */ import_react3.default.createElement("p", null, "Powered by ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://cobe.vercel.app/" }, "\u{1F30F} Cobe"), ",", " ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://www.npmjs.com/package/phenomenon" }, "Phenomenon"), " and", " ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://npmjs.com/package/partyserver/" }, "\u{1F388} PartyServer")), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement("a", { href: "#", onClick: (e2) => {
-    e2.preventDefault();
-    navigate("/privacy-policy");
-  }, style: { color: "#ccc" } }, "Privacy Policy")));
+  ), /* @__PURE__ */ import_react3.default.createElement("p", null, "Powered by ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://cobe.vercel.app/" }, "\u{1F30F} Cobe"), ",", " ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://www.npmjs.com/package/phenomenon" }, "Phenomenon"), " and", " ", /* @__PURE__ */ import_react3.default.createElement("a", { href: "https://npmjs.com/package/partyserver/" }, "\u{1F388} PartyServer")), /* @__PURE__ */ import_react3.default.createElement("p", { style: { marginTop: 32 } }, /* @__PURE__ */ import_react3.default.createElement(
+    "a",
+    {
+      href: "#",
+      onClick: (e2) => {
+        e2.preventDefault();
+        navigate("/privacy-policy");
+      },
+      style: { color: "#ccc" }
+    },
+    "Privacy Policy"
+  ), " \u2022 ", /* @__PURE__ */ import_react3.default.createElement(
+    "a",
+    {
+      href: "#",
+      onClick: (e2) => {
+        e2.preventDefault();
+        navigate("/support");
+      },
+      style: { color: "#ccc" }
+    },
+    "Support"
+  )));
 }
 (0, import_client.createRoot)(document.getElementById("root")).render(/* @__PURE__ */ import_react3.default.createElement(App, null));
 /*! Bundled license information:
