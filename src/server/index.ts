@@ -79,9 +79,13 @@ export class Globe extends Server {
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
-    return (
-      (await routePartykitRequest(request, { ...env })) ||
-      new Response("Not Found", { status: 404 })
+    const partykitResponse = await routePartykitRequest(request, { ...env });
+    if (partykitResponse) return partykitResponse;
+
+    // For non-PartyKit routes, delegate to static assets so SPA deep links
+    // (for example /privacy-policy) resolve through the assets fallback.
+    return (env as Env & { ASSETS: { fetch: typeof fetch } }).ASSETS.fetch(
+      request,
     );
   },
 } satisfies ExportedHandler<Env>;
