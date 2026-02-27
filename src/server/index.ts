@@ -84,8 +84,10 @@ export default {
 
     // For non-PartyKit routes, delegate to static assets so SPA deep links
     // (for example /privacy-policy) resolve through the assets fallback.
-    return (env as Env & { ASSETS: { fetch: typeof fetch } }).ASSETS.fetch(
-      request,
-    );
+    const assets = (env as Partial<{ ASSETS: { fetch: typeof fetch } }>).ASSETS;
+    if (!assets) {
+      return new Response("Static assets binding is missing", { status: 500 });
+    }
+    return assets.fetch(request);
   },
 } satisfies ExportedHandler<Env>;
